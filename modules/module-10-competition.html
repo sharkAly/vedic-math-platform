@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Module 10: Speed Drills & Competition Training</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;500;600;700&family=Caveat:wght@400;700&family=Architects+Daughter&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@1/css/pico.min.css" />
+    <style>
+      body {
+        max-width: 880px;
+        margin: 0 auto;
+        padding: 40px 60px;
+        font-family: 'Lexend', sans-serif;
+        color: #1a1a1a;
+        line-height: 1.6;
+        background-color: #ffffff;
+      }
+
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6 {
+        color: #9f1239; /* Crimson for Championship Theme */
+        font-weight: 700;
+        margin-top: 1.5em;
+        margin-bottom: 0.5em;
+      }
+
+      h1 {
+        font-size: 2.5em;
+        text-align: center;
+        border-bottom: 3px solid #9f1239;
+        padding-bottom: 20px;
+      }
+      h2 {
+        font-size: 1.8em;
+        border-left: 5px solid #fbbf24; /* Gold accent */
+        padding-left: 15px;
+        background-color: #fffbeb;
+        padding: 10px 15px;
+        margin-top: 40px;
+      }
+      h3 {
+        font-size: 1.4em;
+        color: #c2410c;
+        margin-top: 25px;
+      }
+
+      .concept-box {
+        background-color: #fff1f2;
+        border-left: 4px solid #9f1239;
+        padding: 15px;
+        margin: 20px 0;
+        border-radius: 0 4px 4px 0;
+      }
+
+      .why-works {
+        background-color: #f0fdf4;
+        border: 1px solid #bbf7d0;
+        border-left: 4px solid #16a34a;
+        padding: 15px;
+        margin: 20px 0;
+      }
+
+      .try-this {
+        background-color: #fffbeb;
+        border: 2px dashed #f59e0b;
+        padding: 20px;
+        margin: 25px 0;
+        text-align: center;
+      }
+
+      .mistake-alert {
+        background-color: #fef2f2;
+        border-left: 4px solid #ef4444;
+        padding: 15px;
+        margin: 20px 0;
+      }
+
+      .worksheet {
+        border: 2px solid #94a3b8;
+        padding: 25px;
+        margin: 30px 0;
+        background-color: #ffffff;
+        page-break-inside: avoid;
+      }
+
+      .worksheet-header {
+        display: flex;
+        justify-content: space-between;
+        border-bottom: 2px solid #94a3b8;
+        padding-bottom: 10px;
+        margin-bottom: 20px;
+        font-weight: bold;
+      }
+
+      .problem-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+        margin-bottom: 20px;
+      }
+
+      .problem-item {
+        display: flex;
+        align-items: center;
+        margin-bottom: 10px;
+        font-family: 'Lexend', monospace;
+        font-size: 1.1em;
+      }
+
+      .problem-number {
+        font-weight: bold;
+        color: #64748b;
+        margin-right: 10px;
+        width: 30px;
+      }
+
+      .diagram-container {
+        border: 1px solid #cbd5e1;
+        background-color: #f8fafc;
+        background-image:
+          linear-gradient(#e2e8f0 1px, transparent 1px), linear-gradient(90deg, #e2e8f0 1px, transparent 1px);
+        background-size: 20px 20px;
+        padding: 30px;
+        margin: 25px 0;
+        text-align: center;
+        max-width: 600px;
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      .step-circle {
+        display: inline-block;
+        width: 24px;
+        height: 24px;
+        line-height: 24px;
+        border-radius: 50%;
+        background-color: #f97316;
+        color: white;
+        text-align: center;
+        font-weight: bold;
+        font-size: 14px;
+        margin-right: 5px;
+      }
+
+      .hand-font {
+        font-family: 'Caveat', cursive;
+        font-size: 1.4em;
+        color: #9f1239;
+      }
+      .label-font {
+        font-family: 'Architects Daughter', cursive;
+        color: #4b5563;
+      }
+
+      .answer-key {
+        font-size: 0.9em;
+        background-color: #f8fafc;
+        padding: 15px;
+        border-top: 1px dotted #cbd5e1;
+        margin-top: 15px;
+      }
+
+      .answer-grid {
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
+        gap: 10px;
+      }
+
+      .intro-box {
+        background-color: #ffe4e6;
+        padding: 20px;
+        border-radius: 8px;
+        margin-bottom: 30px;
+        border: 1px solid #fda4af;
+      }
+
+      .progress-tracker {
+        background-color: #f0fdf4;
+        border: 1px solid #22c55e;
+        padding: 15px;
+        border-radius: 8px;
+        margin-top: 30px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+      .star-rating {
+        color: #f59e0b;
+        font-size: 1.5em;
+      }
+
+      .trophy-icon {
+        font-size: 4em;
+        display: block;
+        margin: 20px auto;
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Module 10: Speed Drills & Competition Training</h1>
+
+    <div class="intro-box">
+      <h3>Welcome to the Championship Round!</h3>
+      <p>
+        You have learned all the techniques. Now it's time to transform into a mathematical athlete. This module is
+        about speed, accuracy, and mental stamina. Prepare for the ultimate challenge!
+      </p>
+      <p><strong>Training Goals:</strong></p>
+      <ul>
+        <li>Increase calculation speed by 300%</li>
+        <li>Develop mental stamina for long problem sets</li>
+        <li>Master competition-style rapid-fire questions</li>
+        <li>Achieve total automaticity with all Vedic techniques</li>
+      </ul>
+    </div>
+
+    <div class="trophy-icon">🏆</div>
+
+    <!-- SECTION 10.1: 5-Minute Speed Tests -->
+    <section>
+      <h2>10.1 5-Minute Speed Tests</h2>
+      <p>Set a timer for 5 minutes for each test. Your goal is 100% accuracy first, then speed.</p>
+
+      <div class="worksheet">
+        <div class="worksheet-header">
+          <span>Speed Test 1: Mixed Addition/Subtraction</span>
+          <span>Time: 5:00 | Score: ____ / 20</span>
+        </div>
+        <div class="problem-grid">
+          <div class="problem-item"><span class="problem-number">1.</span> 45 + 38 = _____</div>
+          <div class="problem-item"><span class="problem-number">2.</span> 67 + 29 = _____</div>
+          <div class="problem-item"><span class="problem-number">3.</span> 100 - 43 = _____</div>
+          <div class="problem-item"><span class="problem-number">4.</span> 1000 - 237 = _____</div>
+          <div class="problem-item"><span class="problem-number">5.</span> 56 + 78 = _____</div>
+          <div class="problem-item"><span class="problem-number">6.</span> 82 - 39 = _____</div>
+          <div class="problem-item"><span class="problem-number">7.</span> 123 + 456 = _____</div>
+          <div class="problem-item"><span class="problem-number">8.</span> 500 - 128 = _____</div>
+          <div class="problem-item"><span class="problem-number">9.</span> 64 + 57 = _____</div>
+          <div class="problem-item"><span class="problem-number">10.</span> 93 - 47 = _____</div>
+          <div class="problem-item"><span class="problem-number">11.</span> 29 + 39 + 49 = _____</div>
+          <div class="problem-item"><span class="problem-number">12.</span> 1000 - 584 = _____</div>
+          <div class="problem-item"><span class="problem-number">13.</span> 75 + 86 = _____</div>
+          <div class="problem-item"><span class="problem-number">14.</span> 100 - 23 = _____</div>
+          <div class="problem-item"><span class="problem-number">15.</span> 456 + 123 = _____</div>
+          <div class="problem-item"><span class="problem-number">16.</span> 600 - 245 = _____</div>
+          <div class="problem-item"><span class="problem-number">17.</span> 88 + 44 = _____</div>
+          <div class="problem-item"><span class="problem-number">18.</span> 1000 - 89 = _____</div>
+          <div class="problem-item"><span class="problem-number">19.</span> 34 + 56 + 78 = _____</div>
+          <div class="problem-item"><span class="problem-number">20.</span> 200 - 111 = _____</div>
+        </div>
+        <div class="answer-key">
+          <strong>Key 1:</strong> 1.83 2.96 3.57 4.763 5.134 6.43 7.579 8.372 9.121 10.46 11.117 12.416 13.161 14.77
+          15.579 16.355 17.132 18.911 19.168 20.89
+        </div>
+      </div>
+
+      <div class="worksheet">
+        <div class="worksheet-header">
+          <span>Speed Test 2: Times Tables Random</span>
+          <span>Time: 5:00 | Score: ____ / 25</span>
+        </div>
+        <div class="problem-grid">
+          <div class="problem-item"><span class="problem-number">1.</span> 7 × 8 = _____</div>
+          <div class="problem-item"><span class="problem-number">2.</span> 6 × 9 = _____</div>
+          <div class="problem-item"><span class="problem-number">3.</span> 12 × 11 = _____</div>
+          <div class="problem-item"><span class="problem-number">4.</span> 8 × 6 = _____</div>
+          <div class="problem-item"><span class="problem-number">5.</span> 9 × 7 = _____</div>
+          <div class="problem-item"><span class="problem-number">6.</span> 12 × 9 = _____</div>
+          <div class="problem-item"><span class="problem-number">7.</span> 11 × 11 = _____</div>
+          <div class="problem-item"><span class="problem-number">8.</span> 8 × 4 = _____</div>
+          <div class="problem-item"><span class="problem-number">9.</span> 7 × 6 = _____</div>
+          <div class="problem-item"><span class="problem-number">10.</span> 9 × 8 = _____</div>
+          <div class="problem-item"><span class="problem-number">11.</span> 12 × 12 = _____</div>
+          <div class="problem-item"><span class="problem-number">12.</span> 6 × 7 = _____</div>
+          <div class="problem-item"><span class="problem-number">13.</span> 4 × 9 = _____</div>
+          <div class="problem-item"><span class="problem-number">14.</span> 8 × 9 = _____</div>
+          <div class="problem-item"><span class="problem-number">15.</span> 7 × 12 = _____</div>
+          <div class="problem-item"><span class="problem-number">16.</span> 11 × 8 = _____</div>
+          <div class="problem-item"><span class="problem-number">17.</span> 6 × 12 = _____</div>
+          <div class="problem-item"><span class="problem-number">18.</span> 9 × 9 = _____</div>
+          <div class="problem-item"><span class="problem-number">19.</span> 7 × 7 = _____</div>
+          <div class="problem-item"><span class="problem-number">20.</span> 8 × 12 = _____</div>
+          <div class="problem-item"><span class="problem-number">21.</span> 12 × 6 = _____</div>
+          <div class="problem-item"><span class="problem-number">22.</span> 9 × 6 = _____</div>
+          <div class="problem-item"><span class="problem-number">23.</span> 4 × 8 = _____</div>
+          <div class="problem-item"><span class="problem-number">24.</span> 3 × 12 = _____</div>
+          <div class="problem-item"><span class="problem-number">25.</span> 11 × 9 = _____</div>
+        </div>
+        <div class="answer-key">
+          <strong>Key 2:</strong> 1.56 2.54 3.132 4.48 5.63 6.108 7.121 8.32 9.42 10.72 11.144 12.42 13.36 14.72 15.84
+          16.88 17.72 18.81 19.49 20.96 21.72 22.54 23.32 24.36 25.99
+        </div>
+      </div>
+
+      <div class="worksheet">
+        <div class="worksheet-header">
+          <span>Speed Test 3: 2-Digit Multiplication</span>
+          <span>Time: 5:00 | Score: ____ / 15</span>
+        </div>
+        <div class="problem-grid">
+          <div class="problem-item"><span class="problem-number">1.</span> 23 × 12 = _____</div>
+          <div class="problem-item"><span class="problem-number">2.</span> 31 × 21 = _____</div>
+          <div class="problem-item"><span class="problem-number">3.</span> 12 × 13 = _____</div>
+          <div class="problem-item"><span class="problem-number">4.</span> 21 × 41 = _____</div>
+          <div class="problem-item"><span class="problem-number">5.</span> 32 × 11 = _____</div>
+          <div class="problem-item"><span class="problem-number">6.</span> 42 × 21 = _____</div>
+          <div class="problem-item"><span class="problem-number">7.</span> 51 × 11 = _____</div>
+          <div class="problem-item"><span class="problem-number">8.</span> 22 × 22 = _____</div>
+          <div class="problem-item"><span class="problem-number">9.</span> 13 × 31 = _____</div>
+          <div class="problem-item"><span class="problem-number">10.</span> 14 × 21 = _____</div>
+          <div class="problem-item"><span class="problem-number">11.</span> 23 × 32 = _____</div>
+          <div class="problem-item"><span class="problem-number">12.</span> 41 × 12 = _____</div>
+          <div class="problem-item"><span class="problem-number">13.</span> 33 × 22 = _____</div>
+          <div class="problem-item"><span class="problem-number">14.</span> 12 × 42 = _____</div>
+          <div class="problem-item"><span class="problem-number">15.</span> 21 × 33 = _____</div>
+        </div>
+        <div class="answer-key">
+          <strong>Key 3:</strong> 1.276 2.651 3.156 4.861 5.352 6.882 7.561 8.484 9.403 10.294 11.736 12.492 13.726
+          14.504 15.693
+        </div>
+      </div>
+
+      <div class="worksheet">
+        <div class="worksheet-header">
+          <span>Speed Test 4: Squaring & Near-Base</span>
+          <span>Time: 5:00 | Score: ____ / 18</span>
+        </div>
+        <div class="problem-grid">
+          <div class="problem-item"><span class="problem-number">1.</span> 35² = _____</div>
+          <div class="problem-item"><span class="problem-number">2.</span> 45² = _____</div>
+          <div class="problem-item"><span class="problem-number">3.</span> 65² = _____</div>
+          <div class="problem-item"><span class="problem-number">4.</span> 95² = _____</div>
+          <div class="problem-item"><span class="problem-number">5.</span> 103 × 104 = _____</div>
+          <div class="problem-item"><span class="problem-number">6.</span> 105 × 106 = _____</div>
+          <div class="problem-item"><span class="problem-number">7.</span> 97 × 96 = _____</div>
+          <div class="problem-item"><span class="problem-number">8.</span> 98 × 95 = _____</div>
+          <div class="problem-item"><span class="problem-number">9.</span> 52² = _____</div>
+          <div class="problem-item"><span class="problem-number">10.</span> 53² = _____</div>
+          <div class="problem-item"><span class="problem-number">11.</span> 48² = _____</div>
+          <div class="problem-item"><span class="problem-number">12.</span> 49² = _____</div>
+          <div class="problem-item"><span class="problem-number">13.</span> 107² = _____</div>
+          <div class="problem-item"><span class="problem-number">14.</span> 102² = _____</div>
+          <div class="problem-item"><span class="problem-number">15.</span> 99² = _____</div>
+          <div class="problem-item"><span class="problem-number">16.</span> 96² = _____</div>
+          <div class="problem-item"><span class="problem-number">17.</span> 25² = _____</div>
+          <div class="problem-item"><span class="problem-number">18.</span> 15² = _____</div>
+        </div>
+        <div class="answer-key">
+          <strong>Key 4:</strong> 1.1225 2.2025 3.4225 4.9025 5.10712 6.11130 7.9312 8.9310 9.2704 10.2809 11.2304
+          12.2401 13.11449 14.10404 15.9801 16.9216 17.625 18.225
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 10.2: 10-Minute Challenges -->
+    <section>
+      <h2>10.2 10-Minute Challenge Sets</h2>
+      <p>These comprehensive challenges test everything you've learned. Pace yourself!</p>
+
+      <div class="worksheet">
+        <div class="worksheet-header">
+          <span>Challenge A: Computational Marathon</span>
+          <span>Time: 10:00 | Score: ____ / 30</span>
+        </div>
+        <div class="problem-grid">
+          <div class="problem-item"><span class="problem-number">1.</span> 25% of 80 = _____</div>
+          <div class="problem-item"><span class="problem-number">2.</span> 15% of 60 = _____</div>
+          <div class="problem-item"><span class="problem-number">3.</span> 103 × 102 = _____</div>
+          <div class="problem-item"><span class="problem-number">4.</span> 98 × 97 = _____</div>
+          <div class="problem-item"><span class="problem-number">5.</span> 432 ÷ 8 = _____</div>
+          <div class="problem-item"><span class="problem-number">6.</span> 567 ÷ 9 = _____</div>
+          <div class="problem-item"><span class="problem-number">7.</span> 35² = _____</div>
+          <div class="problem-item"><span class="problem-number">8.</span> 45² = _____</div>
+          <div class="problem-item"><span class="problem-number">9.</span> 123 + 456 = _____</div>
+          <div class="problem-item"><span class="problem-number">10.</span> 1000 - 342 = _____</div>
+          <div class="problem-item"><span class="problem-number">11.</span> 23 × 11 = _____</div>
+          <div class="problem-item"><span class="problem-number">12.</span> 45 × 11 = _____</div>
+          <div class="problem-item"><span class="problem-number">13.</span> 1/2 as decimal = _____</div>
+          <div class="problem-item"><span class="problem-number">14.</span> 1/4 as decimal = _____</div>
+          <div class="problem-item"><span class="problem-number">15.</span> 3/4 as decimal = _____</div>
+          <div class="problem-item"><span class="problem-number">16.</span> 20% off $50 = _____</div>
+          <div class="problem-item"><span class="problem-number">17.</span> 10% tip on $40 = _____</div>
+          <div class="problem-item"><span class="problem-number">18.</span> 50% of 140 = _____</div>
+          <div class="problem-item"><span class="problem-number">19.</span> 52² = _____</div>
+          <div class="problem-item"><span class="problem-number">20.</span> 48² = _____</div>
+          <div class="problem-item"><span class="problem-number">21.</span> 12 × 12 = _____</div>
+          <div class="problem-item"><span class="problem-number">22.</span> 11 × 11 = _____</div>
+          <div class="problem-item"><span class="problem-number">23.</span> 9 × 8 = _____</div>
+          <div class="problem-item"><span class="problem-number">24.</span> 7 × 6 = _____</div>
+          <div class="problem-item"><span class="problem-number">25.</span> 12 × 21 = _____</div>
+          <div class="problem-item"><span class="problem-number">26.</span> 13 × 31 = _____</div>
+          <div class="problem-item"><span class="problem-number">27.</span> 1000 - 888 = _____</div>
+          <div class="problem-item"><span class="problem-number">28.</span> 123 + 321 = _____</div>
+          <div class="problem-item"><span class="problem-number">29.</span> 15% of 200 = _____</div>
+          <div class="problem-item"><span class="problem-number">30.</span> 25% of 120 = _____</div>
+        </div>
+        <div class="answer-key">
+          <strong>Key A:</strong> 1.20 2.9 3.10506 4.9506 5.54 6.63 7.1225 8.2025 9.579 10.658 11.253 12.495 13.0.5
+          14.0.25 15.0.75 16.$10 17.$4 18.70 19.2704 20.2304 21.144 22.121 23.72 24.42 25.252 26.403 27.112 28.444 29.30
+          30.30
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 10.3: Mental Math Olympics -->
+    <section>
+      <h2>10.3 Mental Math Olympics (No Paper)</h2>
+      <p><strong>Rules:</strong> No writing down intermediate steps. Only write the final answer.</p>
+
+      <div class="concept-box">
+        <strong>Mental Tracking Strategies:</strong>
+        <ul>
+          <li>Visualize the numbers in your mind's eye</li>
+          <li>Say the partial results out loud (whispering is okay)</li>
+          <li>Use your fingers to hold carries if needed</li>
+          <li>Trust your first instinct - speed often aids accuracy</li>
+        </ul>
+      </div>
+
+      <div class="worksheet">
+        <div class="worksheet-header">
+          <span>Mental Math Challenge</span>
+          <span>Score: ____ / 10</span>
+        </div>
+        <div class="problem-grid">
+          <div class="problem-item"><span class="problem-number">1.</span> 35² (Mental) = _____</div>
+          <div class="problem-item"><span class="problem-number">2.</span> 103 × 104 (Mental) = _____</div>
+          <div class="problem-item"><span class="problem-number">3.</span> 15% of 40 (Mental) = _____</div>
+          <div class="problem-item"><span class="problem-number">4.</span> 1000 - 364 (Mental) = _____</div>
+          <div class="problem-item"><span class="problem-number">5.</span> 45 + 38 (Mental) = _____</div>
+          <div class="problem-item"><span class="problem-number">6.</span> 23 × 11 (Mental) = _____</div>
+          <div class="problem-item"><span class="problem-number">7.</span> 50% of 86 (Mental) = _____</div>
+          <div class="problem-item"><span class="problem-number">8.</span> 98 × 97 (Mental) = _____</div>
+          <div class="problem-item"><span class="problem-number">9.</span> 1/4 of 120 (Mental) = _____</div>
+          <div class="problem-item"><span class="problem-number">10.</span> 12 × 12 (Mental) = _____</div>
+        </div>
+        <div class="answer-key">
+          <strong>Key Mental:</strong> 1.1225 2.10712 3.6 4.636 5.83 6.253 7.43 8.9506 9.30 10.144
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 10.5: Progress Celebration -->
+    <section>
+      <h2>10.5 Journey Summary & Celebration</h2>
+
+      <div class="intro-box">
+        <h3>🎉 CONGRATULATIONS! 🎉</h3>
+        <p>
+          You have completed the entire 10-Module Vedic Mathematics Speed Mastery System! You have transformed from a
+          regular student into a mathematical athlete.
+        </p>
+        <p><strong>Skills You Have Mastered:</strong></p>
+        <ul>
+          <li>✅ Lightning-fast addition and subtraction</li>
+          <li>✅ Instant multiplication of any numbers</li>
+          <li>✅ Mental squaring and division shortcuts</li>
+          <li>✅ Rapid percentage and fraction calculations</li>
+          <li>✅ Competition-level mental math stamina</li>
+        </ul>
+      </div>
+
+      <div class="progress-tracker">
+        <div>
+          <strong>COMPLETE SYSTEM MASTERY</strong><br />
+          <span>Status: CHAMPION</span>
+        </div>
+        <div class="star-rating">★★★★★★★★★★</div>
+      </div>
+    </section>
+  </body>
+</html>

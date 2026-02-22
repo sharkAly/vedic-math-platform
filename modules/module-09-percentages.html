@@ -1,0 +1,643 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Module 9: Percentages & Fractions</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;500;600;700&family=Caveat:wght@400;700&family=Architects+Daughter&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@1/css/pico.min.css" />
+    <style>
+      body {
+        max-width: 880px;
+        margin: 0 auto;
+        padding: 40px 60px;
+        font-family: 'Lexend', sans-serif;
+        color: #1a1a1a;
+        line-height: 1.6;
+        background-color: #ffffff;
+      }
+
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6 {
+        color: #d97706; /* Amber for Percentage Theme */
+        font-weight: 700;
+        margin-top: 1.5em;
+        margin-bottom: 0.5em;
+      }
+
+      h1 {
+        font-size: 2.5em;
+        text-align: center;
+        border-bottom: 3px solid #d97706;
+        padding-bottom: 20px;
+      }
+      h2 {
+        font-size: 1.8em;
+        border-left: 5px solid #b45309;
+        padding-left: 15px;
+        background-color: #fffbeb;
+        padding: 10px 15px;
+        margin-top: 40px;
+      }
+      h3 {
+        font-size: 1.4em;
+        color: #c2410c;
+        margin-top: 25px;
+      }
+
+      .concept-box {
+        background-color: #fef3c7;
+        border-left: 4px solid #d97706;
+        padding: 15px;
+        margin: 20px 0;
+        border-radius: 0 4px 4px 0;
+      }
+
+      .why-works {
+        background-color: #f0fdf4;
+        border: 1px solid #bbf7d0;
+        border-left: 4px solid #16a34a;
+        padding: 15px;
+        margin: 20px 0;
+      }
+
+      .try-this {
+        background-color: #fffbeb;
+        border: 2px dashed #f59e0b;
+        padding: 20px;
+        margin: 25px 0;
+        text-align: center;
+      }
+
+      .mistake-alert {
+        background-color: #fef2f2;
+        border-left: 4px solid #ef4444;
+        padding: 15px;
+        margin: 20px 0;
+      }
+
+      .worksheet {
+        border: 2px solid #94a3b8;
+        padding: 25px;
+        margin: 30px 0;
+        background-color: #ffffff;
+        page-break-inside: avoid;
+      }
+
+      .worksheet-header {
+        display: flex;
+        justify-content: space-between;
+        border-bottom: 2px solid #94a3b8;
+        padding-bottom: 10px;
+        margin-bottom: 20px;
+        font-weight: bold;
+      }
+
+      .problem-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+        margin-bottom: 20px;
+      }
+
+      .problem-item {
+        display: flex;
+        align-items: center;
+        margin-bottom: 10px;
+        font-family: 'Lexend', monospace;
+        font-size: 1.1em;
+      }
+
+      .problem-number {
+        font-weight: bold;
+        color: #64748b;
+        margin-right: 10px;
+        width: 30px;
+      }
+
+      .diagram-container {
+        border: 1px solid #cbd5e1;
+        background-color: #f8fafc;
+        background-image:
+          linear-gradient(#e2e8f0 1px, transparent 1px), linear-gradient(90deg, #e2e8f0 1px, transparent 1px);
+        background-size: 20px 20px;
+        padding: 30px;
+        margin: 25px 0;
+        text-align: center;
+        max-width: 600px;
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      .step-circle {
+        display: inline-block;
+        width: 24px;
+        height: 24px;
+        line-height: 24px;
+        border-radius: 50%;
+        background-color: #f97316;
+        color: white;
+        text-align: center;
+        font-weight: bold;
+        font-size: 14px;
+        margin-right: 5px;
+      }
+
+      .hand-font {
+        font-family: 'Caveat', cursive;
+        font-size: 1.4em;
+        color: #d97706;
+      }
+      .label-font {
+        font-family: 'Architects Daughter', cursive;
+        color: #4b5563;
+      }
+
+      .answer-key {
+        font-size: 0.9em;
+        background-color: #f8fafc;
+        padding: 15px;
+        border-top: 1px dotted #cbd5e1;
+        margin-top: 15px;
+      }
+
+      .answer-grid {
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
+        gap: 10px;
+      }
+
+      .intro-box {
+        background-color: #fde68a;
+        padding: 20px;
+        border-radius: 8px;
+        margin-bottom: 30px;
+        border: 1px solid #fcd34d;
+      }
+
+      .progress-tracker {
+        background-color: #f0fdf4;
+        border: 1px solid #22c55e;
+        padding: 15px;
+        border-radius: 8px;
+        margin-top: 30px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+      .star-rating {
+        color: #f59e0b;
+        font-size: 1.5em;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Module 9: Percentages & Fractions</h1>
+
+    <div class="intro-box">
+      <h3>Welcome to Module 9!</h3>
+      <p>
+        Percentages and fractions are everywhere in real life—discounts, tips, taxes, interest rates, and recipes. Most
+        people struggle with them, but with Vedic Mathematics, you'll see them as simple building blocks.
+      </p>
+      <p><strong>Learning Objectives:</strong></p>
+      <ul>
+        <li>Calculate percentages instantly using the "Building Block" method</li>
+        <li>Convert fractions to decimals with speed and accuracy</li>
+        <li>Handle real-world discounts, markups, and taxes effortlessly</li>
+        <li>Solve ratio and proportion problems using simple scaling</li>
+      </ul>
+    </div>
+
+    <!-- SUB-SECTION 9.1: Building Block Percentages -->
+    <section>
+      <h2>9.1 Building Block Percentages</h2>
+      <p>Instead of complex formulas, we break percentages down into simple pieces: 10%, 5%, 1%, and 50%.</p>
+
+      <div class="concept-box">
+        <strong>The Building Blocks:</strong>
+        <ul>
+          <li><strong>100%</strong> = The whole number</li>
+          <li><strong>50%</strong> = Half of the number (÷ 2)</li>
+          <li><strong>10%</strong> = Move decimal one place left (÷ 10)</li>
+          <li><strong>5%</strong> = Half of 10%</li>
+          <li><strong>1%</strong> = Move decimal two places left (÷ 100)</li>
+        </ul>
+        <p><strong>Example: 35% of 240</strong></p>
+        <ul>
+          <li>Break 35% into 25% + 10% OR 30% + 5%. Let's use 10% blocks.</li>
+          <li><strong>10%</strong> of 240 = 24.</li>
+          <li><strong>30%</strong> = 3 × 24 = 72.</li>
+          <li><strong>5%</strong> = Half of 10% (24) = 12.</li>
+          <li><strong>35%</strong> = 72 + 12 = <strong>84</strong>.</li>
+        </ul>
+      </div>
+
+      <div class="diagram-container">
+        <svg width="600" height="250" viewBox="0 0 600 250">
+          <text x="300" y="30" text-anchor="middle" class="hand-font" font-size="24">Finding 15% of $80</text>
+
+          <!-- The Whole -->
+          <rect x="50" y="60" width="500" height="40" fill="#e0e7ff" stroke="#3730a3" stroke-width="2" />
+          <text x="300" y="85" text-anchor="middle" font-weight="bold">100% = $80</text>
+
+          <!-- 10% Block -->
+          <rect x="50" y="120" width="50" height="40" fill="#fde68a" stroke="#d97706" stroke-width="2" />
+          <text x="75" y="145" text-anchor="middle" font-weight="bold">10%</text>
+          <path d="M 75 165 L 75 185" stroke="#d97706" stroke-width="2" marker-end="url(#arrow)" />
+          <text x="75" y="205" text-anchor="middle" font-weight="bold" fill="#d97706">$8</text>
+
+          <!-- 5% Block -->
+          <rect x="110" y="120" width="25" height="40" fill="#fed7aa" stroke="#ea580c" stroke-width="2" />
+          <text x="122.5" y="145" text-anchor="middle" font-size="12" font-weight="bold">5%</text>
+          <path d="M 122.5 165 L 122.5 185" stroke="#ea580c" stroke-width="2" marker-end="url(#arrow)" />
+          <text x="122.5" y="205" text-anchor="middle" font-weight="bold" fill="#ea580c">$4</text>
+
+          <!-- Combination -->
+          <path d="M 90 210 Q 100 230 110 210" stroke="#15803d" stroke-width="2" fill="none" />
+          <text x="100" y="240" text-anchor="middle" font-weight="bold" fill="#15803d" font-size="20">
+            $8 + $4 = $12
+          </text>
+        </svg>
+      </div>
+
+      <div class="try-this">
+        <h4>🛒 Shopping Challenge!</h4>
+        <p>A video game costs $60. It's on sale for 15% off.</p>
+        <p>1. Find 10%: $___</p>
+        <p>2. Find 5%: $___</p>
+        <p>3. Total Discount: $___</p>
+        <p>4. Final Price: $___</p>
+      </div>
+
+      <div class="worksheet">
+        <div class="worksheet-header">
+          <span>Worksheet 9.1: Building Block Percentages</span>
+          <span>Score: ____ / 30</span>
+        </div>
+        <div class="problem-grid">
+          <div class="problem-item"><span class="problem-number">1.</span> 10% of 50 = _____</div>
+          <div class="problem-item"><span class="problem-number">2.</span> 10% of 120 = _____</div>
+          <div class="problem-item"><span class="problem-number">3.</span> 10% of 45 = _____</div>
+          <div class="problem-item"><span class="problem-number">4.</span> 20% of 60 = _____</div>
+          <div class="problem-item"><span class="problem-number">5.</span> 20% of 80 = _____</div>
+          <div class="problem-item"><span class="problem-number">6.</span> 50% of 140 = _____</div>
+          <div class="problem-item"><span class="problem-number">7.</span> 50% of 64 = _____</div>
+          <div class="problem-item"><span class="problem-number">8.</span> 25% of 40 = _____</div>
+          <div class="problem-item"><span class="problem-number">9.</span> 25% of 80 = _____</div>
+          <div class="problem-item"><span class="problem-number">10.</span> 5% of 100 = _____</div>
+          <div class="problem-item"><span class="problem-number">11.</span> 5% of 60 = _____</div>
+          <div class="problem-item"><span class="problem-number">12.</span> 15% of 200 = _____</div>
+          <div class="problem-item"><span class="problem-number">13.</span> 15% of 40 = _____</div>
+          <div class="problem-item"><span class="problem-number">14.</span> 15% of 80 = _____</div>
+          <div class="problem-item"><span class="problem-number">15.</span> 30% of 50 = _____</div>
+          <div class="problem-item"><span class="problem-number">16.</span> 30% of 90 = _____</div>
+          <div class="problem-item"><span class="problem-number">17.</span> 40% of 60 = _____</div>
+          <div class="problem-item"><span class="problem-number">18.</span> 60% of 50 = _____</div>
+          <div class="problem-item"><span class="problem-number">19.</span> 75% of 40 = _____</div>
+          <div class="problem-item"><span class="problem-number">20.</span> 75% of 80 = _____</div>
+          <div class="problem-item"><span class="problem-number">21.</span> 35% of 200 = _____</div>
+          <div class="problem-item"><span class="problem-number">22.</span> 45% of 200 = _____</div>
+          <div class="problem-item"><span class="problem-number">23.</span> 12% of 50 = _____</div>
+          <div class="problem-item"><span class="problem-number">24.</span> 11% of 400 = _____</div>
+          <div class="problem-item"><span class="problem-number">25.</span> 1% of 500 = _____</div>
+          <div class="problem-item"><span class="problem-number">26.</span> 2% of 300 = _____</div>
+          <div class="problem-item"><span class="problem-number">27.</span> 90% of 50 = _____</div>
+          <div class="problem-item"><span class="problem-number">28.</span> 95% of 100 = _____</div>
+          <div class="problem-item"><span class="problem-number">29.</span> 99% of 200 = _____</div>
+          <div class="problem-item"><span class="problem-number">30.</span> 150% of 40 = _____</div>
+        </div>
+
+        <div class="answer-key">
+          <strong>Answer Key:</strong>
+          <div class="answer-grid">
+            <div>1. 5</div>
+            <div>2. 12</div>
+            <div>3. 4.5</div>
+            <div>4. 12</div>
+            <div>5. 16</div>
+            <div>6. 70</div>
+            <div>7. 32</div>
+            <div>8. 10</div>
+            <div>9. 20</div>
+            <div>10. 5</div>
+            <div>11. 3</div>
+            <div>12. 30</div>
+            <div>13. 6</div>
+            <div>14. 12</div>
+            <div>15. 15</div>
+            <div>16. 27</div>
+            <div>17. 24</div>
+            <div>18. 30</div>
+            <div>19. 30</div>
+            <div>20. 60</div>
+            <div>21. 70</div>
+            <div>22. 90</div>
+            <div>23. 6</div>
+            <div>24. 44</div>
+            <div>25. 5</div>
+            <div>26. 6</div>
+            <div>27. 45</div>
+            <div>28. 95</div>
+            <div>29. 198</div>
+            <div>30. 60</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SUB-SECTION 9.2: Fractions to Decimals -->
+    <section>
+      <h2>9.2 Fraction to Decimal Speed</h2>
+      <p>
+        Memorizing a few key fractions allows you to instantly convert them to decimals and percentages without
+        division.
+      </p>
+
+      <div class="concept-box">
+        <strong>Key Conversions:</strong>
+        <ul>
+          <li><strong>1/2</strong> = 0.5 (50%)</li>
+          <li><strong>1/4</strong> = 0.25 (25%)</li>
+          <li><strong>3/4</strong> = 0.75 (75%)</li>
+          <li><strong>1/5</strong> = 0.2 (20%)</li>
+          <li><strong>1/8</strong> = 0.125 (12.5%)</li>
+          <li><strong>1/3</strong> = 0.333... (33.3%)</li>
+        </ul>
+        <p><strong>Shortcut for 1/n:</strong></p>
+        <p>For 1/5, think "20". For 1/4, think "25". For 1/2, think "50".</p>
+      </div>
+
+      <div class="worksheet">
+        <div class="worksheet-header">
+          <span>Worksheet 9.2: Fraction Conversions</span>
+          <span>Score: ____ / 30</span>
+        </div>
+        <div class="problem-grid">
+          <div class="problem-item"><span class="problem-number">1.</span> 1/2 = _____</div>
+          <div class="problem-item"><span class="problem-number">2.</span> 1/4 = _____</div>
+          <div class="problem-item"><span class="problem-number">3.</span> 3/4 = _____</div>
+          <div class="problem-item"><span class="problem-number">4.</span> 1/5 = _____</div>
+          <div class="problem-item"><span class="problem-number">5.</span> 2/5 = _____</div>
+          <div class="problem-item"><span class="problem-number">6.</span> 3/5 = _____</div>
+          <div class="problem-item"><span class="problem-number">7.</span> 4/5 = _____</div>
+          <div class="problem-item"><span class="problem-number">8.</span> 1/10 = _____</div>
+          <div class="problem-item"><span class="problem-number">9.</span> 3/10 = _____</div>
+          <div class="problem-item"><span class="problem-number">10.</span> 7/10 = _____</div>
+          <div class="problem-item"><span class="problem-number">11.</span> 9/10 = _____</div>
+          <div class="problem-item"><span class="problem-number">12.</span> 1/8 = _____</div>
+          <div class="problem-item"><span class="problem-number">13.</span> 3/8 = _____</div>
+          <div class="problem-item"><span class="problem-number">14.</span> 5/8 = _____</div>
+          <div class="problem-item"><span class="problem-number">15.</span> 7/8 = _____</div>
+          <div class="problem-item"><span class="problem-number">16.</span> 1/3 = _____</div>
+          <div class="problem-item"><span class="problem-number">17.</span> 2/3 = _____</div>
+          <div class="problem-item"><span class="problem-number">18.</span> 1/9 = _____</div>
+          <div class="problem-item"><span class="problem-number">19.</span> 2/9 = _____</div>
+          <div class="problem-item"><span class="problem-number">20.</span> 1/11 = _____</div>
+          <div class="problem-item"><span class="problem-number">21.</span> 1/20 = _____</div>
+          <div class="problem-item"><span class="problem-number">22.</span> 3/20 = _____</div>
+          <div class="problem-item"><span class="problem-number">23.</span> 1/25 = _____</div>
+          <div class="problem-item"><span class="problem-number">24.</span> 3/25 = _____</div>
+          <div class="problem-item"><span class="problem-number">25.</span> 1/50 = _____</div>
+          <div class="problem-item"><span class="problem-number">26.</span> 3/50 = _____</div>
+          <div class="problem-item"><span class="problem-number">27.</span> 1/100 = _____</div>
+          <div class="problem-item"><span class="problem-number">28.</span> 15/100 = _____</div>
+          <div class="problem-item"><span class="problem-number">29.</span> 50/100 = _____</div>
+          <div class="problem-item"><span class="problem-number">30.</span> 75/100 = _____</div>
+        </div>
+
+        <div class="answer-key">
+          <strong>Answer Key:</strong>
+          <div class="answer-grid">
+            <div>1. 0.5</div>
+            <div>2. 0.25</div>
+            <div>3. 0.75</div>
+            <div>4. 0.2</div>
+            <div>5. 0.4</div>
+            <div>6. 0.6</div>
+            <div>7. 0.8</div>
+            <div>8. 0.1</div>
+            <div>9. 0.3</div>
+            <div>10. 0.7</div>
+            <div>11. 0.9</div>
+            <div>12. 0.125</div>
+            <div>13. 0.375</div>
+            <div>14. 0.625</div>
+            <div>15. 0.875</div>
+            <div>16. 0.33...</div>
+            <div>17. 0.66...</div>
+            <div>18. 0.11...</div>
+            <div>19. 0.22...</div>
+            <div>20. 0.0909..</div>
+            <div>21. 0.05</div>
+            <div>22. 0.15</div>
+            <div>23. 0.04</div>
+            <div>24. 0.12</div>
+            <div>25. 0.02</div>
+            <div>26. 0.06</div>
+            <div>27. 0.01</div>
+            <div>28. 0.15</div>
+            <div>29. 0.5</div>
+            <div>30. 0.75</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SUB-SECTION 9.3: Real-World Applications -->
+    <section>
+      <h2>9.3 Real-World Applications</h2>
+      <p>Now let's apply these skills to shopping, taxes, and tips.</p>
+
+      <div class="worksheet">
+        <div class="worksheet-header">
+          <span>Worksheet 9.3: Discounts & Markup</span>
+          <span>Score: ____ / 30</span>
+        </div>
+        <div class="problem-grid">
+          <div class="problem-item"><span class="problem-number">1.</span> 10% tip on $40 = _____</div>
+          <div class="problem-item"><span class="problem-number">2.</span> 15% tip on $40 = _____</div>
+          <div class="problem-item"><span class="problem-number">3.</span> 20% tip on $40 = _____</div>
+          <div class="problem-item"><span class="problem-number">4.</span> 10% off $50 = _____</div>
+          <div class="problem-item"><span class="problem-number">5.</span> 20% off $50 = _____</div>
+          <div class="problem-item"><span class="problem-number">6.</span> 50% off $80 = _____</div>
+          <div class="problem-item"><span class="problem-number">7.</span> 25% off $80 = _____</div>
+          <div class="problem-item"><span class="problem-number">8.</span> 10% tax on $20 = _____</div>
+          <div class="problem-item"><span class="problem-number">9.</span> 5% tax on $20 = _____</div>
+          <div class="problem-item"><span class="problem-number">10.</span> Total: $20 + 5% tax = _____</div>
+          <div class="problem-item"><span class="problem-number">11.</span> 15% tip on $60 = _____</div>
+          <div class="problem-item"><span class="problem-number">12.</span> 20% tip on $55 = _____</div>
+          <div class="problem-item"><span class="problem-number">13.</span> 25% off $120 = _____</div>
+          <div class="problem-item"><span class="problem-number">14.</span> 30% off $50 = _____</div>
+          <div class="problem-item"><span class="problem-number">15.</span> 40% off $50 = _____</div>
+          <div class="problem-item"><span class="problem-number">16.</span> $100 - 10% = _____</div>
+          <div class="problem-item"><span class="problem-number">17.</span> $100 - 20% = _____</div>
+          <div class="problem-item"><span class="problem-number">18.</span> $200 - 15% = _____</div>
+          <div class="problem-item"><span class="problem-number">19.</span> $50 + 10% = _____</div>
+          <div class="problem-item"><span class="problem-number">20.</span> $80 + 25% = _____</div>
+          <div class="problem-item"><span class="problem-number">21.</span> 10% of $15.50 = _____</div>
+          <div class="problem-item"><span class="problem-number">22.</span> 20% of $15.50 = _____</div>
+          <div class="problem-item"><span class="problem-number">23.</span> 50% of $11 = _____</div>
+          <div class="problem-item"><span class="problem-number">24.</span> 25% of $12 = _____</div>
+          <div class="problem-item"><span class="problem-number">25.</span> 1% of $500 = _____</div>
+          <div class="problem-item"><span class="problem-number">26.</span> 3% of $200 = _____</div>
+          <div class="problem-item"><span class="problem-number">27.</span> Original $40, 20% off = _____</div>
+          <div class="problem-item"><span class="problem-number">28.</span> Original $60, 25% off = _____</div>
+          <div class="problem-item"><span class="problem-number">29.</span> Bill $30, 20% tip = Total _____</div>
+          <div class="problem-item"><span class="problem-number">30.</span> Bill $40, 15% tip = Total _____</div>
+        </div>
+
+        <div class="answer-key">
+          <strong>Answer Key:</strong>
+          <div class="answer-grid">
+            <div>1. $4</div>
+            <div>2. $6</div>
+            <div>3. $8</div>
+            <div>4. $5</div>
+            <div>5. $10</div>
+            <div>6. $40</div>
+            <div>7. $20</div>
+            <div>8. $2</div>
+            <div>9. $1</div>
+            <div>10. $21</div>
+            <div>11. $9</div>
+            <div>12. $11</div>
+            <div>13. $30</div>
+            <div>14. $15</div>
+            <div>15. $20</div>
+            <div>16. $90</div>
+            <div>17. $80</div>
+            <div>18. $170</div>
+            <div>19. $55</div>
+            <div>20. $100</div>
+            <div>21. $1.55</div>
+            <div>22. $3.10</div>
+            <div>23. $5.50</div>
+            <div>24. $3</div>
+            <div>25. $5</div>
+            <div>26. $6</div>
+            <div>27. $32</div>
+            <div>28. $45</div>
+            <div>29. $36</div>
+            <div>30. $46</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SUB-SECTION 9.4: Ratios & Proportions -->
+    <section>
+      <h2>9.4 Ratios & Proportions</h2>
+      <p>Using simple scaling to solve ratio problems instantly.</p>
+
+      <div class="worksheet">
+        <div class="worksheet-header">
+          <span>Worksheet 9.4: Ratios</span>
+          <span>Score: ____ / 30</span>
+        </div>
+        <div class="problem-grid">
+          <div class="problem-item"><span class="problem-number">1.</span> 1:2 = 5:_____</div>
+          <div class="problem-item"><span class="problem-number">2.</span> 1:3 = 4:_____</div>
+          <div class="problem-item"><span class="problem-number">3.</span> 2:3 = 6:_____</div>
+          <div class="problem-item"><span class="problem-number">4.</span> 3:4 = 9:_____</div>
+          <div class="problem-item"><span class="problem-number">5.</span> 2:5 = 10:_____</div>
+          <div class="problem-item"><span class="problem-number">6.</span> 5:1 = 25:_____</div>
+          <div class="problem-item"><span class="problem-number">7.</span> 3:2 = 15:_____</div>
+          <div class="problem-item"><span class="problem-number">8.</span> 4:5 = 20:_____</div>
+          <div class="problem-item"><span class="problem-number">9.</span> 1:10 = 5:_____</div>
+          <div class="problem-item"><span class="problem-number">10.</span> 10:1 = 50:_____</div>
+          <div class="problem-item">
+            <span class="problem-number">11.</span> If 2 apples cost $1, 6 apples cost _____
+          </div>
+          <div class="problem-item"><span class="problem-number">12.</span> If 3 pens cost $2, 9 pens cost _____</div>
+          <div class="problem-item"><span class="problem-number">13.</span> 1:4 = _____:20</div>
+          <div class="problem-item"><span class="problem-number">14.</span> 2:3 = _____:15</div>
+          <div class="problem-item"><span class="problem-number">15.</span> 5:6 = 25:_____</div>
+          <div class="problem-item"><span class="problem-number">16.</span> 7:8 = 14:_____</div>
+          <div class="problem-item"><span class="problem-number">17.</span> 1:2 = 50:_____</div>
+          <div class="problem-item"><span class="problem-number">18.</span> 1:5 = 20:_____</div>
+          <div class="problem-item"><span class="problem-number">19.</span> 3:5 = 9:_____</div>
+          <div class="problem-item"><span class="problem-number">20.</span> 4:7 = 8:_____</div>
+          <div class="problem-item"><span class="problem-number">21.</span> Scale up 2x: 1 cup flour → _____</div>
+          <div class="problem-item"><span class="problem-number">22.</span> Scale up 3x: 2 eggs → _____</div>
+          <div class="problem-item"><span class="problem-number">23.</span> Scale up 4x: 1/2 cup sugar → _____</div>
+          <div class="problem-item"><span class="problem-number">24.</span> Scale down 1/2: 4 cups → _____</div>
+          <div class="problem-item"><span class="problem-number">25.</span> Scale down 1/2: 3 cups → _____</div>
+          <div class="problem-item"><span class="problem-number">26.</span> 100 miles in 2 hrs = _____ mph</div>
+          <div class="problem-item"><span class="problem-number">27.</span> 150 miles in 3 hrs = _____ mph</div>
+          <div class="problem-item">
+            <span class="problem-number">28.</span> 60 miles in 1 hr = _____ miles in 2 hrs
+          </div>
+          <div class="problem-item"><span class="problem-number">29.</span> 60 mph for 30 min = _____ miles</div>
+          <div class="problem-item"><span class="problem-number">30.</span> 40 mph for 15 min = _____ miles</div>
+        </div>
+
+        <div class="answer-key">
+          <strong>Answer Key:</strong>
+          <div class="answer-grid">
+            <div>1. 10</div>
+            <div>2. 12</div>
+            <div>3. 9</div>
+            <div>4. 12</div>
+            <div>5. 25</div>
+            <div>6. 5</div>
+            <div>7. 10</div>
+            <div>8. 25</div>
+            <div>9. 50</div>
+            <div>10. 5</div>
+            <div>11. $3</div>
+            <div>12. $6</div>
+            <div>13. 5</div>
+            <div>14. 10</div>
+            <div>15. 30</div>
+            <div>16. 16</div>
+            <div>17. 100</div>
+            <div>18. 100</div>
+            <div>19. 15</div>
+            <div>20. 14</div>
+            <div>21. 2 cups</div>
+            <div>22. 6 eggs</div>
+            <div>23. 2 cups</div>
+            <div>24. 2 cups</div>
+            <div>25. 1.5 cups</div>
+            <div>26. 50</div>
+            <div>27. 50</div>
+            <div>28. 120</div>
+            <div>29. 30</div>
+            <div>30. 10</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Module Summary -->
+    <section>
+      <h2>Module 9 Summary</h2>
+
+      <div class="concept-box">
+        <strong>You have mastered:</strong>
+        <ul>
+          <li>Building block method for instant percentages</li>
+          <li>Converting fractions to decimals instantly</li>
+          <li>Calculating discounts, tips, and taxes mentally</li>
+          <li>Solving ratio problems using scaling</li>
+        </ul>
+      </div>
+
+      <div class="progress-tracker">
+        <div>
+          <strong>Module 9: Percentages & Fractions</strong><br />
+          <span>Status: COMPLETE</span>
+        </div>
+        <div class="star-rating">★★★★★</div>
+      </div>
+    </section>
+  </body>
+</html>

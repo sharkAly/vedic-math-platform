@@ -1,0 +1,861 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Module 8: Division Shortcuts</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;500;600;700&family=Caveat:wght@400;700&family=Architects+Daughter&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@1/css/pico.min.css" />
+    <style>
+      body {
+        max-width: 880px;
+        margin: 0 auto;
+        padding: 40px 60px;
+        font-family: 'Lexend', sans-serif;
+        color: #1a1a1a;
+        line-height: 1.6;
+        background-color: #ffffff;
+      }
+
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6 {
+        color: #15803d; /* Forest Green for Division Theme */
+        font-weight: 700;
+        margin-top: 1.5em;
+        margin-bottom: 0.5em;
+      }
+
+      h1 {
+        font-size: 2.5em;
+        text-align: center;
+        border-bottom: 3px solid #15803d;
+        padding-bottom: 20px;
+      }
+      h2 {
+        font-size: 1.8em;
+        border-left: 5px solid #166534;
+        padding-left: 15px;
+        background-color: #f0fdf4;
+        padding: 10px 15px;
+        margin-top: 40px;
+      }
+      h3 {
+        font-size: 1.4em;
+        color: #c2410c;
+        margin-top: 25px;
+      }
+
+      .concept-box {
+        background-color: #dcfce7;
+        border-left: 4px solid #15803d;
+        padding: 15px;
+        margin: 20px 0;
+        border-radius: 0 4px 4px 0;
+      }
+
+      .why-works {
+        background-color: #f0fdf4;
+        border: 1px solid #bbf7d0;
+        border-left: 4px solid #16a34a;
+        padding: 15px;
+        margin: 20px 0;
+      }
+
+      .try-this {
+        background-color: #fffbeb;
+        border: 2px dashed #f59e0b;
+        padding: 20px;
+        margin: 25px 0;
+        text-align: center;
+      }
+
+      .mistake-alert {
+        background-color: #fef2f2;
+        border-left: 4px solid #ef4444;
+        padding: 15px;
+        margin: 20px 0;
+      }
+
+      .worksheet {
+        border: 2px solid #94a3b8;
+        padding: 25px;
+        margin: 30px 0;
+        background-color: #ffffff;
+        page-break-inside: avoid;
+      }
+
+      .worksheet-header {
+        display: flex;
+        justify-content: space-between;
+        border-bottom: 2px solid #94a3b8;
+        padding-bottom: 10px;
+        margin-bottom: 20px;
+        font-weight: bold;
+      }
+
+      .problem-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+        margin-bottom: 20px;
+      }
+
+      .problem-item {
+        display: flex;
+        align-items: center;
+        margin-bottom: 10px;
+        font-family: 'Lexend', monospace;
+        font-size: 1.1em;
+      }
+
+      .problem-number {
+        font-weight: bold;
+        color: #64748b;
+        margin-right: 10px;
+        width: 30px;
+      }
+
+      .diagram-container {
+        border: 1px solid #cbd5e1;
+        background-color: #f8fafc;
+        background-image:
+          linear-gradient(#e2e8f0 1px, transparent 1px), linear-gradient(90deg, #e2e8f0 1px, transparent 1px);
+        background-size: 20px 20px;
+        padding: 30px;
+        margin: 25px 0;
+        text-align: center;
+        max-width: 600px;
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      .step-circle {
+        display: inline-block;
+        width: 24px;
+        height: 24px;
+        line-height: 24px;
+        border-radius: 50%;
+        background-color: #f97316;
+        color: white;
+        text-align: center;
+        font-weight: bold;
+        font-size: 14px;
+        margin-right: 5px;
+      }
+
+      .hand-font {
+        font-family: 'Caveat', cursive;
+        font-size: 1.4em;
+        color: #15803d;
+      }
+      .label-font {
+        font-family: 'Architects Daughter', cursive;
+        color: #4b5563;
+      }
+
+      .answer-key {
+        font-size: 0.9em;
+        background-color: #f8fafc;
+        padding: 15px;
+        border-top: 1px dotted #cbd5e1;
+        margin-top: 15px;
+      }
+
+      .answer-grid {
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
+        gap: 10px;
+      }
+
+      .intro-box {
+        background-color: #bbf7d0;
+        padding: 20px;
+        border-radius: 8px;
+        margin-bottom: 30px;
+        border: 1px solid #86efac;
+      }
+
+      .progress-tracker {
+        background-color: #f0fdf4;
+        border: 1px solid #22c55e;
+        padding: 15px;
+        border-radius: 8px;
+        margin-top: 30px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+      .star-rating {
+        color: #f59e0b;
+        font-size: 1.5em;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Module 8: Division Shortcuts</h1>
+
+    <div class="intro-box">
+      <h3>Welcome to Module 8!</h3>
+      <p>
+        Long division is often the most dreaded operation in mathematics. It's slow, tedious, and prone to errors. Vedic
+        Mathematics offers brilliant shortcuts that eliminate traditional long division completely for many numbers,
+        replacing it with simple addition and multiplication.
+      </p>
+      <p><strong>Learning Objectives:</strong></p>
+      <ul>
+        <li>Master the Nikhilam division method for single-line answers</li>
+        <li>Instantly divide by 9, 11, 99, and 111</li>
+        <li>Use multiplication complements to divide by 8, 7, 6, 5</li>
+        <li>Apply the "Transpose and Apply" method for complex division</li>
+      </ul>
+    </div>
+
+    <!-- SUB-SECTION 8.1: Nikhilam Division -->
+    <section>
+      <h2>8.1 Nikhilam Division Method</h2>
+      <p>
+        This method is perfect for dividing by numbers close to a base (like dividing by 9, 8, 98, 997). It converts
+        division into multiplication and addition!
+      </p>
+
+      <div class="concept-box">
+        <strong>The Method:</strong>
+        <ol>
+          <li>Find the complement of the divisor from the nearest base (e.g., for 9, complement is 1).</li>
+          <li>Split the dividend based on the base zeros (e.g., for base 10, split last digit).</li>
+          <li>Bring down the first digit.</li>
+          <li>Multiply by the complement and add to the next digit. Repeat.</li>
+        </ol>
+        <p><strong>Example: 123 ÷ 9</strong> (Base 10, Complement 1)</p>
+        <ul>
+          <li>Split: 12 | 3</li>
+          <li>Bring down 1. (Quotient so far: 1)</li>
+          <li>1 × 1 = 1. Add to next digit: 2+1 = 3. (Quotient: 13)</li>
+          <li>3 × 1 = 3. Add to remainder part: 3+3 = 6.</li>
+          <li>Answer: <strong>13 R 6</strong>.</li>
+        </ul>
+      </div>
+
+      <div class="diagram-container">
+        <svg width="600" height="200" viewBox="0 0 600 200">
+          <text x="300" y="30" text-anchor="middle" class="hand-font" font-size="24">Dividing 212 ÷ 9</text>
+
+          <!-- The Setup -->
+          <text x="150" y="80" font-size="30" font-weight="bold">9</text>
+          <text x="180" y="80" font-size="30" font-weight="bold">)</text>
+          <text x="210" y="80" font-size="30" font-weight="bold">2</text>
+          <text x="260" y="80" font-size="30" font-weight="bold">1</text>
+          <line x1="290" y1="50" x2="290" y2="130" stroke="#94a3b8" stroke-width="2" stroke-dasharray="5,5" />
+          <text x="320" y="80" font-size="30" font-weight="bold">2</text>
+
+          <!-- Complement -->
+          <text x="150" y="110" font-size="20" fill="#0d9488">(+1)</text>
+
+          <!-- Steps -->
+          <path d="M 215 90 L 215 130" stroke="#15803d" stroke-width="2" marker-end="url(#arrow)" />
+          <text x="215" y="155" font-size="30" font-weight="bold" fill="#15803d">2</text>
+
+          <!-- Multiply & Add -->
+          <path d="M 225 145 Q 250 110 260 100" stroke="#f97316" stroke-width="2" fill="none" />
+          <text x="260" y="110" font-size="20" fill="#f97316" font-weight="bold">+2</text>
+          <text x="265" y="155" font-size="30" font-weight="bold" fill="#15803d">3</text>
+
+          <!-- Second Multiply & Add -->
+          <path d="M 275 145 Q 310 110 320 100" stroke="#f97316" stroke-width="2" fill="none" />
+          <text x="320" y="110" font-size="20" fill="#f97316" font-weight="bold">+3</text>
+          <text x="325" y="155" font-size="30" font-weight="bold" fill="#ef4444">5</text>
+
+          <!-- Result Label -->
+          <text x="240" y="185" font-size="20" font-weight="bold" fill="#15803d">Quotient: 23</text>
+          <text x="350" y="185" font-size="20" font-weight="bold" fill="#ef4444">Rem: 5</text>
+        </svg>
+      </div>
+
+      <div class="worksheet">
+        <div class="worksheet-header">
+          <span>Worksheet 8.1: Nikhilam Division</span>
+          <span>Score: ____ / 45</span>
+        </div>
+        <div class="problem-grid">
+          <div class="problem-item"><span class="problem-number">1.</span> 21 ÷ 9 = _____</div>
+          <div class="problem-item"><span class="problem-number">2.</span> 32 ÷ 9 = _____</div>
+          <div class="problem-item"><span class="problem-number">3.</span> 43 ÷ 9 = _____</div>
+          <div class="problem-item"><span class="problem-number">4.</span> 112 ÷ 9 = _____</div>
+          <div class="problem-item"><span class="problem-number">5.</span> 121 ÷ 9 = _____</div>
+          <div class="problem-item"><span class="problem-number">6.</span> 211 ÷ 9 = _____</div>
+          <div class="problem-item"><span class="problem-number">7.</span> 312 ÷ 9 = _____</div>
+          <div class="problem-item"><span class="problem-number">8.</span> 104 ÷ 9 = _____</div>
+          <div class="problem-item"><span class="problem-number">9.</span> 203 ÷ 9 = _____</div>
+          <div class="problem-item"><span class="problem-number">10.</span> 401 ÷ 9 = _____</div>
+          <div class="problem-item"><span class="problem-number">11.</span> 1111 ÷ 9 = _____</div>
+          <div class="problem-item"><span class="problem-number">12.</span> 1212 ÷ 9 = _____</div>
+          <div class="problem-item"><span class="problem-number">13.</span> 32 ÷ 8 = _____</div>
+          <div class="problem-item"><span class="problem-number">14.</span> 41 ÷ 8 = _____</div>
+          <div class="problem-item"><span class="problem-number">15.</span> 52 ÷ 8 = _____</div>
+          <div class="problem-item"><span class="problem-number">16.</span> 113 ÷ 8 = _____</div>
+          <div class="problem-item"><span class="problem-number">17.</span> 122 ÷ 8 = _____</div>
+          <div class="problem-item"><span class="problem-number">18.</span> 211 ÷ 8 = _____</div>
+          <div class="problem-item"><span class="problem-number">19.</span> 32 ÷ 7 = _____</div>
+          <div class="problem-item"><span class="problem-number">20.</span> 45 ÷ 7 = _____</div>
+          <div class="problem-item"><span class="problem-number">21.</span> 111 ÷ 99 = _____</div>
+          <div class="problem-item"><span class="problem-number">22.</span> 123 ÷ 99 = _____</div>
+          <div class="problem-item"><span class="problem-number">23.</span> 212 ÷ 99 = _____</div>
+          <div class="problem-item"><span class="problem-number">24.</span> 315 ÷ 99 = _____</div>
+          <div class="problem-item"><span class="problem-number">25.</span> 104 ÷ 98 = _____</div>
+          <div class="problem-item"><span class="problem-number">26.</span> 105 ÷ 97 = _____</div>
+          <div class="problem-item"><span class="problem-number">27.</span> 1111 ÷ 99 = _____</div>
+          <div class="problem-item"><span class="problem-number">28.</span> 1213 ÷ 99 = _____</div>
+          <div class="problem-item"><span class="problem-number">29.</span> 123 ÷ 8 = _____</div>
+          <div class="problem-item"><span class="problem-number">30.</span> 134 ÷ 8 = _____</div>
+          <div class="problem-item"><span class="problem-number">31.</span> 145 ÷ 8 = _____</div>
+          <div class="problem-item"><span class="problem-number">32.</span> 213 ÷ 8 = _____</div>
+          <div class="problem-item"><span class="problem-number">33.</span> 12 ÷ 9 = _____</div>
+          <div class="problem-item"><span class="problem-number">34.</span> 23 ÷ 9 = _____</div>
+          <div class="problem-item"><span class="problem-number">35.</span> 34 ÷ 9 = _____</div>
+          <div class="problem-item"><span class="problem-number">36.</span> 45 ÷ 9 = _____</div>
+          <div class="problem-item"><span class="problem-number">37.</span> 56 ÷ 9 = _____</div>
+          <div class="problem-item"><span class="problem-number">38.</span> 67 ÷ 9 = _____</div>
+          <div class="problem-item"><span class="problem-number">39.</span> 78 ÷ 9 = _____</div>
+          <div class="problem-item"><span class="problem-number">40.</span> 89 ÷ 9 = _____</div>
+          <div class="problem-item"><span class="problem-number">41.</span> 112 ÷ 8 = _____</div>
+          <div class="problem-item"><span class="problem-number">42.</span> 114 ÷ 8 = _____</div>
+          <div class="problem-item"><span class="problem-number">43.</span> 212 ÷ 7 = _____</div>
+          <div class="problem-item"><span class="problem-number">44.</span> 311 ÷ 7 = _____</div>
+          <div class="problem-item"><span class="problem-number">45.</span> 411 ÷ 6 = _____</div>
+        </div>
+
+        <div class="answer-key">
+          <strong>Answer Key (Q = Quotient, R = Remainder):</strong>
+          <div class="answer-grid">
+            <div>1. 2 R 3</div>
+            <div>2. 3 R 5</div>
+            <div>3. 4 R 7</div>
+            <div>4. 12 R 4</div>
+            <div>5. 13 R 4</div>
+            <div>6. 23 R 4</div>
+            <div>7. 34 R 6</div>
+            <div>8. 11 R 5</div>
+            <div>9. 22 R 5</div>
+            <div>10. 44 R 5</div>
+            <div>11. 123 R 4</div>
+            <div>12. 134 R 6</div>
+            <div>13. 4 R 0</div>
+            <div>14. 5 R 1</div>
+            <div>15. 6 R 4</div>
+            <div>16. 14 R 1</div>
+            <div>17. 15 R 2</div>
+            <div>18. 26 R 3</div>
+            <div>19. 4 R 4</div>
+            <div>20. 6 R 3</div>
+            <div>21. 1 R 12</div>
+            <div>22. 1 R 24</div>
+            <div>23. 2 R 14</div>
+            <div>24. 3 R 18</div>
+            <div>25. 1 R 6</div>
+            <div>26. 1 R 8</div>
+            <div>27. 11 R 22</div>
+            <div>28. 12 R 25</div>
+            <div>29. 15 R 3</div>
+            <div>30. 16 R 6</div>
+            <div>31. 18 R 1</div>
+            <div>32. 26 R 5</div>
+            <div>33. 1 R 3</div>
+            <div>34. 2 R 5</div>
+            <div>35. 3 R 7</div>
+            <div>36. 5 R 0</div>
+            <div>37. 6 R 2</div>
+            <div>38. 7 R 4</div>
+            <div>39. 8 R 6</div>
+            <div>40. 9 R 8</div>
+            <div>41. 14 R 0</div>
+            <div>42. 14 R 2</div>
+            <div>43. 30 R 2</div>
+            <div>44. 44 R 3</div>
+            <div>45. 68 R 3</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SUB-SECTION 8.2: Special Divisors -->
+    <section>
+      <h2>8.2 Special Divisors (9, 11, 99, 111)</h2>
+      <p>
+        These numbers have unique properties that allow for almost instant division. We've seen 9, but 11 and 99 are
+        just as easy.
+      </p>
+
+      <div class="concept-box">
+        <strong>Division by 11 Shortcut:</strong>
+        <p>Instead of adding like with 9, we subtract!</p>
+        <p><strong>Example: 135 ÷ 11</strong></p>
+        <ul>
+          <li>Split: 13 | 5</li>
+          <li>Bring down 1.</li>
+          <li>13 - 1 = 12. (Quotient: 12)</li>
+          <li>Remainder: 5 - 2 = 3.</li>
+          <li>Answer: <strong>12 R 3</strong>.</li>
+        </ul>
+      </div>
+
+      <div class="worksheet">
+        <div class="worksheet-header">
+          <span>Worksheet 8.2: Special Divisors</span>
+          <span>Score: ____ / 50</span>
+        </div>
+        <div class="problem-grid">
+          <div class="problem-item"><span class="problem-number">1.</span> 13 ÷ 11 = _____</div>
+          <div class="problem-item"><span class="problem-number">2.</span> 25 ÷ 11 = _____</div>
+          <div class="problem-item"><span class="problem-number">3.</span> 36 ÷ 11 = _____</div>
+          <div class="problem-item"><span class="problem-number">4.</span> 123 ÷ 11 = _____</div>
+          <div class="problem-item"><span class="problem-number">5.</span> 135 ÷ 11 = _____</div>
+          <div class="problem-item"><span class="problem-number">6.</span> 246 ÷ 11 = _____</div>
+          <div class="problem-item"><span class="problem-number">7.</span> 357 ÷ 11 = _____</div>
+          <div class="problem-item"><span class="problem-number">8.</span> 468 ÷ 11 = _____</div>
+          <div class="problem-item"><span class="problem-number">9.</span> 152 ÷ 11 = _____</div>
+          <div class="problem-item"><span class="problem-number">10.</span> 263 ÷ 11 = _____</div>
+          <div class="problem-item"><span class="problem-number">11.</span> 24 ÷ 9 = _____</div>
+          <div class="problem-item"><span class="problem-number">12.</span> 35 ÷ 9 = _____</div>
+          <div class="problem-item"><span class="problem-number">13.</span> 46 ÷ 9 = _____</div>
+          <div class="problem-item"><span class="problem-number">14.</span> 115 ÷ 9 = _____</div>
+          <div class="problem-item"><span class="problem-number">15.</span> 226 ÷ 9 = _____</div>
+          <div class="problem-item"><span class="problem-number">16.</span> 112 ÷ 99 = _____</div>
+          <div class="problem-item"><span class="problem-number">17.</span> 223 ÷ 99 = _____</div>
+          <div class="problem-item"><span class="problem-number">18.</span> 334 ÷ 99 = _____</div>
+          <div class="problem-item"><span class="problem-number">19.</span> 1234 ÷ 99 = _____</div>
+          <div class="problem-item"><span class="problem-number">20.</span> 2345 ÷ 99 = _____</div>
+          <div class="problem-item"><span class="problem-number">21.</span> 1112 ÷ 111 = _____</div>
+          <div class="problem-item"><span class="problem-number">22.</span> 2223 ÷ 111 = _____</div>
+          <div class="problem-item"><span class="problem-number">23.</span> 3334 ÷ 111 = _____</div>
+          <div class="problem-item"><span class="problem-number">24.</span> 4445 ÷ 111 = _____</div>
+          <div class="problem-item"><span class="problem-number">25.</span> 5556 ÷ 111 = _____</div>
+          <div class="problem-item"><span class="problem-number">26.</span> 146 ÷ 12 = _____</div>
+          <div class="problem-item"><span class="problem-number">27.</span> 158 ÷ 12 = _____</div>
+          <div class="problem-item"><span class="problem-number">28.</span> 256 ÷ 12 = _____</div>
+          <div class="problem-item"><span class="problem-number">29.</span> 315 ÷ 15 = _____</div>
+          <div class="problem-item"><span class="problem-number">30.</span> 425 ÷ 25 = _____</div>
+          <div class="problem-item"><span class="problem-number">31.</span> 111 ÷ 9 = _____</div>
+          <div class="problem-item"><span class="problem-number">32.</span> 222 ÷ 9 = _____</div>
+          <div class="problem-item"><span class="problem-number">33.</span> 333 ÷ 9 = _____</div>
+          <div class="problem-item"><span class="problem-number">34.</span> 444 ÷ 9 = _____</div>
+          <div class="problem-item"><span class="problem-number">35.</span> 555 ÷ 9 = _____</div>
+          <div class="problem-item"><span class="problem-number">36.</span> 666 ÷ 9 = _____</div>
+          <div class="problem-item"><span class="problem-number">37.</span> 777 ÷ 9 = _____</div>
+          <div class="problem-item"><span class="problem-number">38.</span> 888 ÷ 9 = _____</div>
+          <div class="problem-item"><span class="problem-number">39.</span> 999 ÷ 9 = _____</div>
+          <div class="problem-item"><span class="problem-number">40.</span> 123 ÷ 11 = _____</div>
+          <div class="problem-item"><span class="problem-number">41.</span> 234 ÷ 11 = _____</div>
+          <div class="problem-item"><span class="problem-number">42.</span> 345 ÷ 11 = _____</div>
+          <div class="problem-item"><span class="problem-number">43.</span> 456 ÷ 11 = _____</div>
+          <div class="problem-item"><span class="problem-number">44.</span> 567 ÷ 11 = _____</div>
+          <div class="problem-item"><span class="problem-number">45.</span> 678 ÷ 11 = _____</div>
+          <div class="problem-item"><span class="problem-number">46.</span> 789 ÷ 11 = _____</div>
+          <div class="problem-item"><span class="problem-number">47.</span> 101 ÷ 11 = _____</div>
+          <div class="problem-item"><span class="problem-number">48.</span> 202 ÷ 11 = _____</div>
+          <div class="problem-item"><span class="problem-number">49.</span> 303 ÷ 11 = _____</div>
+          <div class="problem-item"><span class="problem-number">50.</span> 404 ÷ 11 = _____</div>
+        </div>
+
+        <div class="answer-key">
+          <strong>Answer Key:</strong>
+          <div class="answer-grid">
+            <div>1. 1 R 2</div>
+            <div>2. 2 R 3</div>
+            <div>3. 3 R 3</div>
+            <div>4. 11 R 2</div>
+            <div>5. 12 R 3</div>
+            <div>6. 22 R 4</div>
+            <div>7. 32 R 5</div>
+            <div>8. 42 R 6</div>
+            <div>9. 13 R 9</div>
+            <div>10. 23 R 10</div>
+            <div>11. 2 R 6</div>
+            <div>12. 3 R 8</div>
+            <div>13. 5 R 1</div>
+            <div>14. 12 R 7</div>
+            <div>15. 25 R 1</div>
+            <div>16. 1 R 13</div>
+            <div>17. 2 R 25</div>
+            <div>18. 3 R 37</div>
+            <div>19. 12 R 46</div>
+            <div>20. 23 R 68</div>
+            <div>21. 10 R 2</div>
+            <div>22. 20 R 3</div>
+            <div>23. 30 R 4</div>
+            <div>24. 40 R 5</div>
+            <div>25. 50 R 6</div>
+            <div>26. 12 R 2</div>
+            <div>27. 13 R 2</div>
+            <div>28. 21 R 4</div>
+            <div>29. 21 R 0</div>
+            <div>30. 17 R 0</div>
+            <div>31. 12 R 3</div>
+            <div>32. 24 R 6</div>
+            <div>33. 37 R 0</div>
+            <div>34. 49 R 3</div>
+            <div>35. 61 R 6</div>
+            <div>36. 74 R 0</div>
+            <div>37. 86 R 3</div>
+            <div>38. 98 R 6</div>
+            <div>39. 111 R 0</div>
+            <div>40. 11 R 2</div>
+            <div>41. 21 R 3</div>
+            <div>42. 31 R 4</div>
+            <div>43. 41 R 5</div>
+            <div>44. 51 R 6</div>
+            <div>45. 61 R 7</div>
+            <div>46. 71 R 8</div>
+            <div>47. 9 R 2</div>
+            <div>48. 18 R 4</div>
+            <div>49. 27 R 6</div>
+            <div>50. 36 R 8</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SUB-SECTION 8.3: Multiplication Complements -->
+    <section>
+      <h2>8.3 Division by 8, 7, 6, 5</h2>
+      <p>
+        For single-digit division, sometimes the fastest way is using multiplication complements or simple doubling
+        tricks.
+      </p>
+
+      <div class="concept-box">
+        <strong>Division by 5 Trick:</strong>
+        <p>Instead of dividing by 5, multiply by 2 and move the decimal left!</p>
+        <p><strong>Example: 240 ÷ 5</strong></p>
+        <ul>
+          <li>240 × 2 = 480.</li>
+          <li>Move decimal: 48.0 → Answer: <strong>48</strong>.</li>
+        </ul>
+        <strong>Division by 8 Trick:</strong>
+        <p>Halve it three times!</p>
+        <p><strong>Example: 120 ÷ 8</strong></p>
+        <ul>
+          <li>Half: 60</li>
+          <li>Half: 30</li>
+          <li>Half: 15 → Answer: <strong>15</strong>.</li>
+        </ul>
+      </div>
+
+      <div class="worksheet">
+        <div class="worksheet-header">
+          <span>Worksheet 8.3: Small Divisors</span>
+          <span>Score: ____ / 40</span>
+        </div>
+        <div class="problem-grid">
+          <div class="problem-item"><span class="problem-number">1.</span> 120 ÷ 5 = _____</div>
+          <div class="problem-item"><span class="problem-number">2.</span> 230 ÷ 5 = _____</div>
+          <div class="problem-item"><span class="problem-number">3.</span> 340 ÷ 5 = _____</div>
+          <div class="problem-item"><span class="problem-number">4.</span> 410 ÷ 5 = _____</div>
+          <div class="problem-item"><span class="problem-number">5.</span> 620 ÷ 5 = _____</div>
+          <div class="problem-item"><span class="problem-number">6.</span> 840 ÷ 5 = _____</div>
+          <div class="problem-item"><span class="problem-number">7.</span> 135 ÷ 5 = _____</div>
+          <div class="problem-item"><span class="problem-number">8.</span> 245 ÷ 5 = _____</div>
+          <div class="problem-item"><span class="problem-number">9.</span> 88 ÷ 8 = _____</div>
+          <div class="problem-item"><span class="problem-number">10.</span> 168 ÷ 8 = _____</div>
+          <div class="problem-item"><span class="problem-number">11.</span> 248 ÷ 8 = _____</div>
+          <div class="problem-item"><span class="problem-number">12.</span> 408 ÷ 8 = _____</div>
+          <div class="problem-item"><span class="problem-number">13.</span> 648 ÷ 8 = _____</div>
+          <div class="problem-item"><span class="problem-number">14.</span> 42 ÷ 6 = _____</div>
+          <div class="problem-item"><span class="problem-number">15.</span> 72 ÷ 6 = _____</div>
+          <div class="problem-item"><span class="problem-number">16.</span> 126 ÷ 6 = _____</div>
+          <div class="problem-item"><span class="problem-number">17.</span> 366 ÷ 6 = _____</div>
+          <div class="problem-item"><span class="problem-number">18.</span> 49 ÷ 7 = _____</div>
+          <div class="problem-item"><span class="problem-number">19.</span> 147 ÷ 7 = _____</div>
+          <div class="problem-item"><span class="problem-number">20.</span> 287 ÷ 7 = _____</div>
+          <div class="problem-item"><span class="problem-number">21.</span> 115 ÷ 5 = _____</div>
+          <div class="problem-item"><span class="problem-number">22.</span> 225 ÷ 5 = _____</div>
+          <div class="problem-item"><span class="problem-number">23.</span> 335 ÷ 5 = _____</div>
+          <div class="problem-item"><span class="problem-number">24.</span> 445 ÷ 5 = _____</div>
+          <div class="problem-item"><span class="problem-number">25.</span> 555 ÷ 5 = _____</div>
+          <div class="problem-item"><span class="problem-number">26.</span> 112 ÷ 8 = _____</div>
+          <div class="problem-item"><span class="problem-number">27.</span> 224 ÷ 8 = _____</div>
+          <div class="problem-item"><span class="problem-number">28.</span> 336 ÷ 8 = _____</div>
+          <div class="problem-item"><span class="problem-number">29.</span> 448 ÷ 8 = _____</div>
+          <div class="problem-item"><span class="problem-number">30.</span> 560 ÷ 8 = _____</div>
+          <div class="problem-item"><span class="problem-number">31.</span> 126 ÷ 6 = _____</div>
+          <div class="problem-item"><span class="problem-number">32.</span> 246 ÷ 6 = _____</div>
+          <div class="problem-item"><span class="problem-number">33.</span> 366 ÷ 6 = _____</div>
+          <div class="problem-item"><span class="problem-number">34.</span> 486 ÷ 6 = _____</div>
+          <div class="problem-item"><span class="problem-number">35.</span> 606 ÷ 6 = _____</div>
+          <div class="problem-item"><span class="problem-number">36.</span> 147 ÷ 7 = _____</div>
+          <div class="problem-item"><span class="problem-number">37.</span> 217 ÷ 7 = _____</div>
+          <div class="problem-item"><span class="problem-number">38.</span> 287 ÷ 7 = _____</div>
+          <div class="problem-item"><span class="problem-number">39.</span> 357 ÷ 7 = _____</div>
+          <div class="problem-item"><span class="problem-number">40.</span> 427 ÷ 7 = _____</div>
+        </div>
+
+        <div class="answer-key">
+          <strong>Answer Key:</strong>
+          <div class="answer-grid">
+            <div>1. 24</div>
+            <div>2. 46</div>
+            <div>3. 68</div>
+            <div>4. 82</div>
+            <div>5. 124</div>
+            <div>6. 168</div>
+            <div>7. 27</div>
+            <div>8. 49</div>
+            <div>9. 11</div>
+            <div>10. 21</div>
+            <div>11. 31</div>
+            <div>12. 51</div>
+            <div>13. 81</div>
+            <div>14. 7</div>
+            <div>15. 12</div>
+            <div>16. 21</div>
+            <div>17. 61</div>
+            <div>18. 7</div>
+            <div>19. 21</div>
+            <div>20. 41</div>
+            <div>21. 23</div>
+            <div>22. 45</div>
+            <div>23. 67</div>
+            <div>24. 89</div>
+            <div>25. 111</div>
+            <div>26. 14</div>
+            <div>27. 28</div>
+            <div>28. 42</div>
+            <div>29. 56</div>
+            <div>30. 70</div>
+            <div>31. 21</div>
+            <div>32. 41</div>
+            <div>33. 61</div>
+            <div>34. 81</div>
+            <div>35. 101</div>
+            <div>36. 21</div>
+            <div>37. 31</div>
+            <div>38. 41</div>
+            <div>39. 51</div>
+            <div>40. 61</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SUB-SECTION 8.4: Paravartya Yojayet -->
+    <section>
+      <h2>8.4 Paravartya Yojayet (Advanced)</h2>
+      <p>
+        The "Transpose and Apply" method is similar to Nikhilam but works when the divisor is above the base (like
+        dividing by 11, 12, 103, 112).
+      </p>
+
+      <div class="concept-box">
+        <strong>The Method:</strong>
+        <ol>
+          <li>Base is 10. Divisor is 11. Deviation is +1.</li>
+          <li>Transpose the deviation: +1 becomes -1.</li>
+          <li>Use the Nikhilam method but with the transposed deviation!</li>
+        </ol>
+        <p><strong>Example: 144 ÷ 12</strong> (Base 10, Deviation +2 → Transpose -2)</p>
+        <ul>
+          <li>Split: 14 | 4</li>
+          <li>Bring down 1.</li>
+          <li>1 × (-2) = -2. Add to next: 4 + (-2) = 2.</li>
+          <li>2 × (-2) = -4. Add to remainder: 4 + (-4) = 0.</li>
+          <li>Answer: <strong>12 R 0</strong>.</li>
+        </ul>
+      </div>
+
+      <div class="worksheet">
+        <div class="worksheet-header">
+          <span>Worksheet 8.4: Transpose & Apply</span>
+          <span>Score: ____ / 35</span>
+        </div>
+        <div class="problem-grid">
+          <div class="problem-item"><span class="problem-number">1.</span> 121 ÷ 11 = _____</div>
+          <div class="problem-item"><span class="problem-number">2.</span> 132 ÷ 11 = _____</div>
+          <div class="problem-item"><span class="problem-number">3.</span> 143 ÷ 11 = _____</div>
+          <div class="problem-item"><span class="problem-number">4.</span> 132 ÷ 12 = _____</div>
+          <div class="problem-item"><span class="problem-number">5.</span> 156 ÷ 12 = _____</div>
+          <div class="problem-item"><span class="problem-number">6.</span> 168 ÷ 12 = _____</div>
+          <div class="problem-item"><span class="problem-number">7.</span> 180 ÷ 12 = _____</div>
+          <div class="problem-item"><span class="problem-number">8.</span> 169 ÷ 13 = _____</div>
+          <div class="problem-item"><span class="problem-number">9.</span> 260 ÷ 13 = _____</div>
+          <div class="problem-item"><span class="problem-number">10.</span> 196 ÷ 14 = _____</div>
+          <div class="problem-item"><span class="problem-number">11.</span> 280 ÷ 14 = _____</div>
+          <div class="problem-item"><span class="problem-number">12.</span> 225 ÷ 15 = _____</div>
+          <div class="problem-item"><span class="problem-number">13.</span> 300 ÷ 15 = _____</div>
+          <div class="problem-item"><span class="problem-number">14.</span> 1122 ÷ 11 = _____</div>
+          <div class="problem-item"><span class="problem-number">15.</span> 1232 ÷ 11 = _____</div>
+          <div class="problem-item"><span class="problem-number">16.</span> 1452 ÷ 11 = _____</div>
+          <div class="problem-item"><span class="problem-number">17.</span> 144 ÷ 12 = _____</div>
+          <div class="problem-item"><span class="problem-number">18.</span> 168 ÷ 12 = _____</div>
+          <div class="problem-item"><span class="problem-number">19.</span> 192 ÷ 12 = _____</div>
+          <div class="problem-item"><span class="problem-number">20.</span> 216 ÷ 12 = _____</div>
+          <div class="problem-item"><span class="problem-number">21.</span> 143 ÷ 13 = _____</div>
+          <div class="problem-item"><span class="problem-number">22.</span> 156 ÷ 13 = _____</div>
+          <div class="problem-item"><span class="problem-number">23.</span> 182 ÷ 13 = _____</div>
+          <div class="problem-item"><span class="problem-number">24.</span> 208 ÷ 13 = _____</div>
+          <div class="problem-item"><span class="problem-number">25.</span> 154 ÷ 14 = _____</div>
+          <div class="problem-item"><span class="problem-number">26.</span> 182 ÷ 14 = _____</div>
+          <div class="problem-item"><span class="problem-number">27.</span> 210 ÷ 14 = _____</div>
+          <div class="problem-item"><span class="problem-number">28.</span> 238 ÷ 14 = _____</div>
+          <div class="problem-item"><span class="problem-number">29.</span> 165 ÷ 15 = _____</div>
+          <div class="problem-item"><span class="problem-number">30.</span> 195 ÷ 15 = _____</div>
+          <div class="problem-item"><span class="problem-number">31.</span> 240 ÷ 15 = _____</div>
+          <div class="problem-item"><span class="problem-number">32.</span> 255 ÷ 15 = _____</div>
+          <div class="problem-item"><span class="problem-number">33.</span> 270 ÷ 15 = _____</div>
+          <div class="problem-item"><span class="problem-number">34.</span> 285 ÷ 15 = _____</div>
+          <div class="problem-item"><span class="problem-number">35.</span> 315 ÷ 15 = _____</div>
+        </div>
+
+        <div class="answer-key">
+          <strong>Answer Key:</strong>
+          <div class="answer-grid">
+            <div>1. 11</div>
+            <div>2. 12</div>
+            <div>3. 13</div>
+            <div>4. 11</div>
+            <div>5. 13</div>
+            <div>6. 14</div>
+            <div>7. 15</div>
+            <div>8. 13</div>
+            <div>9. 20</div>
+            <div>10. 14</div>
+            <div>11. 20</div>
+            <div>12. 15</div>
+            <div>13. 20</div>
+            <div>14. 102</div>
+            <div>15. 112</div>
+            <div>16. 132</div>
+            <div>17. 12</div>
+            <div>18. 14</div>
+            <div>19. 16</div>
+            <div>20. 18</div>
+            <div>21. 11</div>
+            <div>22. 12</div>
+            <div>23. 14</div>
+            <div>24. 16</div>
+            <div>25. 11</div>
+            <div>26. 13</div>
+            <div>27. 15</div>
+            <div>28. 17</div>
+            <div>29. 11</div>
+            <div>30. 13</div>
+            <div>31. 16</div>
+            <div>32. 17</div>
+            <div>33. 18</div>
+            <div>34. 19</div>
+            <div>35. 21</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SUB-SECTION 8.5: Challenge -->
+    <section>
+      <h2>8.5 Division Challenge</h2>
+      <p>Test your skills with mixed division problems. Choose the best method for each problem!</p>
+
+      <div class="worksheet">
+        <div class="worksheet-header">
+          <span>Worksheet 8.5: Mixed Division</span>
+          <span>Score: ____ / 30</span>
+        </div>
+        <div class="problem-grid">
+          <div class="problem-item"><span class="problem-number">1.</span> 124 ÷ 4 = _____</div>
+          <div class="problem-item"><span class="problem-number">2.</span> 248 ÷ 4 = _____</div>
+          <div class="problem-item"><span class="problem-number">3.</span> 364 ÷ 4 = _____</div>
+          <div class="problem-item"><span class="problem-number">4.</span> 488 ÷ 4 = _____</div>
+          <div class="problem-item"><span class="problem-number">5.</span> 126 ÷ 6 = _____</div>
+          <div class="problem-item"><span class="problem-number">6.</span> 246 ÷ 6 = _____</div>
+          <div class="problem-item"><span class="problem-number">7.</span> 366 ÷ 6 = _____</div>
+          <div class="problem-item"><span class="problem-number">8.</span> 486 ÷ 6 = _____</div>
+          <div class="problem-item"><span class="problem-number">9.</span> 155 ÷ 5 = _____</div>
+          <div class="problem-item"><span class="problem-number">10.</span> 255 ÷ 5 = _____</div>
+          <div class="problem-item"><span class="problem-number">11.</span> 355 ÷ 5 = _____</div>
+          <div class="problem-item"><span class="problem-number">12.</span> 455 ÷ 5 = _____</div>
+          <div class="problem-item"><span class="problem-number">13.</span> 121 ÷ 11 = _____</div>
+          <div class="problem-item"><span class="problem-number">14.</span> 144 ÷ 12 = _____</div>
+          <div class="problem-item"><span class="problem-number">15.</span> 169 ÷ 13 = _____</div>
+          <div class="problem-item"><span class="problem-number">16.</span> 196 ÷ 14 = _____</div>
+          <div class="problem-item"><span class="problem-number">17.</span> 225 ÷ 15 = _____</div>
+          <div class="problem-item"><span class="problem-number">18.</span> 256 ÷ 16 = _____</div>
+          <div class="problem-item"><span class="problem-number">19.</span> 289 ÷ 17 = _____</div>
+          <div class="problem-item"><span class="problem-number">20.</span> 324 ÷ 18 = _____</div>
+          <div class="problem-item"><span class="problem-number">21.</span> 361 ÷ 19 = _____</div>
+          <div class="problem-item"><span class="problem-number">22.</span> 400 ÷ 20 = _____</div>
+          <div class="problem-item"><span class="problem-number">23.</span> 441 ÷ 21 = _____</div>
+          <div class="problem-item"><span class="problem-number">24.</span> 484 ÷ 22 = _____</div>
+          <div class="problem-item"><span class="problem-number">25.</span> 529 ÷ 23 = _____</div>
+          <div class="problem-item"><span class="problem-number">26.</span> 576 ÷ 24 = _____</div>
+          <div class="problem-item"><span class="problem-number">27.</span> 625 ÷ 25 = _____</div>
+          <div class="problem-item"><span class="problem-number">28.</span> 676 ÷ 26 = _____</div>
+          <div class="problem-item"><span class="problem-number">29.</span> 729 ÷ 27 = _____</div>
+          <div class="problem-item"><span class="problem-number">30.</span> 784 ÷ 28 = _____</div>
+        </div>
+
+        <div class="answer-key">
+          <strong>Answer Key:</strong>
+          <div class="answer-grid">
+            <div>1. 31</div>
+            <div>2. 62</div>
+            <div>3. 91</div>
+            <div>4. 122</div>
+            <div>5. 21</div>
+            <div>6. 41</div>
+            <div>7. 61</div>
+            <div>8. 81</div>
+            <div>9. 31</div>
+            <div>10. 51</div>
+            <div>11. 71</div>
+            <div>12. 91</div>
+            <div>13. 11</div>
+            <div>14. 12</div>
+            <div>15. 13</div>
+            <div>16. 14</div>
+            <div>17. 15</div>
+            <div>18. 16</div>
+            <div>19. 17</div>
+            <div>20. 18</div>
+            <div>21. 19</div>
+            <div>22. 20</div>
+            <div>23. 21</div>
+            <div>24. 22</div>
+            <div>25. 23</div>
+            <div>26. 24</div>
+            <div>27. 25</div>
+            <div>28. 26</div>
+            <div>29. 27</div>
+            <div>30. 28</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Module Summary -->
+    <section>
+      <h2>Module 8 Summary</h2>
+
+      <div class="concept-box">
+        <strong>You have mastered:</strong>
+        <ul>
+          <li>Nikhilam division for numbers near a base</li>
+          <li>Instant division by 9, 11, and 99</li>
+          <li>Mental division tricks for 5, 6, 7, 8</li>
+          <li>Transpose and Apply method for divisors above base</li>
+        </ul>
+      </div>
+
+      <div class="progress-tracker">
+        <div>
+          <strong>Module 8: Division Shortcuts</strong><br />
+          <span>Status: COMPLETE</span>
+        </div>
+        <div class="star-rating">★★★★★</div>
+      </div>
+    </section>
+  </body>
+</html>

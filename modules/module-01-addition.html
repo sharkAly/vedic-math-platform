@@ -1,0 +1,881 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Module 1: Addition Mastery</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;500;600;700&family=Caveat:wght@400;700&family=Architects+Daughter&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@1/css/pico.min.css" />
+    <style>
+      body {
+        max-width: 880px;
+        margin: 0 auto;
+        padding: 40px 60px;
+        font-family: 'Lexend', sans-serif;
+        color: #1a1a1a;
+        line-height: 1.6;
+        background-color: #ffffff;
+      }
+
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6 {
+        color: #1e3a8a;
+        font-weight: 700;
+        margin-top: 1.5em;
+        margin-bottom: 0.5em;
+      }
+
+      h1 {
+        font-size: 2.5em;
+        text-align: center;
+        border-bottom: 3px solid #1e3a8a;
+        padding-bottom: 20px;
+      }
+      h2 {
+        font-size: 1.8em;
+        border-left: 5px solid #047857;
+        padding-left: 15px;
+        background-color: #f0fdf4;
+        padding: 10px 15px;
+        margin-top: 40px;
+      }
+      h3 {
+        font-size: 1.4em;
+        color: #c2410c;
+        margin-top: 25px;
+      }
+
+      .concept-box {
+        background-color: #eff6ff;
+        border-left: 4px solid #3b82f6;
+        padding: 15px;
+        margin: 20px 0;
+        border-radius: 0 4px 4px 0;
+      }
+
+      .why-works {
+        background-color: #f0fdf4;
+        border: 1px solid #bbf7d0;
+        border-left: 4px solid #22c55e;
+        padding: 15px;
+        margin: 20px 0;
+      }
+
+      .try-this {
+        background-color: #fffbeb;
+        border: 2px dashed #f59e0b;
+        padding: 20px;
+        margin: 25px 0;
+        text-align: center;
+      }
+
+      .mistake-alert {
+        background-color: #fef2f2;
+        border-left: 4px solid #ef4444;
+        padding: 15px;
+        margin: 20px 0;
+      }
+
+      .worksheet {
+        border: 2px solid #94a3b8;
+        padding: 25px;
+        margin: 30px 0;
+        background-color: #ffffff;
+        page-break-inside: avoid;
+      }
+
+      .worksheet-header {
+        display: flex;
+        justify-content: space-between;
+        border-bottom: 2px solid #94a3b8;
+        padding-bottom: 10px;
+        margin-bottom: 20px;
+        font-weight: bold;
+      }
+
+      .problem-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+        margin-bottom: 20px;
+      }
+
+      .problem-item {
+        display: flex;
+        align-items: center;
+        margin-bottom: 10px;
+        font-family: 'Lexend', monospace;
+        font-size: 1.1em;
+      }
+
+      .problem-number {
+        font-weight: bold;
+        color: #64748b;
+        margin-right: 10px;
+        width: 30px;
+      }
+
+      .diagram-container {
+        border: 1px solid #cbd5e1;
+        background-color: #f8fafc;
+        background-image:
+          linear-gradient(#e2e8f0 1px, transparent 1px), linear-gradient(90deg, #e2e8f0 1px, transparent 1px);
+        background-size: 20px 20px;
+        padding: 30px;
+        margin: 25px 0;
+        text-align: center;
+        max-width: 600px;
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      .step-circle {
+        display: inline-block;
+        width: 24px;
+        height: 24px;
+        line-height: 24px;
+        border-radius: 50%;
+        background-color: #f97316;
+        color: white;
+        text-align: center;
+        font-weight: bold;
+        font-size: 14px;
+        margin-right: 5px;
+      }
+
+      .hand-font {
+        font-family: 'Caveat', cursive;
+        font-size: 1.4em;
+        color: #1e3a8a;
+      }
+      .label-font {
+        font-family: 'Architects Daughter', cursive;
+        color: #4b5563;
+      }
+
+      .answer-key {
+        font-size: 0.9em;
+        background-color: #f8fafc;
+        padding: 15px;
+        border-top: 1px dotted #cbd5e1;
+        margin-top: 15px;
+      }
+
+      .answer-grid {
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
+        gap: 10px;
+      }
+
+      .intro-box {
+        background-color: #e0e7ff;
+        padding: 20px;
+        border-radius: 8px;
+        margin-bottom: 30px;
+        border: 1px solid #c7d2fe;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Module 1: Addition Mastery</h1>
+
+    <div class="intro-box">
+      <h3>Welcome to Module 1!</h3>
+      <p>
+        Addition is the absolute foundation of mental mathematics. If you can add quickly and accurately, everything
+        else becomes easier. In this module, we will re-train your brain to see numbers differently.
+      </p>
+      <p><strong>Learning Objectives:</strong></p>
+      <ul>
+        <li>Master the "Complement Method" to simplify hard additions</li>
+        <li>Learn to calculate from Left-to-Right (the natural way)</li>
+        <li>Develop speed with vertical addition shortcuts</li>
+        <li>Build mental stamina with addition chains</li>
+      </ul>
+      <p>
+        <strong>How to use this module:</strong> Read the explanation, study the examples, and then
+        <em>immediately</em> complete the worksheet. Don't skip any steps!
+      </p>
+    </div>
+
+    <!-- SUB-SECTION 1.1 -->
+    <section>
+      <h2>1.1 Complement Method (Making 10s)</h2>
+      <p>
+        When you add numbers like 8 + 7, your brain has to work a little bit. But adding 10 + 5 is instant. The
+        Complement Method teaches you to look for "friends of 10" to turn hard additions into easy ones.
+      </p>
+
+      <div class="concept-box">
+        <strong>The "Friends of 10" Pairs:</strong><br />
+        1 + 9 = 10<br />
+        2 + 8 = 10<br />
+        3 + 7 = 10<br />
+        4 + 6 = 10<br />
+        5 + 5 = 10
+      </div>
+
+      <div class="why-works">
+        <strong>Why This Works:</strong> Your brain loves round numbers (10, 20, 100). By borrowing a small amount from
+        one number to "complete" the other to the nearest 10, you simplify the calculation. <br />
+        <em>Example:</em> 8 + 7 becomes (8 + 2) + 5 = 10 + 5 = 15.
+      </div>
+
+      <h3>Worked Examples:</h3>
+      <ol>
+        <li><strong>9 + 6:</strong> 9 needs 1 to become 10. Take 1 from 6 (leaving 5). Result: 10 + 5 = 15.</li>
+        <li><strong>8 + 5:</strong> 8 needs 2 to become 10. Take 2 from 5 (leaving 3). Result: 10 + 3 = 13.</li>
+        <li><strong>29 + 6:</strong> 29 needs 1 to become 30. Take 1 from 6 (leaving 5). Result: 30 + 5 = 35.</li>
+        <li><strong>48 + 7:</strong> 48 needs 2 to become 50. Take 2 from 7 (leaving 5). Result: 50 + 5 = 55.</li>
+        <li><strong>7 + 4:</strong> 7 needs 3 to become 10. Take 3 from 4 (leaving 1). Result: 10 + 1 = 11.</li>
+      </ol>
+
+      <div class="diagram-container">
+        <svg width="400" height="150" viewBox="0 0 400 150">
+          <text x="50" y="50" class="hand-font" style="font-size: 24px">8 + 7 = ?</text>
+
+          <!-- Visualizing the transfer -->
+          <circle cx="55" cy="90" r="20" fill="#e0e7ff" stroke="#3b82f6" />
+          <text x="48" y="98" font-size="20">8</text>
+
+          <circle cx="155" cy="90" r="20" fill="#fef3c7" stroke="#f59e0b" />
+          <text x="148" y="98" font-size="20">7</text>
+
+          <!-- Arrow transferring 2 -->
+          <path d="M 135 90 Q 105 70 75 90" stroke="#f97316" fill="none" marker-end="url(#arrow)" stroke-width="2" />
+          <text x="95" y="75" class="hand-font" fill="#f97316" font-size="14">+2</text>
+
+          <!-- Result -->
+          <text x="220" y="95" class="hand-font" font-size="24" fill="#047857">= 10 + 5 = 15</text>
+        </svg>
+      </div>
+
+      <div class="try-this">
+        <strong>Try This!</strong><br />
+        What does 9 need to become 10? (Answer: 1)<br />
+        Solve 19 + 5 using the complement method. (Answer: 24)
+      </div>
+
+      <div class="mistake-alert">
+        <strong>Common Mistake:</strong> Forgetting to subtract from the second number what you added to the first. If
+        you add 2 to the 8, you MUST subtract 2 from the 7.
+      </div>
+
+      <p>
+        <strong>Real-World Application:</strong> You are buying a snack for $0.80 and have $0.50. How much is that?
+        Think: 80 needs 20 to make 100 ($1.00). Take 20 from 50 (leaving 30). Total is $1.30.
+      </p>
+
+      <!-- WORKSHEET 1.1 -->
+      <div class="worksheet">
+        <div class="worksheet-header">
+          <span>Worksheet 1.1: Complements & Making 10s</span>
+          <span>Score: ____ / 25</span>
+        </div>
+        <div class="problem-grid">
+          <div class="problem-item"><span class="problem-number">1.</span> 9 + 5 = _____</div>
+          <div class="problem-item"><span class="problem-number">2.</span> 8 + 6 = _____</div>
+          <div class="problem-item"><span class="problem-number">3.</span> 7 + 5 = _____</div>
+          <div class="problem-item"><span class="problem-number">4.</span> 9 + 7 = _____</div>
+          <div class="problem-item"><span class="problem-number">5.</span> 8 + 4 = _____</div>
+          <div class="problem-item"><span class="problem-number">6.</span> 29 + 5 = _____</div>
+          <div class="problem-item"><span class="problem-number">7.</span> 38 + 7 = _____</div>
+          <div class="problem-item"><span class="problem-number">8.</span> 49 + 8 = _____</div>
+          <div class="problem-item"><span class="problem-number">9.</span> 17 + 6 = _____</div>
+          <div class="problem-item"><span class="problem-number">10.</span> 58 + 5 = _____</div>
+          <div class="problem-item"><span class="problem-number">11.</span> 69 + 4 = _____</div>
+          <div class="problem-item"><span class="problem-number">12.</span> 78 + 9 = _____</div>
+          <div class="problem-item"><span class="problem-number">13.</span> 89 + 7 = _____</div>
+          <div class="problem-item"><span class="problem-number">14.</span> 27 + 8 = _____</div>
+          <div class="problem-item"><span class="problem-number">15.</span> 39 + 6 = _____</div>
+          <div class="problem-item"><span class="problem-number">16.</span> 48 + 5 = _____</div>
+          <div class="problem-item"><span class="problem-number">17.</span> 59 + 8 = _____</div>
+          <div class="problem-item"><span class="problem-number">18.</span> 67 + 5 = _____</div>
+          <div class="problem-item"><span class="problem-number">19.</span> 18 + 7 = _____</div>
+          <div class="problem-item"><span class="problem-number">20.</span> 99 + 5 = _____</div>
+          <div class="problem-item"><span class="problem-number">21.</span> 8 + 3 = _____</div>
+          <div class="problem-item"><span class="problem-number">22.</span> 9 + 9 = _____</div>
+          <div class="problem-item"><span class="problem-number">23.</span> 7 + 7 = _____</div>
+          <div class="problem-item"><span class="problem-number">24.</span> 8 + 8 = _____</div>
+          <div class="problem-item"><span class="problem-number">25.</span> 6 + 6 = _____</div>
+        </div>
+
+        <div class="answer-key">
+          <strong>Answer Key:</strong>
+          <div class="answer-grid">
+            <div>1. 14</div>
+            <div>2. 14</div>
+            <div>3. 12</div>
+            <div>4. 16</div>
+            <div>5. 12</div>
+            <div>6. 34</div>
+            <div>7. 45</div>
+            <div>8. 57</div>
+            <div>9. 23</div>
+            <div>10. 63</div>
+            <div>11. 73</div>
+            <div>12. 87</div>
+            <div>13. 96</div>
+            <div>14. 35</div>
+            <div>15. 45</div>
+            <div>16. 53</div>
+            <div>17. 67</div>
+            <div>18. 72</div>
+            <div>19. 25</div>
+            <div>20. 104</div>
+            <div>21. 11</div>
+            <div>22. 18</div>
+            <div>23. 14</div>
+            <div>24. 16</div>
+            <div>25. 12</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SUB-SECTION 1.2 -->
+    <section>
+      <h2>1.2 Left-to-Right Addition</h2>
+      <p>
+        In school, you learned to add from right to left. But when you say numbers, you say them left to right (e.g.,
+        "four hundred..."). Vedic mathematics aligns calculation with speech. We add the biggest parts first!
+      </p>
+
+      <div class="why-works">
+        <strong>Why This Works:</strong> It is faster because you get the most significant part of the answer
+        immediately. It's also easier to hold in your working memory because you are building the number naturally.
+      </div>
+
+      <h3>Worked Examples:</h3>
+      <ol>
+        <li>
+          <strong>46 + 38:</strong>
+          <ul>
+            <li>Step 1: 40 + 30 = 70</li>
+            <li>Step 2: 6 + 8 = 14</li>
+            <li>Step 3: 70 + 14 = 84</li>
+          </ul>
+        </li>
+        <li><strong>27 + 54:</strong> 20+50=70; 7+4=11; 70+11=81.</li>
+        <li><strong>63 + 29:</strong> 60+20=80; 3+9=12; 80+12=92.</li>
+        <li><strong>15 + 76:</strong> 10+70=80; 5+6=11; 80+11=91.</li>
+        <li><strong>82 + 45:</strong> 80+40=120; 2+5=7; 120+7=127.</li>
+      </ol>
+
+      <div class="diagram-container">
+        <svg width="400" height="150" viewBox="0 0 400 150">
+          <text x="50" y="40" class="hand-font" style="font-size: 24px">46 + 38 = ?</text>
+
+          <!-- Step 1 -->
+          <circle cx="50" cy="80" r="12" fill="#f97316" />
+          <text x="46" y="85" fill="white" font-weight="bold">1</text>
+          <text x="80" y="85" class="hand-font">40 + 30 = 70</text>
+
+          <!-- Step 2 -->
+          <circle cx="220" cy="80" r="12" fill="#f97316" />
+          <text x="216" y="85" fill="white" font-weight="bold">2</text>
+          <text x="250" y="85" class="hand-font">6 + 8 = 14</text>
+
+          <!-- Result -->
+          <text x="130" y="130" class="hand-font" fill="#047857" font-weight="bold" font-size="24">70 + 14 = 84</text>
+
+          <!-- Connectors -->
+          <path d="M 60 50 L 80 70" stroke="#cbd5e1" stroke-dasharray="4" />
+          <path d="M 90 50 L 250 70" stroke="#cbd5e1" stroke-dasharray="4" />
+        </svg>
+      </div>
+
+      <div class="try-this">
+        <strong>Try This!</strong><br />
+        Break 53 + 28 into two steps.<br />
+        50 + 20 = ? (70)<br />
+        3 + 8 = ? (11)<br />
+        Total? (81)
+      </div>
+
+      <div class="mistake-alert">
+        <strong>Common Mistake:</strong> Forgetting the place value. In 46 + 38, the '4' is 40, not 4. Always say
+        "forty" in your head, not "four".
+      </div>
+
+      <!-- WORKSHEET 1.2 -->
+      <div class="worksheet">
+        <div class="worksheet-header">
+          <span>Worksheet 1.2: Left-to-Right Addition</span>
+          <span>Score: ____ / 25</span>
+        </div>
+        <div class="problem-grid">
+          <div class="problem-item"><span class="problem-number">1.</span> 23 + 45 = _____</div>
+          <div class="problem-item"><span class="problem-number">2.</span> 36 + 21 = _____</div>
+          <div class="problem-item"><span class="problem-number">3.</span> 52 + 34 = _____</div>
+          <div class="problem-item"><span class="problem-number">4.</span> 17 + 62 = _____</div>
+          <div class="problem-item"><span class="problem-number">5.</span> 45 + 33 = _____</div>
+          <div class="problem-item"><span class="problem-number">6.</span> 28 + 34 = _____</div>
+          <div class="problem-item"><span class="problem-number">7.</span> 56 + 27 = _____</div>
+          <div class="problem-item"><span class="problem-number">8.</span> 39 + 42 = _____</div>
+          <div class="problem-item"><span class="problem-number">9.</span> 18 + 65 = _____</div>
+          <div class="problem-item"><span class="problem-number">10.</span> 47 + 36 = _____</div>
+          <div class="problem-item"><span class="problem-number">11.</span> 72 + 19 = _____</div>
+          <div class="problem-item"><span class="problem-number">12.</span> 83 + 28 = _____</div>
+          <div class="problem-item"><span class="problem-number">13.</span> 54 + 37 = _____</div>
+          <div class="problem-item"><span class="problem-number">14.</span> 26 + 48 = _____</div>
+          <div class="problem-item"><span class="problem-number">15.</span> 35 + 57 = _____</div>
+          <div class="problem-item"><span class="problem-number">16.</span> 64 + 29 = _____</div>
+          <div class="problem-item"><span class="problem-number">17.</span> 91 + 25 = _____</div>
+          <div class="problem-item"><span class="problem-number">18.</span> 13 + 78 = _____</div>
+          <div class="problem-item"><span class="problem-number">19.</span> 42 + 59 = _____</div>
+          <div class="problem-item"><span class="problem-number">20.</span> 38 + 38 = _____</div>
+          <div class="problem-item"><span class="problem-number">21.</span> 25 + 25 = _____</div>
+          <div class="problem-item"><span class="problem-number">22.</span> 49 + 49 = _____</div>
+          <div class="problem-item"><span class="problem-number">23.</span> 75 + 15 = _____</div>
+          <div class="problem-item"><span class="problem-number">24.</span> 66 + 22 = _____</div>
+          <div class="problem-item"><span class="problem-number">25.</span> 88 + 11 = _____</div>
+        </div>
+
+        <div class="answer-key">
+          <strong>Answer Key:</strong>
+          <div class="answer-grid">
+            <div>1. 68</div>
+            <div>2. 57</div>
+            <div>3. 86</div>
+            <div>4. 79</div>
+            <div>5. 78</div>
+            <div>6. 62</div>
+            <div>7. 83</div>
+            <div>8. 81</div>
+            <div>9. 83</div>
+            <div>10. 83</div>
+            <div>11. 91</div>
+            <div>12. 111</div>
+            <div>13. 91</div>
+            <div>14. 74</div>
+            <div>15. 92</div>
+            <div>16. 93</div>
+            <div>17. 116</div>
+            <div>18. 91</div>
+            <div>19. 101</div>
+            <div>20. 76</div>
+            <div>21. 50</div>
+            <div>22. 98</div>
+            <div>23. 90</div>
+            <div>24. 88</div>
+            <div>25. 99</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SUB-SECTION 1.3 -->
+    <section>
+      <h2>1.3 Vertical Speed Addition</h2>
+      <p>
+        When you have 3-digit numbers or longer columns, vertical addition is efficient. But instead of carrying large
+        numbers, we can use a "tick" or "dot" method to mark every time we reach 10.
+      </p>
+
+      <h3>Worked Examples:</h3>
+      <ol>
+        <li>
+          <strong>345 + 267:</strong>
+          <ul>
+            <li>Hundreds: 3+2=5</li>
+            <li>Tens: 4+6=10 (write 0, carry 1 to hundreds) -> Hundreds becomes 6</li>
+            <li>Ones: 5+7=12 (write 2, carry 1 to tens) -> Tens becomes 1</li>
+            <li>Result: 612</li>
+          </ul>
+        </li>
+        <li><strong>589 + 123:</strong> 5+1=6; 8+2=10 (carry); 9+3=12 (carry). Result: 712.</li>
+        <li><strong>147 + 258:</strong> 1+2=3; 4+5=9; 7+8=15 (carry). Result: 405.</li>
+        <li><strong>672 + 184:</strong> 6+1=7; 7+8=15 (carry); 2+4=6. Result: 856.</li>
+        <li><strong>923 + 145:</strong> 9+1=10; 2+4=6; 3+5=8. Result: 1068.</li>
+      </ol>
+
+      <div class="diagram-container">
+        <svg width="400" height="200" viewBox="0 0 400 200">
+          <text x="100" y="40" class="hand-font" style="font-size: 24px">3 4 5</text>
+          <text x="80" y="70" class="hand-font" style="font-size: 24px">+</text>
+          <text x="100" y="70" class="hand-font" style="font-size: 24px">2 6 7</text>
+          <line x1="80" y1="80" x2="200" y2="80" stroke="black" />
+
+          <text x="250" y="50" font-weight="bold">Left-to-Right:</text>
+          <text x="250" y="80" class="hand-font">3+2 = 5</text>
+          <text x="250" y="110" class="hand-font">4+6 = 10 (carry 1 to left)</text>
+          <text x="250" y="140" class="hand-font">5+7 = 12 (carry 1 to left)</text>
+
+          <text x="100" y="110" class="hand-font" style="font-size: 24px" fill="#047857">6 1 2</text>
+
+          <!-- Visual carries -->
+          <text x="90" y="95" class="hand-font" font-size="12" fill="red">¹</text>
+          <text x="115" y="95" class="hand-font" font-size="12" fill="red">¹</text>
+        </svg>
+      </div>
+
+      <!-- WORKSHEET 1.3 -->
+      <div class="worksheet">
+        <div class="worksheet-header">
+          <span>Worksheet 1.3: Vertical Speed Addition</span>
+          <span>Score: ____ / 25</span>
+        </div>
+        <div class="problem-grid">
+          <div class="problem-item"><span class="problem-number">1.</span> 123 + 456 = _____</div>
+          <div class="problem-item"><span class="problem-number">2.</span> 234 + 567 = _____</div>
+          <div class="problem-item"><span class="problem-number">3.</span> 345 + 678 = _____</div>
+          <div class="problem-item"><span class="problem-number">4.</span> 456 + 123 = _____</div>
+          <div class="problem-item"><span class="problem-number">5.</span> 567 + 234 = _____</div>
+          <div class="problem-item"><span class="problem-number">6.</span> 678 + 345 = _____</div>
+          <div class="problem-item"><span class="problem-number">7.</span> 789 + 112 = _____</div>
+          <div class="problem-item"><span class="problem-number">8.</span> 112 + 789 = _____</div>
+          <div class="problem-item"><span class="problem-number">9.</span> 258 + 369 = _____</div>
+          <div class="problem-item"><span class="problem-number">10.</span> 147 + 258 = _____</div>
+          <div class="problem-item"><span class="problem-number">11.</span> 369 + 147 = _____</div>
+          <div class="problem-item"><span class="problem-number">12.</span> 852 + 147 = _____</div>
+          <div class="problem-item"><span class="problem-number">13.</span> 963 + 025 = _____</div>
+          <div class="problem-item"><span class="problem-number">14.</span> 741 + 258 = _____</div>
+          <div class="problem-item"><span class="problem-number">15.</span> 321 + 654 = _____</div>
+          <div class="problem-item"><span class="problem-number">16.</span> 987 + 123 = _____</div>
+          <div class="problem-item"><span class="problem-number">17.</span> 654 + 321 = _____</div>
+          <div class="problem-item"><span class="problem-number">18.</span> 159 + 753 = _____</div>
+          <div class="problem-item"><span class="problem-number">19.</span> 753 + 159 = _____</div>
+          <div class="problem-item"><span class="problem-number">20.</span> 456 + 789 = _____</div>
+          <div class="problem-item"><span class="problem-number">21.</span> 555 + 666 = _____</div>
+          <div class="problem-item"><span class="problem-number">22.</span> 777 + 888 = _____</div>
+          <div class="problem-item"><span class="problem-number">23.</span> 999 + 111 = _____</div>
+          <div class="problem-item"><span class="problem-number">24.</span> 222 + 333 = _____</div>
+          <div class="problem-item"><span class="problem-number">25.</span> 444 + 555 = _____</div>
+        </div>
+
+        <div class="answer-key">
+          <strong>Answer Key:</strong>
+          <div class="answer-grid">
+            <div>1. 579</div>
+            <div>2. 801</div>
+            <div>3. 1023</div>
+            <div>4. 579</div>
+            <div>5. 801</div>
+            <div>6. 1023</div>
+            <div>7. 901</div>
+            <div>8. 901</div>
+            <div>9. 627</div>
+            <div>10. 405</div>
+            <div>11. 516</div>
+            <div>12. 999</div>
+            <div>13. 988</div>
+            <div>14. 999</div>
+            <div>15. 975</div>
+            <div>16. 1110</div>
+            <div>17. 975</div>
+            <div>18. 912</div>
+            <div>19. 912</div>
+            <div>20. 1245</div>
+            <div>21. 1221</div>
+            <div>22. 1665</div>
+            <div>23. 1110</div>
+            <div>24. 555</div>
+            <div>25. 999</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SUB-SECTION 1.4 -->
+    <section>
+      <h2>1.4 Mental Addition Chains</h2>
+      <p>
+        Building mental stamina is key. An addition chain is adding a series of single-digit numbers rapidly in your
+        head. This trains your working memory.
+      </p>
+
+      <h3>Worked Examples:</h3>
+      <ol>
+        <li>
+          <strong>Chain: 5 + 6 + 3 + 7 + 2</strong>
+          <ul>
+            <li>5+6=11</li>
+            <li>11+3=14</li>
+            <li>14+7=21</li>
+            <li>21+2=23</li>
+          </ul>
+        </li>
+        <li><strong>4 + 8 + 6 + 2:</strong> 12, 18, 20.</li>
+        <li><strong>9 + 5 + 5 + 1:</strong> 14, 19, 20. (Or see 5+5=10, 9+1=10, total 20!)</li>
+        <li><strong>7 + 6 + 4 + 3:</strong> 13, 17, 20.</li>
+        <li><strong>2 + 9 + 8 + 1:</strong> 11, 19, 20.</li>
+      </ol>
+
+      <!-- WORKSHEET 1.4 -->
+      <div class="worksheet">
+        <div class="worksheet-header">
+          <span>Worksheet 1.4: Mental Addition Chains</span>
+          <span>Score: ____ / 25</span>
+        </div>
+        <div class="problem-grid">
+          <div class="problem-item"><span class="problem-number">1.</span> 3 + 4 + 5 = _____</div>
+          <div class="problem-item"><span class="problem-number">2.</span> 6 + 7 + 2 = _____</div>
+          <div class="problem-item"><span class="problem-number">3.</span> 9 + 1 + 8 = _____</div>
+          <div class="problem-item"><span class="problem-number">4.</span> 5 + 5 + 5 = _____</div>
+          <div class="problem-item"><span class="problem-number">5.</span> 2 + 4 + 6 = _____</div>
+          <div class="problem-item"><span class="problem-number">6.</span> 3 + 3 + 3 + 3 = _____</div>
+          <div class="problem-item"><span class="problem-number">7.</span> 4 + 4 + 4 + 4 = _____</div>
+          <div class="problem-item"><span class="problem-number">8.</span> 5 + 6 + 7 + 8 = _____</div>
+          <div class="problem-item"><span class="problem-number">9.</span> 1 + 2 + 3 + 4 + 5 = _____</div>
+          <div class="problem-item"><span class="problem-number">10.</span> 9 + 8 + 7 = _____</div>
+          <div class="problem-item"><span class="problem-number">11.</span> 2 + 9 + 3 + 8 = _____</div>
+          <div class="problem-item"><span class="problem-number">12.</span> 5 + 2 + 5 + 3 = _____</div>
+          <div class="problem-item"><span class="problem-number">13.</span> 7 + 7 + 6 = _____</div>
+          <div class="problem-item"><span class="problem-number">14.</span> 8 + 8 + 4 = _____</div>
+          <div class="problem-item"><span class="problem-number">15.</span> 6 + 4 + 5 + 5 = _____</div>
+          <div class="problem-item"><span class="problem-number">16.</span> 1 + 9 + 2 + 8 = _____</div>
+          <div class="problem-item"><span class="problem-number">17.</span> 3 + 7 + 4 + 6 = _____</div>
+          <div class="problem-item"><span class="problem-number">18.</span> 1 + 1 + 1 + 1 + 1 + 1 = _____</div>
+          <div class="problem-item"><span class="problem-number">19.</span> 5 + 5 + 5 + 5 + 5 = _____</div>
+          <div class="problem-item"><span class="problem-number">20.</span> 9 + 9 + 9 = _____</div>
+          <div class="problem-item"><span class="problem-number">21.</span> 6 + 6 + 6 = _____</div>
+          <div class="problem-item"><span class="problem-number">22.</span> 8 + 2 + 5 + 5 = _____</div>
+          <div class="problem-item"><span class="problem-number">23.</span> 4 + 3 + 2 + 1 = _____</div>
+          <div class="problem-item"><span class="problem-number">24.</span> 7 + 3 + 5 + 2 = _____</div>
+          <div class="problem-item"><span class="problem-number">25.</span> 9 + 1 + 9 + 1 = _____</div>
+        </div>
+
+        <div class="answer-key">
+          <strong>Answer Key:</strong>
+          <div class="answer-grid">
+            <div>1. 12</div>
+            <div>2. 15</div>
+            <div>3. 18</div>
+            <div>4. 15</div>
+            <div>5. 12</div>
+            <div>6. 12</div>
+            <div>7. 16</div>
+            <div>8. 26</div>
+            <div>9. 15</div>
+            <div>10. 24</div>
+            <div>11. 22</div>
+            <div>12. 15</div>
+            <div>13. 20</div>
+            <div>14. 20</div>
+            <div>15. 20</div>
+            <div>16. 20</div>
+            <div>17. 20</div>
+            <div>18. 6</div>
+            <div>19. 25</div>
+            <div>20. 27</div>
+            <div>21. 18</div>
+            <div>22. 20</div>
+            <div>23. 10</div>
+            <div>24. 17</div>
+            <div>25. 20</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SUB-SECTION 1.5 -->
+    <section>
+      <h2>1.5 Multi-Number Addition (3-5 numbers)</h2>
+      <p>
+        Real life often involves adding more than two numbers (like a grocery list). The strategy is to look for chunks
+        or pairs that are easy to add, rather than going strictly top-to-bottom.
+      </p>
+
+      <h3>Worked Examples:</h3>
+      <ol>
+        <li>
+          <strong>24 + 36 + 15:</strong>
+          <ul>
+            <li>24+36 = 60 (easy pair!)</li>
+            <li>60+15 = 75</li>
+          </ul>
+        </li>
+        <li><strong>12 + 47 + 88:</strong> 12+88=100; 100+47=147.</li>
+        <li><strong>35 + 25 + 18:</strong> 35+25=60; 60+18=78.</li>
+        <li><strong>5 + 17 + 35 + 3:</strong> 17+3=20; 5+35=40; 20+40=60.</li>
+        <li><strong>44 + 22 + 34:</strong> 44+34=78; 78+22=100.</li>
+      </ol>
+
+      <!-- WORKSHEET 1.5 -->
+      <div class="worksheet">
+        <div class="worksheet-header">
+          <span>Worksheet 1.5: Multi-Number Addition</span>
+          <span>Score: ____ / 25</span>
+        </div>
+        <div class="problem-grid">
+          <div class="problem-item"><span class="problem-number">1.</span> 12 + 13 + 14 = _____</div>
+          <div class="problem-item"><span class="problem-number">2.</span> 20 + 30 + 40 = _____</div>
+          <div class="problem-item"><span class="problem-number">3.</span> 15 + 25 + 35 = _____</div>
+          <div class="problem-item"><span class="problem-number">4.</span> 45 + 5 + 10 = _____</div>
+          <div class="problem-item"><span class="problem-number">5.</span> 22 + 33 + 44 = _____</div>
+          <div class="problem-item"><span class="problem-number">6.</span> 8 + 12 + 20 = _____</div>
+          <div class="problem-item"><span class="problem-number">7.</span> 50 + 25 + 25 = _____</div>
+          <div class="problem-item"><span class="problem-number">8.</span> 19 + 1 + 30 = _____</div>
+          <div class="problem-item"><span class="problem-number">9.</span> 24 + 26 + 10 = _____</div>
+          <div class="problem-item"><span class="problem-number">10.</span> 33 + 7 + 20 = _____</div>
+          <div class="problem-item"><span class="problem-number">11.</span> 15 + 15 + 15 = _____</div>
+          <div class="problem-item"><span class="problem-number">12.</span> 12 + 18 + 5 = _____</div>
+          <div class="problem-item"><span class="problem-number">13.</span> 11 + 22 + 33 + 44 = _____</div>
+          <div class="problem-item"><span class="problem-number">14.</span> 5 + 15 + 25 + 35 = _____</div>
+          <div class="problem-item"><span class="problem-number">15.</span> 10 + 20 + 30 + 40 = _____</div>
+          <div class="problem-item"><span class="problem-number">16.</span> 2 + 4 + 6 + 8 = _____</div>
+          <div class="problem-item"><span class="problem-number">17.</span> 1 + 3 + 5 + 7 = _____</div>
+          <div class="problem-item"><span class="problem-number">18.</span> 25 + 50 + 25 + 10 = _____</div>
+          <div class="problem-item"><span class="problem-number">19.</span> 9 + 9 + 9 + 3 = _____</div>
+          <div class="problem-item"><span class="problem-number">20.</span> 12 + 8 + 15 + 5 = _____</div>
+          <div class="problem-item"><span class="problem-number">21.</span> 1 + 2 + 3 + 4 + 5 + 6 = _____</div>
+          <div class="problem-item"><span class="problem-number">22.</span> 10 + 10 + 10 + 10 + 10 = _____</div>
+          <div class="problem-item"><span class="problem-number">23.</span> 5 + 10 + 15 + 20 + 25 = _____</div>
+          <div class="problem-item"><span class="problem-number">24.</span> 100 + 50 + 25 + 25 = _____</div>
+          <div class="problem-item"><span class="problem-number">25.</span> 11 + 9 + 12 + 8 + 10 = _____</div>
+        </div>
+
+        <div class="answer-key">
+          <strong>Answer Key:</strong>
+          <div class="answer-grid">
+            <div>1. 39</div>
+            <div>2. 90</div>
+            <div>3. 75</div>
+            <div>4. 60</div>
+            <div>5. 99</div>
+            <div>6. 40</div>
+            <div>7. 100</div>
+            <div>8. 50</div>
+            <div>9. 60</div>
+            <div>10. 60</div>
+            <div>11. 45</div>
+            <div>12. 35</div>
+            <div>13. 110</div>
+            <div>14. 80</div>
+            <div>15. 100</div>
+            <div>16. 20</div>
+            <div>17. 16</div>
+            <div>18. 110</div>
+            <div>19. 30</div>
+            <div>20. 40</div>
+            <div>21. 21</div>
+            <div>22. 50</div>
+            <div>23. 75</div>
+            <div>24. 200</div>
+            <div>25. 50</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SUB-SECTION 1.6 -->
+    <section>
+      <h2>1.6 Addition Speed Challenge</h2>
+      <p>
+        Now put it all together! This challenge combines complements, left-to-right addition, and chains. Your goal is
+        accuracy first, then speed.
+      </p>
+
+      <div class="try-this">
+        <strong>Speed Benchmark:</strong><br />
+        Top Performer: < 2 minutes<br />
+        Great: < 3 minutes<br />
+        Good: < 5 minutes
+      </div>
+
+      <!-- WORKSHEET 1.6 -->
+      <div class="worksheet">
+        <div class="worksheet-header">
+          <span>Worksheet 1.6: Speed Challenge</span>
+          <span>Time: ____ min</span>
+        </div>
+        <div class="problem-grid">
+          <div class="problem-item"><span class="problem-number">1.</span> 15 + 16 = _____</div>
+          <div class="problem-item"><span class="problem-number">2.</span> 27 + 34 = _____</div>
+          <div class="problem-item"><span class="problem-number">3.</span> 45 + 45 = _____</div>
+          <div class="problem-item"><span class="problem-number">4.</span> 56 + 28 = _____</div>
+          <div class="problem-item"><span class="problem-number">5.</span> 72 + 19 = _____</div>
+          <div class="problem-item"><span class="problem-number">6.</span> 88 + 12 = _____</div>
+          <div class="problem-item"><span class="problem-number">7.</span> 39 + 41 = _____</div>
+          <div class="problem-item"><span class="problem-number">8.</span> 63 + 27 = _____</div>
+          <div class="problem-item"><span class="problem-number">9.</span> 125 + 125 = _____</div>
+          <div class="problem-item"><span class="problem-number">10.</span> 250 + 175 = _____</div>
+          <div class="problem-item"><span class="problem-number">11.</span> 333 + 222 = _____</div>
+          <div class="problem-item"><span class="problem-number">12.</span> 150 + 350 = _____</div>
+          <div class="problem-item"><span class="problem-number">13.</span> 8 + 9 + 10 = _____</div>
+          <div class="problem-item"><span class="problem-number">14.</span> 12 + 13 + 15 = _____</div>
+          <div class="problem-item"><span class="problem-number">15.</span> 25 + 25 + 50 = _____</div>
+          <div class="problem-item"><span class="problem-number">16.</span> 5 + 15 + 25 = _____</div>
+          <div class="problem-item"><span class="problem-number">17.</span> 100 + 200 + 300 = _____</div>
+          <div class="problem-item"><span class="problem-number">18.</span> 50 + 60 + 70 = _____</div>
+          <div class="problem-item"><span class="problem-number">19.</span> 14 + 14 + 14 = _____</div>
+          <div class="problem-item"><span class="problem-number">20.</span> 30 + 15 + 45 = _____</div>
+          <div class="problem-item"><span class="problem-number">21.</span> 12 + 88 + 5 = _____</div>
+          <div class="problem-item"><span class="problem-number">22.</span> 1 + 2 + 99 + 98 = _____</div>
+          <div class="problem-item"><span class="problem-number">23.</span> 55 + 45 + 10 = _____</div>
+          <div class="problem-item"><span class="problem-number">24.</span> 75 + 25 + 50 = _____</div>
+          <div class="problem-item"><span class="problem-number">25.</span> 33 + 33 + 33 = _____</div>
+        </div>
+
+        <div class="answer-key">
+          <strong>Answer Key:</strong>
+          <div class="answer-grid">
+            <div>1. 31</div>
+            <div>2. 61</div>
+            <div>3. 90</div>
+            <div>4. 84</div>
+            <div>5. 91</div>
+            <div>6. 100</div>
+            <div>7. 80</div>
+            <div>8. 90</div>
+            <div>9. 250</div>
+            <div>10. 425</div>
+            <div>11. 555</div>
+            <div>12. 500</div>
+            <div>13. 27</div>
+            <div>14. 40</div>
+            <div>15. 100</div>
+            <div>16. 45</div>
+            <div>17. 600</div>
+            <div>18. 180</div>
+            <div>19. 42</div>
+            <div>20. 90</div>
+            <div>21. 105</div>
+            <div>22. 200</div>
+            <div>23. 110</div>
+            <div>24. 150</div>
+            <div>25. 99</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Module Summary -->
+    <section>
+      <h2>Module 1 Summary</h2>
+
+      <div class="concept-box">
+        <strong>You have mastered:</strong>
+        <ul>
+          <li>The <strong>Complement Method</strong> for turning hard additions into easy ones.</li>
+          <li><strong>Left-to-Right Addition</strong> for natural, fast calculation.</li>
+          <li><strong>Vertical Addition Shortcuts</strong> for larger numbers.</li>
+          <li><strong>Addition Chains</strong> for mental stamina.</li>
+        </ul>
+      </div>
+
+      <div class="try-this" style="background-color: #f0fdf4; border-color: #22c55e">
+        <strong>Celebration Time!</strong><br />
+        Before this module, adding 47 + 36 might have taken you 10 seconds.<br />
+        Now you can do it in 2 seconds: 70 + 13 = 83.<br />
+        <strong>Great job! Ready for Module 2: Subtraction Mastery.</strong>
+      </div>
+
+      <div class="progress-tracker">
+        <div>
+          <strong>Module 1: Addition Mastery</strong><br />
+          <span>Status: COMPLETE</span>
+        </div>
+        <div class="star-rating">★★★★★</div>
+      </div>
+    </section>
+  </body>
+</html>

@@ -1,0 +1,848 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Module 5: 3-Digit & Mixed Multiplication</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;500;600;700&family=Caveat:wght@400;700&family=Architects+Daughter&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@1/css/pico.min.css" />
+    <style>
+      body {
+        max-width: 880px;
+        margin: 0 auto;
+        padding: 40px 60px;
+        font-family: 'Lexend', sans-serif;
+        color: #1a1a1a;
+        line-height: 1.6;
+        background-color: #ffffff;
+      }
+
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6 {
+        color: #047857; /* Emerald Green for Advanced Multiplication */
+        font-weight: 700;
+        margin-top: 1.5em;
+        margin-bottom: 0.5em;
+      }
+
+      h1 {
+        font-size: 2.5em;
+        text-align: center;
+        border-bottom: 3px solid #047857;
+        padding-bottom: 20px;
+      }
+      h2 {
+        font-size: 1.8em;
+        border-left: 5px solid #059669;
+        padding-left: 15px;
+        background-color: #ecfdf5;
+        padding: 10px 15px;
+        margin-top: 40px;
+      }
+      h3 {
+        font-size: 1.4em;
+        color: #c2410c;
+        margin-top: 25px;
+      }
+
+      .concept-box {
+        background-color: #ecfdf5;
+        border-left: 4px solid #047857;
+        padding: 15px;
+        margin: 20px 0;
+        border-radius: 0 4px 4px 0;
+      }
+
+      .why-works {
+        background-color: #f0fdf4;
+        border: 1px solid #bbf7d0;
+        border-left: 4px solid #16a34a;
+        padding: 15px;
+        margin: 20px 0;
+      }
+
+      .try-this {
+        background-color: #fffbeb;
+        border: 2px dashed #f59e0b;
+        padding: 20px;
+        margin: 25px 0;
+        text-align: center;
+      }
+
+      .mistake-alert {
+        background-color: #fef2f2;
+        border-left: 4px solid #ef4444;
+        padding: 15px;
+        margin: 20px 0;
+      }
+
+      .worksheet {
+        border: 2px solid #94a3b8;
+        padding: 25px;
+        margin: 30px 0;
+        background-color: #ffffff;
+        page-break-inside: avoid;
+      }
+
+      .worksheet-header {
+        display: flex;
+        justify-content: space-between;
+        border-bottom: 2px solid #94a3b8;
+        padding-bottom: 10px;
+        margin-bottom: 20px;
+        font-weight: bold;
+      }
+
+      .problem-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+        margin-bottom: 20px;
+      }
+
+      .problem-item {
+        display: flex;
+        align-items: center;
+        margin-bottom: 10px;
+        font-family: 'Lexend', monospace;
+        font-size: 1.1em;
+      }
+
+      .problem-number {
+        font-weight: bold;
+        color: #64748b;
+        margin-right: 10px;
+        width: 30px;
+      }
+
+      .diagram-container {
+        border: 1px solid #cbd5e1;
+        background-color: #f8fafc;
+        background-image:
+          linear-gradient(#e2e8f0 1px, transparent 1px), linear-gradient(90deg, #e2e8f0 1px, transparent 1px);
+        background-size: 20px 20px;
+        padding: 30px;
+        margin: 25px 0;
+        text-align: center;
+        max-width: 600px;
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      .step-circle {
+        display: inline-block;
+        width: 24px;
+        height: 24px;
+        line-height: 24px;
+        border-radius: 50%;
+        background-color: #f97316;
+        color: white;
+        text-align: center;
+        font-weight: bold;
+        font-size: 14px;
+        margin-right: 5px;
+      }
+
+      .hand-font {
+        font-family: 'Caveat', cursive;
+        font-size: 1.4em;
+        color: #047857;
+      }
+      .label-font {
+        font-family: 'Architects Daughter', cursive;
+        color: #4b5563;
+      }
+
+      .answer-key {
+        font-size: 0.9em;
+        background-color: #f8fafc;
+        padding: 15px;
+        border-top: 1px dotted #cbd5e1;
+        margin-top: 15px;
+      }
+
+      .answer-grid {
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
+        gap: 10px;
+      }
+
+      .intro-box {
+        background-color: #d1fae5;
+        padding: 20px;
+        border-radius: 8px;
+        margin-bottom: 30px;
+        border: 1px solid #a7f3d0;
+      }
+
+      .progress-tracker {
+        background-color: #f0fdf4;
+        border: 1px solid #22c55e;
+        padding: 15px;
+        border-radius: 8px;
+        margin-top: 30px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+      .star-rating {
+        color: #f59e0b;
+        font-size: 1.5em;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Module 5: 3-Digit & Mixed Multiplication</h1>
+
+    <div class="intro-box">
+      <h3>Welcome to Module 5!</h3>
+      <p>
+        Now that you've mastered 2-digit multiplication, it's time to scale up. The "Vertically and Crosswise" method
+        works for ANY number of digits. In this module, we'll conquer 3-digit and mixed-digit multiplication.
+      </p>
+      <p><strong>Learning Objectives:</strong></p>
+      <ul>
+        <li>Master 3-digit × 2-digit multiplication (5 steps)</li>
+        <li>Handle mixed digit operations (2×3, 4×2)</li>
+        <li>Tackle advanced 3-digit × 3-digit calculations</li>
+        <li>Apply these skills to real-world large number problems</li>
+      </ul>
+    </div>
+
+    <!-- SUB-SECTION 5.1 -->
+    <section>
+      <h2>5.1 3-Digit × 2-Digit Multiplication</h2>
+      <p>
+        When multiplying a 3-digit number (like 234) by a 2-digit number (like 67), we simply treat the 2-digit number
+        as having a leading zero (067) OR use a specific 5-step pattern. Let's look at the 5-step pattern for
+        <strong>234 × 67</strong>.
+      </p>
+
+      <div class="concept-box">
+        <strong>The 5 Steps (Moving Right to Left):</strong>
+        <ol>
+          <li><strong>Right Vertical:</strong> 4 × 7</li>
+          <li><strong>Crosswise Right:</strong> (3 × 7) + (4 × 6)</li>
+          <li><strong>Star Step (Middle):</strong> (2 × 7) + (3 × 6)</li>
+          <li><strong>Crosswise Left:</strong> (2 × 6)</li>
+          <li>
+            <strong>Left Vertical:</strong> (Leading zero logic applies here, or just stop if no digits left) -> Wait!
+            For 3x2, it's actually safer to treat 67 as 067 and do full 3x3 steps. Let's visualize it as 3-digit x
+            2-digit specific pattern.
+          </li>
+        </ol>
+        <p>
+          Actually, let's treat it as <strong>234 × 067</strong>. This makes it a standard 3x3 pattern which is easier
+          to memorize.
+        </p>
+        <ol>
+          <li><strong>Step 1 (Right):</strong> 4×7</li>
+          <li><strong>Step 2 (Cross Right):</strong> (3×7) + (4×6)</li>
+          <li><strong>Step 3 (Star):</strong> (2×7) + (3×6) + (4×0)</li>
+          <li><strong>Step 4 (Cross Left):</strong> (2×6) + (3×0)</li>
+          <li><strong>Step 5 (Left):</strong> (2×0) -> usually 0, unless carry.</li>
+        </ol>
+      </div>
+
+      <div class="diagram-container">
+        <svg width="600" height="400" viewBox="0 0 600 400">
+          <text x="300" y="30" text-anchor="middle" class="hand-font" font-size="24">234 × 67 (Treat as 067)</text>
+
+          <!-- Numbers -->
+          <text x="150" y="80" class="label-font" fill="#64748b">A₁</text>
+          <text x="250" y="80" class="label-font" fill="#64748b">A₂</text>
+          <text x="350" y="80" class="label-font" fill="#64748b">A₃</text>
+          <text x="150" y="120" font-size="40" font-weight="bold">2</text>
+          <text x="250" y="120" font-size="40" font-weight="bold">3</text>
+          <text x="350" y="120" font-size="40" font-weight="bold">4</text>
+
+          <text x="150" y="200" class="label-font" fill="#64748b">B₁</text>
+          <text x="250" y="200" class="label-font" fill="#64748b">B₂</text>
+          <text x="350" y="200" class="label-font" fill="#64748b">B₃</text>
+          <text x="150" y="240" font-size="40" font-weight="bold" fill="#94a3b8">0</text>
+          <text x="250" y="240" font-size="40" font-weight="bold">6</text>
+          <text x="350" y="240" font-size="40" font-weight="bold">7</text>
+
+          <line x1="100" y1="260" x2="400" y2="260" stroke="#000" stroke-width="2" />
+
+          <!-- Visualization of Step 2 (Cross Right) just as example -->
+          <line x1="250" y1="130" x2="350" y2="230" stroke="#f97316" stroke-width="2" opacity="0.5" />
+          <line x1="350" y1="130" x2="250" y2="230" stroke="#f97316" stroke-width="2" opacity="0.5" />
+
+          <!-- Calculation Box -->
+          <rect x="420" y="50" width="170" height="220" fill="white" stroke="#cbd5e1" rx="5" />
+          <text x="430" y="75" font-size="12" font-weight="bold">Step 1: 4×7 = 28</text>
+          <text x="430" y="90" font-size="12" fill="#ef4444">Write 8, carry 2</text>
+
+          <text x="430" y="115" font-size="12" font-weight="bold">Step 2: (3×7)+(4×6)</text>
+          <text x="430" y="130" font-size="12">21 + 24 = 45</text>
+          <text x="430" y="145" font-size="12" fill="#ef4444">45+2=47 (Write 7, c4)</text>
+
+          <text x="430" y="170" font-size="12" font-weight="bold">Step 3: (2×7)+(3×6)</text>
+          <text x="430" y="185" font-size="12">14 + 18 = 32</text>
+          <text x="430" y="200" font-size="12" fill="#ef4444">32+4=36 (Write 6, c3)</text>
+
+          <text x="430" y="225" font-size="12">... and so on</text>
+
+          <!-- Final Answer digits -->
+          <text x="130" y="320" font-size="40" font-weight="bold" fill="#047857">1</text>
+          <text x="190" y="320" font-size="40" font-weight="bold" fill="#047857">5</text>
+          <text x="250" y="320" font-size="40" font-weight="bold" fill="#047857">6</text>
+          <text x="310" y="320" font-size="40" font-weight="bold" fill="#047857">7</text>
+          <text x="370" y="320" font-size="40" font-weight="bold" fill="#047857">8</text>
+
+          <text x="250" y="380" text-anchor="middle" font-weight="bold">Answer: 15,678</text>
+        </svg>
+      </div>
+
+      <div class="mistake-alert">
+        <strong>Common Mistake:</strong> Forgetting the cross-multiply with the leading zero! Always treat 67 as 067.
+        This keeps the pattern consistent.
+      </div>
+
+      <h3>Worked Examples:</h3>
+      <ol>
+        <li>
+          <strong>456 × 83:</strong> (Treat as 456 × 083)<br />
+          ① 6×3 = 18 (8, c1)<br />
+          ② (5×3)+(6×8) = 15+48=63. 63+1=64 (4, c6)<br />
+          ③ (4×3)+(5×8)+(6×0) = 12+40+0=52. 52+6=58 (8, c5)<br />
+          ④ (4×8)+(5×0) = 32+0=32. 32+5=37 (7, c3)<br />
+          ⑤ (4×0)=0. 0+3=3.<br />
+          <strong>Answer: 37,848</strong>
+        </li>
+        <li>
+          <strong>321 × 49:</strong><br />
+          ... Calculation ...<br />
+          <strong>Answer: 15,729</strong>
+        </li>
+      </ol>
+
+      <!-- WORKSHEET 5.1 -->
+      <div class="worksheet">
+        <div class="worksheet-header">
+          <span>Worksheet 5.1: 3-Digit × 2-Digit</span>
+          <span>Score: ____ / 40</span>
+        </div>
+        <div class="problem-grid">
+          <div class="problem-item"><span class="problem-number">1.</span> 123 × 12 = _____</div>
+          <div class="problem-item"><span class="problem-number">2.</span> 234 × 21 = _____</div>
+          <div class="problem-item"><span class="problem-number">3.</span> 312 × 13 = _____</div>
+          <div class="problem-item"><span class="problem-number">4.</span> 421 × 11 = _____</div>
+          <div class="problem-item"><span class="problem-number">5.</span> 213 × 22 = _____</div>
+          <div class="problem-item"><span class="problem-number">6.</span> 142 × 31 = _____</div>
+          <div class="problem-item"><span class="problem-number">7.</span> 324 × 12 = _____</div>
+          <div class="problem-item"><span class="problem-number">8.</span> 153 × 21 = _____</div>
+          <div class="problem-item"><span class="problem-number">9.</span> 231 × 32 = _____</div>
+          <div class="problem-item"><span class="problem-number">10.</span> 412 × 14 = _____</div>
+          <div class="problem-item"><span class="problem-number">11.</span> 125 × 23 = _____</div>
+          <div class="problem-item"><span class="problem-number">12.</span> 236 × 15 = _____</div>
+          <div class="problem-item"><span class="problem-number">13.</span> 314 × 24 = _____</div>
+          <div class="problem-item"><span class="problem-number">14.</span> 423 × 13 = _____</div>
+          <div class="problem-item"><span class="problem-number">15.</span> 215 × 33 = _____</div>
+          <div class="problem-item"><span class="problem-number">16.</span> 146 × 25 = _____</div>
+          <div class="problem-item"><span class="problem-number">17.</span> 325 × 16 = _____</div>
+          <div class="problem-item"><span class="problem-number">18.</span> 154 × 42 = _____</div>
+          <div class="problem-item"><span class="problem-number">19.</span> 237 × 26 = _____</div>
+          <div class="problem-item"><span class="problem-number">20.</span> 415 × 35 = _____</div>
+          <div class="problem-item"><span class="problem-number">21.</span> 456 × 83 = _____</div>
+          <div class="problem-item"><span class="problem-number">22.</span> 789 × 52 = _____</div>
+          <div class="problem-item"><span class="problem-number">23.</span> 321 × 49 = _____</div>
+          <div class="problem-item"><span class="problem-number">24.</span> 567 × 28 = _____</div>
+          <div class="problem-item"><span class="problem-number">25.</span> 654 × 37 = _____</div>
+          <div class="problem-item"><span class="problem-number">26.</span> 876 × 45 = _____</div>
+          <div class="problem-item"><span class="problem-number">27.</span> 987 × 19 = _____</div>
+          <div class="problem-item"><span class="problem-number">28.</span> 234 × 67 = _____</div>
+          <div class="problem-item"><span class="problem-number">29.</span> 129 × 88 = _____</div>
+          <div class="problem-item"><span class="problem-number">30.</span> 345 × 76 = _____</div>
+          <div class="problem-item"><span class="problem-number">31.</span> 512 × 94 = _____</div>
+          <div class="problem-item"><span class="problem-number">32.</span> 623 × 58 = _____</div>
+          <div class="problem-item"><span class="problem-number">33.</span> 734 × 29 = _____</div>
+          <div class="problem-item"><span class="problem-number">34.</span> 845 × 63 = _____</div>
+          <div class="problem-item"><span class="problem-number">35.</span> 956 × 47 = _____</div>
+          <div class="problem-item"><span class="problem-number">36.</span> 167 × 92 = _____</div>
+          <div class="problem-item"><span class="problem-number">37.</span> 278 × 74 = _____</div>
+          <div class="problem-item"><span class="problem-number">38.</span> 389 × 55 = _____</div>
+          <div class="problem-item"><span class="problem-number">39.</span> 491 × 38 = _____</div>
+          <div class="problem-item"><span class="problem-number">40.</span> 513 × 86 = _____</div>
+        </div>
+
+        <div class="answer-key">
+          <strong>Answer Key:</strong>
+          <div class="answer-grid">
+            <div>1. 1476</div>
+            <div>2. 4914</div>
+            <div>3. 4056</div>
+            <div>4. 4631</div>
+            <div>5. 4686</div>
+            <div>6. 4402</div>
+            <div>7. 3888</div>
+            <div>8. 3213</div>
+            <div>9. 7392</div>
+            <div>10. 5768</div>
+            <div>11. 2875</div>
+            <div>12. 3540</div>
+            <div>13. 7536</div>
+            <div>14. 5499</div>
+            <div>15. 7095</div>
+            <div>16. 3650</div>
+            <div>17. 5200</div>
+            <div>18. 6468</div>
+            <div>19. 6162</div>
+            <div>20. 14525</div>
+            <div>21. 37848</div>
+            <div>22. 41028</div>
+            <div>23. 15729</div>
+            <div>24. 15876</div>
+            <div>25. 24198</div>
+            <div>26. 39420</div>
+            <div>27. 18753</div>
+            <div>28. 15678</div>
+            <div>29. 11352</div>
+            <div>30. 26220</div>
+            <div>31. 48128</div>
+            <div>32. 36134</div>
+            <div>33. 21286</div>
+            <div>34. 53235</div>
+            <div>35. 44932</div>
+            <div>36. 15364</div>
+            <div>37. 20572</div>
+            <div>38. 21395</div>
+            <div>39. 18658</div>
+            <div>40. 44118</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SUB-SECTION 5.2 -->
+    <section>
+      <h2>5.2 2-Digit × 3-Digit (Mixed Order)</h2>
+      <p>
+        Does it matter if the small number comes first? Not at all! <strong>67 × 234</strong> is the same as
+        <strong>234 × 67</strong>. Just visualize the smaller number with a leading zero and put it "under" or "over"
+        the larger one mentally. The pattern is the same.
+      </p>
+
+      <div class="try-this">
+        <strong>Try This!</strong><br />
+        Calculate 23 × 456.<br />
+        Visualize it as:
+        <br />456<br />023<br />
+        Then apply the 5-step pattern.
+      </div>
+
+      <!-- WORKSHEET 5.2 -->
+      <div class="worksheet">
+        <div class="worksheet-header">
+          <span>Worksheet 5.2: Mixed Order</span>
+          <span>Score: ____ / 35</span>
+        </div>
+        <div class="problem-grid">
+          <div class="problem-item"><span class="problem-number">1.</span> 12 × 123 = _____</div>
+          <div class="problem-item"><span class="problem-number">2.</span> 21 × 234 = _____</div>
+          <div class="problem-item"><span class="problem-number">3.</span> 13 × 312 = _____</div>
+          <div class="problem-item"><span class="problem-number">4.</span> 11 × 421 = _____</div>
+          <div class="problem-item"><span class="problem-number">5.</span> 22 × 213 = _____</div>
+          <div class="problem-item"><span class="problem-number">6.</span> 31 × 142 = _____</div>
+          <div class="problem-item"><span class="problem-number">7.</span> 12 × 324 = _____</div>
+          <div class="problem-item"><span class="problem-number">8.</span> 21 × 153 = _____</div>
+          <div class="problem-item"><span class="problem-number">9.</span> 32 × 231 = _____</div>
+          <div class="problem-item"><span class="problem-number">10.</span> 14 × 412 = _____</div>
+          <div class="problem-item"><span class="problem-number">11.</span> 23 × 125 = _____</div>
+          <div class="problem-item"><span class="problem-number">12.</span> 15 × 236 = _____</div>
+          <div class="problem-item"><span class="problem-number">13.</span> 24 × 314 = _____</div>
+          <div class="problem-item"><span class="problem-number">14.</span> 13 × 423 = _____</div>
+          <div class="problem-item"><span class="problem-number">15.</span> 33 × 215 = _____</div>
+          <div class="problem-item"><span class="problem-number">16.</span> 25 × 146 = _____</div>
+          <div class="problem-item"><span class="problem-number">17.</span> 16 × 325 = _____</div>
+          <div class="problem-item"><span class="problem-number">18.</span> 42 × 154 = _____</div>
+          <div class="problem-item"><span class="problem-number">19.</span> 26 × 237 = _____</div>
+          <div class="problem-item"><span class="problem-number">20.</span> 35 × 415 = _____</div>
+          <div class="problem-item"><span class="problem-number">21.</span> 47 × 321 = _____</div>
+          <div class="problem-item"><span class="problem-number">22.</span> 58 × 654 = _____</div>
+          <div class="problem-item"><span class="problem-number">23.</span> 69 × 987 = _____</div>
+          <div class="problem-item"><span class="problem-number">24.</span> 71 × 159 = _____</div>
+          <div class="problem-item"><span class="problem-number">25.</span> 82 × 263 = _____</div>
+          <div class="problem-item"><span class="problem-number">26.</span> 93 × 374 = _____</div>
+          <div class="problem-item"><span class="problem-number">27.</span> 14 × 485 = _____</div>
+          <div class="problem-item"><span class="problem-number">28.</span> 25 × 596 = _____</div>
+          <div class="problem-item"><span class="problem-number">29.</span> 36 × 617 = _____</div>
+          <div class="problem-item"><span class="problem-number">30.</span> 47 × 728 = _____</div>
+          <div class="problem-item"><span class="problem-number">31.</span> 58 × 839 = _____</div>
+          <div class="problem-item"><span class="problem-number">32.</span> 69 × 941 = _____</div>
+          <div class="problem-item"><span class="problem-number">33.</span> 71 × 152 = _____</div>
+          <div class="problem-item"><span class="problem-number">34.</span> 82 × 263 = _____</div>
+          <div class="problem-item"><span class="problem-number">35.</span> 93 × 374 = _____</div>
+        </div>
+
+        <div class="answer-key">
+          <strong>Answer Key:</strong>
+          <div class="answer-grid">
+            <div>1. 1476</div>
+            <div>2. 4914</div>
+            <div>3. 4056</div>
+            <div>4. 4631</div>
+            <div>5. 4686</div>
+            <div>6. 4402</div>
+            <div>7. 3888</div>
+            <div>8. 3213</div>
+            <div>9. 7392</div>
+            <div>10. 5768</div>
+            <div>11. 2875</div>
+            <div>12. 3540</div>
+            <div>13. 7536</div>
+            <div>14. 5499</div>
+            <div>15. 7095</div>
+            <div>16. 3650</div>
+            <div>17. 5200</div>
+            <div>18. 6468</div>
+            <div>19. 6162</div>
+            <div>20. 14525</div>
+            <div>21. 15087</div>
+            <div>22. 37932</div>
+            <div>23. 68103</div>
+            <div>24. 11289</div>
+            <div>25. 21566</div>
+            <div>26. 34782</div>
+            <div>27. 6790</div>
+            <div>28. 14900</div>
+            <div>29. 22212</div>
+            <div>30. 34216</div>
+            <div>31. 48662</div>
+            <div>32. 64929</div>
+            <div>33. 10792</div>
+            <div>34. 21566</div>
+            <div>35. 34782</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SUB-SECTION 5.3 -->
+    <section>
+      <h2>5.3 3-Digit × 3-Digit Advanced</h2>
+      <p>
+        This is the heavyweight division! Multiplying two 3-digit numbers is a 5-step process. It requires focus, but
+        it's incredibly satisfying to do in one line.
+      </p>
+
+      <div class="concept-box">
+        <strong>The 5 Steps for ABC × DEF:</strong>
+        <ol>
+          <li>C×F</li>
+          <li>(B×F) + (C×E)</li>
+          <li>(A×F) + (B×E) + (C×D) [The Star Step!]</li>
+          <li>(A×E) + (B×D)</li>
+          <li>A×D</li>
+        </ol>
+      </div>
+
+      <!-- WORKSHEET 5.3 -->
+      <div class="worksheet">
+        <div class="worksheet-header">
+          <span>Worksheet 5.3: 3×3 Multiplication</span>
+          <span>Score: ____ / 35</span>
+        </div>
+        <div class="problem-grid">
+          <div class="problem-item"><span class="problem-number">1.</span> 123 × 121 = _____</div>
+          <div class="problem-item"><span class="problem-number">2.</span> 213 × 132 = _____</div>
+          <div class="problem-item"><span class="problem-number">3.</span> 312 × 213 = _____</div>
+          <div class="problem-item"><span class="problem-number">4.</span> 111 × 111 = _____</div>
+          <div class="problem-item"><span class="problem-number">5.</span> 222 × 121 = _____</div>
+          <div class="problem-item"><span class="problem-number">6.</span> 333 × 112 = _____</div>
+          <div class="problem-item"><span class="problem-number">7.</span> 412 × 211 = _____</div>
+          <div class="problem-item"><span class="problem-number">8.</span> 153 × 122 = _____</div>
+          <div class="problem-item"><span class="problem-number">9.</span> 231 × 231 = _____</div>
+          <div class="problem-item"><span class="problem-number">10.</span> 412 × 114 = _____</div>
+          <div class="problem-item"><span class="problem-number">11.</span> 234 × 567 = _____</div>
+          <div class="problem-item"><span class="problem-number">12.</span> 891 × 432 = _____</div>
+          <div class="problem-item"><span class="problem-number">13.</span> 123 × 789 = _____</div>
+          <div class="problem-item"><span class="problem-number">14.</span> 456 × 123 = _____</div>
+          <div class="problem-item"><span class="problem-number">15.</span> 789 × 321 = _____</div>
+          <div class="problem-item"><span class="problem-number">16.</span> 654 × 111 = _____</div>
+          <div class="problem-item"><span class="problem-number">17.</span> 321 × 987 = _____</div>
+          <div class="problem-item"><span class="problem-number">18.</span> 147 × 258 = _____</div>
+          <div class="problem-item"><span class="problem-number">19.</span> 369 × 147 = _____</div>
+          <div class="problem-item"><span class="problem-number">20.</span> 258 × 369 = _____</div>
+          <div class="problem-item"><span class="problem-number">21.</span> 159 × 753 = _____</div>
+          <div class="problem-item"><span class="problem-number">22.</span> 357 × 951 = _____</div>
+          <div class="problem-item"><span class="problem-number">23.</span> 852 × 159 = _____</div>
+          <div class="problem-item"><span class="problem-number">24.</span> 741 × 369 = _____</div>
+          <div class="problem-item"><span class="problem-number">25.</span> 963 × 258 = _____</div>
+          <div class="problem-item"><span class="problem-number">26.</span> 112 × 358 = _____</div>
+          <div class="problem-item"><span class="problem-number">27.</span> 223 × 469 = _____</div>
+          <div class="problem-item"><span class="problem-number">28.</span> 334 × 571 = _____</div>
+          <div class="problem-item"><span class="problem-number">29.</span> 445 × 682 = _____</div>
+          <div class="problem-item"><span class="problem-number">30.</span> 556 × 793 = _____</div>
+          <div class="problem-item"><span class="problem-number">31.</span> 667 × 814 = _____</div>
+          <div class="problem-item"><span class="problem-number">32.</span> 778 × 925 = _____</div>
+          <div class="problem-item"><span class="problem-number">33.</span> 889 × 136 = _____</div>
+          <div class="problem-item"><span class="problem-number">34.</span> 912 × 247 = _____</div>
+          <div class="problem-item"><span class="problem-number">35.</span> 123 × 987 = _____</div>
+        </div>
+
+        <div class="answer-key">
+          <strong>Answer Key:</strong>
+          <div class="answer-grid">
+            <div>1. 14883</div>
+            <div>2. 28116</div>
+            <div>3. 66456</div>
+            <div>4. 12321</div>
+            <div>5. 26862</div>
+            <div>6. 37296</div>
+            <div>7. 86932</div>
+            <div>8. 18666</div>
+            <div>9. 53361</div>
+            <div>10. 46968</div>
+            <div>11. 132678</div>
+            <div>12. 384912</div>
+            <div>13. 97047</div>
+            <div>14. 56088</div>
+            <div>15. 253269</div>
+            <div>16. 72594</div>
+            <div>17. 316827</div>
+            <div>18. 37926</div>
+            <div>19. 54243</div>
+            <div>20. 95202</div>
+            <div>21. 119727</div>
+            <div>22. 339507</div>
+            <div>23. 135468</div>
+            <div>24. 273429</div>
+            <div>25. 248454</div>
+            <div>26. 40096</div>
+            <div>27. 104587</div>
+            <div>28. 190714</div>
+            <div>29. 303490</div>
+            <div>30. 440908</div>
+            <div>31. 542938</div>
+            <div>32. 719650</div>
+            <div>33. 120904</div>
+            <div>34. 225264</div>
+            <div>35. 121401</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SUB-SECTION 5.4: 4-Digit x 2-Digit -->
+    <section>
+      <h2>5.4 4-Digit × 2-Digit</h2>
+      <p>
+        Extending the pattern is logical. For 4-digit x 2-digit, simply add a leading zero to the 2-digit number to make
+        it 3-digits? No, that's not enough digits. Treat it as 4-digit x 4-digit where two digits are zero! Or simply
+        sliding the 2-digit number across.
+      </p>
+      <p>
+        Let's use the sliding method (or treating as 4x4 with 00XX). <strong>1234 × 56</strong> becomes 1234 × 0056.
+      </p>
+
+      <div class="worksheet">
+        <div class="worksheet-header">
+          <span>Worksheet 5.4: 4×2 Multiplication</span>
+          <span>Score: ____ / 35</span>
+        </div>
+        <div class="problem-grid">
+          <div class="problem-item"><span class="problem-number">1.</span> 1234 × 12 = _____</div>
+          <div class="problem-item"><span class="problem-number">2.</span> 2345 × 21 = _____</div>
+          <div class="problem-item"><span class="problem-number">3.</span> 3456 × 13 = _____</div>
+          <div class="problem-item"><span class="problem-number">4.</span> 4567 × 11 = _____</div>
+          <div class="problem-item"><span class="problem-number">5.</span> 5678 × 22 = _____</div>
+          <div class="problem-item"><span class="problem-number">6.</span> 6789 × 31 = _____</div>
+          <div class="problem-item"><span class="problem-number">7.</span> 7891 × 12 = _____</div>
+          <div class="problem-item"><span class="problem-number">8.</span> 8912 × 21 = _____</div>
+          <div class="problem-item"><span class="problem-number">9.</span> 9123 × 32 = _____</div>
+          <div class="problem-item"><span class="problem-number">10.</span> 1357 × 14 = _____</div>
+          <div class="problem-item"><span class="problem-number">11.</span> 1234 × 56 = _____</div>
+          <div class="problem-item"><span class="problem-number">12.</span> 5678 × 78 = _____</div>
+          <div class="problem-item"><span class="problem-number">13.</span> 9876 × 23 = _____</div>
+          <div class="problem-item"><span class="problem-number">14.</span> 5432 × 45 = _____</div>
+          <div class="problem-item"><span class="problem-number">15.</span> 1928 × 36 = _____</div>
+          <div class="problem-item"><span class="problem-number">16.</span> 3746 × 59 = _____</div>
+          <div class="problem-item"><span class="problem-number">17.</span> 2819 × 62 = _____</div>
+          <div class="problem-item"><span class="problem-number">18.</span> 4758 × 74 = _____</div>
+          <div class="problem-item"><span class="problem-number">19.</span> 6592 × 85 = _____</div>
+          <div class="problem-item"><span class="problem-number">20.</span> 8371 × 93 = _____</div>
+          <div class="problem-item"><span class="problem-number">21.</span> 9462 × 15 = _____</div>
+          <div class="problem-item"><span class="problem-number">22.</span> 1537 × 28 = _____</div>
+          <div class="problem-item"><span class="problem-number">23.</span> 2648 × 37 = _____</div>
+          <div class="problem-item"><span class="problem-number">24.</span> 3759 × 49 = _____</div>
+          <div class="problem-item"><span class="problem-number">25.</span> 4861 × 51 = _____</div>
+          <div class="problem-item"><span class="problem-number">26.</span> 5972 × 63 = _____</div>
+          <div class="problem-item"><span class="problem-number">27.</span> 6183 × 76 = _____</div>
+          <div class="problem-item"><span class="problem-number">28.</span> 7294 × 87 = _____</div>
+          <div class="problem-item"><span class="problem-number">29.</span> 8315 × 98 = _____</div>
+          <div class="problem-item"><span class="problem-number">30.</span> 9426 × 19 = _____</div>
+          <div class="problem-item"><span class="problem-number">31.</span> 1534 × 22 = _____</div>
+          <div class="problem-item"><span class="problem-number">32.</span> 2645 × 33 = _____</div>
+          <div class="problem-item"><span class="problem-number">33.</span> 3756 × 44 = _____</div>
+          <div class="problem-item"><span class="problem-number">34.</span> 4867 × 55 = _____</div>
+          <div class="problem-item"><span class="problem-number">35.</span> 5978 × 66 = _____</div>
+        </div>
+
+        <div class="answer-key">
+          <strong>Answer Key:</strong>
+          <div class="answer-grid">
+            <div>1. 14808</div>
+            <div>2. 49245</div>
+            <div>3. 44928</div>
+            <div>4. 50237</div>
+            <div>5. 124916</div>
+            <div>6. 210459</div>
+            <div>7. 94692</div>
+            <div>8. 187152</div>
+            <div>9. 291936</div>
+            <div>10. 18998</div>
+            <div>11. 69104</div>
+            <div>12. 442884</div>
+            <div>13. 227148</div>
+            <div>14. 244440</div>
+            <div>15. 69408</div>
+            <div>16. 221014</div>
+            <div>17. 174778</div>
+            <div>18. 352092</div>
+            <div>19. 560320</div>
+            <div>20. 778503</div>
+            <div>21. 141930</div>
+            <div>22. 43036</div>
+            <div>23. 97976</div>
+            <div>24. 184191</div>
+            <div>25. 247911</div>
+            <div>26. 376236</div>
+            <div>27. 469908</div>
+            <div>28. 634578</div>
+            <div>29. 814870</div>
+            <div>30. 179094</div>
+            <div>31. 33748</div>
+            <div>32. 87285</div>
+            <div>33. 165264</div>
+            <div>34. 267685</div>
+            <div>35. 394548</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SUB-SECTION 5.5: Mixed Challenge -->
+    <section>
+      <h2>5.5 Mixed Digit Challenge</h2>
+      <p>A mix of everything you've learned! 2x3, 3x2, 3x3, 4x2.</p>
+
+      <div class="worksheet">
+        <div class="worksheet-header">
+          <span>Worksheet 5.5: Mixed Challenge</span>
+          <span>Score: ____ / 35</span>
+        </div>
+        <div class="problem-grid">
+          <div class="problem-item"><span class="problem-number">1.</span> 123 × 45 = _____</div>
+          <div class="problem-item"><span class="problem-number">2.</span> 67 × 891 = _____</div>
+          <div class="problem-item"><span class="problem-number">3.</span> 234 × 567 = _____</div>
+          <div class="problem-item"><span class="problem-number">4.</span> 8912 × 34 = _____</div>
+          <div class="problem-item"><span class="problem-number">5.</span> 456 × 23 = _____</div>
+          <div class="problem-item"><span class="problem-number">6.</span> 78 × 912 = _____</div>
+          <div class="problem-item"><span class="problem-number">7.</span> 345 × 678 = _____</div>
+          <div class="problem-item"><span class="problem-number">8.</span> 1234 × 98 = _____</div>
+          <div class="problem-item"><span class="problem-number">9.</span> 567 × 12 = _____</div>
+          <div class="problem-item"><span class="problem-number">10.</span> 34 × 567 = _____</div>
+          <div class="problem-item"><span class="problem-number">11.</span> 891 × 23 = _____</div>
+          <div class="problem-item"><span class="problem-number">12.</span> 45 × 678 = _____</div>
+          <div class="problem-item"><span class="problem-number">13.</span> 912 × 345 = _____</div>
+          <div class="problem-item"><span class="problem-number">14.</span> 5678 × 12 = _____</div>
+          <div class="problem-item"><span class="problem-number">15.</span> 234 × 91 = _____</div>
+          <div class="problem-item"><span class="problem-number">16.</span> 87 × 123 = _____</div>
+          <div class="problem-item"><span class="problem-number">17.</span> 456 × 789 = _____</div>
+          <div class="problem-item"><span class="problem-number">18.</span> 9876 × 54 = _____</div>
+          <div class="problem-item"><span class="problem-number">19.</span> 123 × 11 = _____</div>
+          <div class="problem-item"><span class="problem-number">20.</span> 22 × 456 = _____</div>
+          <div class="problem-item"><span class="problem-number">21.</span> 789 × 99 = _____</div>
+          <div class="problem-item"><span class="problem-number">22.</span> 5432 × 10 = _____</div>
+          <div class="problem-item"><span class="problem-number">23.</span> 111 × 222 = _____</div>
+          <div class="problem-item"><span class="problem-number">24.</span> 333 × 44 = _____</div>
+          <div class="problem-item"><span class="problem-number">25.</span> 555 × 666 = _____</div>
+          <div class="problem-item"><span class="problem-number">26.</span> 777 × 88 = _____</div>
+          <div class="problem-item"><span class="problem-number">27.</span> 999 × 12 = _____</div>
+          <div class="problem-item"><span class="problem-number">28.</span> 121 × 131 = _____</div>
+          <div class="problem-item"><span class="problem-number">29.</span> 212 × 141 = _____</div>
+          <div class="problem-item"><span class="problem-number">30.</span> 313 × 151 = _____</div>
+          <div class="problem-item"><span class="problem-number">31.</span> 414 × 16 = _____</div>
+          <div class="problem-item"><span class="problem-number">32.</span> 515 × 17 = _____</div>
+          <div class="problem-item"><span class="problem-number">33.</span> 616 × 18 = _____</div>
+          <div class="problem-item"><span class="problem-number">34.</span> 717 × 19 = _____</div>
+          <div class="problem-item"><span class="problem-number">35.</span> 818 × 21 = _____</div>
+        </div>
+
+        <div class="answer-key">
+          <strong>Answer Key:</strong>
+          <div class="answer-grid">
+            <div>1. 5535</div>
+            <div>2. 59697</div>
+            <div>3. 132678</div>
+            <div>4. 303008</div>
+            <div>5. 10488</div>
+            <div>6. 71136</div>
+            <div>7. 233910</div>
+            <div>8. 120932</div>
+            <div>9. 6804</div>
+            <div>10. 19278</div>
+            <div>11. 20493</div>
+            <div>12. 30510</div>
+            <div>13. 314640</div>
+            <div>14. 68136</div>
+            <div>15. 21294</div>
+            <div>16. 10701</div>
+            <div>17. 359784</div>
+            <div>18. 533304</div>
+            <div>19. 1353</div>
+            <div>20. 10032</div>
+            <div>21. 78111</div>
+            <div>22. 54320</div>
+            <div>23. 24642</div>
+            <div>24. 14652</div>
+            <div>25. 369630</div>
+            <div>26. 68376</div>
+            <div>27. 11988</div>
+            <div>28. 15851</div>
+            <div>29. 29892</div>
+            <div>30. 47263</div>
+            <div>31. 6624</div>
+            <div>32. 8755</div>
+            <div>33. 11088</div>
+            <div>34. 13623</div>
+            <div>35. 17178</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Module Summary -->
+    <section>
+      <h2>Module 5 Summary</h2>
+
+      <div class="concept-box">
+        <strong>You have mastered:</strong>
+        <ul>
+          <li>3-Digit × 2-Digit Multiplication</li>
+          <li>Handling Mixed Digit Orders</li>
+          <li>Advanced 3-Digit × 3-Digit</li>
+          <li>4-Digit × 2-Digit Extension</li>
+          <li><strong>Universal Multiplication!</strong></li>
+        </ul>
+      </div>
+
+      <div class="progress-tracker">
+        <div>
+          <strong>Module 5: 3-Digit & Mixed Multiplication</strong><br />
+          <span>Status: COMPLETE</span>
+        </div>
+        <div class="star-rating">★★★★★</div>
+      </div>
+    </section>
+  </body>
+</html>

@@ -1,0 +1,678 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vedic Mathematics Mastery System - Learning Platform</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@1/css/pico.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    <style>
+      :root {
+        --primary: #1e3a8a;
+        --secondary: #047857;
+        --accent: #f59e0b;
+        --text: #1a1a1a;
+        --bg: #f8fafc;
+        --card-bg: #ffffff;
+        --border: #e2e8f0;
+      }
+
+      body {
+        font-family: 'Lexend', sans-serif;
+        background-color: var(--bg);
+        color: var(--text);
+        margin: 0;
+        padding: 0;
+        min-height: 100vh;
+      }
+
+      /* Navigation */
+      .navbar {
+        position: sticky;
+        top: 0;
+        z-index: 100;
+        background-color: var(--card-bg);
+        box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+        padding: 1rem 2rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .logo {
+        font-size: 1.5rem;
+        font-weight: 700;
+        color: var(--primary);
+        text-decoration: none;
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+      }
+
+      .nav-links {
+        display: flex;
+        gap: 1.5rem;
+        align-items: center;
+      }
+
+      .nav-link {
+        color: var(--text);
+        text-decoration: none;
+        font-weight: 500;
+        transition: color 0.2s;
+      }
+
+      .nav-link:hover {
+        color: var(--primary);
+      }
+
+      .progress-summary {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        font-size: 0.9rem;
+        background: #eff6ff;
+        padding: 0.5rem 1rem;
+        border-radius: 20px;
+        color: var(--primary);
+      }
+
+      /* Hero Section */
+      .hero {
+        background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%);
+        color: white;
+        padding: 4rem 2rem;
+        text-align: center;
+        margin-bottom: 2rem;
+      }
+
+      .hero h1 {
+        font-size: 2.5rem;
+        margin-bottom: 1rem;
+        color: white;
+      }
+
+      .hero p {
+        font-size: 1.2rem;
+        opacity: 0.9;
+        max-width: 600px;
+        margin: 0 auto;
+      }
+
+      /* Main Content */
+      .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 2rem 4rem;
+      }
+
+      .dashboard-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+        gap: 2rem;
+        margin-top: 2rem;
+      }
+
+      /* Module Cards */
+      .module-card {
+        background: var(--card-bg);
+        border-radius: 12px;
+        padding: 1.5rem;
+        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+        transition:
+          transform 0.2s,
+          box-shadow 0.2s;
+        border: 1px solid var(--border);
+        display: flex;
+        flex-direction: column;
+      }
+
+      .module-card:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+      }
+
+      .module-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        margin-bottom: 1rem;
+      }
+
+      .module-number {
+        background: #eff6ff;
+        color: var(--primary);
+        padding: 0.25rem 0.75rem;
+        border-radius: 6px;
+        font-size: 0.8rem;
+        font-weight: 600;
+      }
+
+      .module-status {
+        color: #9ca3af;
+      }
+
+      .module-status.completed {
+        color: var(--secondary);
+      }
+
+      .module-title {
+        font-size: 1.25rem;
+        font-weight: 700;
+        margin-bottom: 0.5rem;
+        color: var(--text);
+      }
+
+      .module-desc {
+        color: #64748b;
+        font-size: 0.9rem;
+        margin-bottom: 1.5rem;
+        flex-grow: 1;
+      }
+
+      .module-meta {
+        display: flex;
+        gap: 1rem;
+        font-size: 0.85rem;
+        color: #64748b;
+        margin-bottom: 1rem;
+      }
+
+      .meta-item {
+        display: flex;
+        align-items: center;
+        gap: 0.25rem;
+      }
+
+      .progress-bar {
+        height: 6px;
+        background: #e2e8f0;
+        border-radius: 3px;
+        margin-bottom: 1rem;
+        overflow: hidden;
+      }
+
+      .progress-fill {
+        height: 100%;
+        background: var(--secondary);
+        width: 0%;
+        transition: width 0.5s ease;
+      }
+
+      .module-btn {
+        width: 100%;
+        padding: 0.75rem;
+        border-radius: 8px;
+        background: var(--primary);
+        color: white;
+        text-align: center;
+        text-decoration: none;
+        font-weight: 600;
+        transition: background 0.2s;
+        border: none;
+        cursor: pointer;
+      }
+
+      .module-btn:hover {
+        background: #1e40af;
+      }
+
+      .module-btn.locked {
+        background: #94a3b8;
+        cursor: not-allowed;
+      }
+
+      /* Stats Section */
+      .stats-container {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 1.5rem;
+        margin-bottom: 3rem;
+      }
+
+      .stat-card {
+        background: white;
+        padding: 1.5rem;
+        border-radius: 12px;
+        border: 1px solid var(--border);
+        text-align: center;
+      }
+
+      .stat-value {
+        font-size: 2rem;
+        font-weight: 700;
+        color: var(--primary);
+        margin-bottom: 0.25rem;
+      }
+
+      .stat-label {
+        color: #64748b;
+        font-size: 0.9rem;
+      }
+
+      /* Quick Links */
+      .quick-links {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1.5rem;
+        margin-top: 3rem;
+      }
+
+      .quick-link-card {
+        background: white;
+        padding: 1.5rem;
+        border-radius: 12px;
+        border: 1px solid var(--border);
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        text-decoration: none;
+        color: var(--text);
+        transition: border-color 0.2s;
+      }
+
+      .quick-link-card:hover {
+        border-color: var(--primary);
+      }
+
+      .link-icon {
+        width: 48px;
+        height: 48px;
+        background: #eff6ff;
+        border-radius: 10px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: var(--primary);
+        font-size: 1.5rem;
+      }
+
+      /* Responsive */
+      @media (max-width: 768px) {
+        .stats-container,
+        .quick-links {
+          grid-template-columns: 1fr;
+        }
+        .navbar {
+          flex-direction: column;
+          gap: 1rem;
+        }
+        .nav-links {
+          flex-wrap: wrap;
+          justify-content: center;
+        }
+      }
+
+      /* Module Colors */
+      .mod-1 {
+        border-top: 4px solid #3b82f6;
+      } /* Addition */
+      .mod-2 {
+        border-top: 4px solid #be123c;
+      } /* Subtraction */
+      .mod-3 {
+        border-top: 4px solid #4338ca;
+      } /* Times Tables */
+      .mod-4 {
+        border-top: 4px solid #1e3a8a;
+      } /* 2-Digit Mult */
+      .mod-5 {
+        border-top: 4px solid #047857;
+      } /* 3-Digit Mult */
+      .mod-6 {
+        border-top: 4px solid #0d9488;
+      } /* Near Base */
+      .mod-7 {
+        border-top: 4px solid #7c3aed;
+      } /* Squaring */
+      .mod-8 {
+        border-top: 4px solid #15803d;
+      } /* Division */
+      .mod-9 {
+        border-top: 4px solid #d97706;
+      } /* Percentages */
+      .mod-10 {
+        border-top: 4px solid #9f1239;
+      } /* Competition */
+    </style>
+  </head>
+  <body>
+    <!-- Navigation -->
+    <nav class="navbar">
+      <a href="#" class="logo">
+        <i class="fas fa-brain"></i>
+        Vedic Math Mastery
+      </a>
+      <div class="nav-links">
+        <a href="#" class="nav-link active">Dashboard</a>
+        <a href="#modules" class="nav-link">Modules</a>
+        <a href="#resources" class="nav-link">Resources</a>
+        <div class="progress-summary">
+          <i class="fas fa-trophy"></i>
+          <span id="overall-progress">0% Complete</span>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="hero">
+      <div class="container" style="padding-bottom: 0">
+        <h1>Master Mental Mathematics in 12 Weeks</h1>
+        <p>
+          Transform from a struggling student to a mathematical champion using the ancient techniques of Vedic
+          Mathematics.
+        </p>
+      </div>
+    </header>
+
+    <main class="container">
+      <!-- Stats Overview -->
+      <section class="stats-container">
+        <div class="stat-card">
+          <div class="stat-value">0/10</div>
+          <div class="stat-label">Modules Completed</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-value">0</div>
+          <div class="stat-label">Problems Solved</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-value">0h</div>
+          <div class="stat-label">Time Spent</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-value">Beginner</div>
+          <div class="stat-label">Current Rank</div>
+        </div>
+      </section>
+
+      <!-- Learning Path Header -->
+      <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2rem">
+        <h2 id="modules">Your Learning Path</h2>
+        <button class="module-btn" style="width: auto; padding: 0.5rem 1.5rem; background: var(--secondary)">
+          <i class="fas fa-play"></i> Resume Learning
+        </button>
+      </div>
+
+      <!-- Module Grid -->
+      <div class="dashboard-grid">
+        <!-- Module 1 -->
+        <div class="module-card mod-1">
+          <div class="module-header">
+            <span class="module-number">Module 1</span>
+            <i class="fas fa-circle-check module-status"></i>
+          </div>
+          <div class="module-title">Addition Mastery</div>
+          <div class="module-desc">Master rapid mental addition using complements and left-to-right techniques.</div>
+          <div class="module-meta">
+            <div class="meta-item"><i class="fas fa-list-ul"></i> 6 Sections</div>
+            <div class="meta-item"><i class="fas fa-calculator"></i> 150 Problems</div>
+          </div>
+          <div class="progress-bar">
+            <div class="progress-fill" style="width: 0%"></div>
+          </div>
+          <a href="https://www.genspark.ai/api/files/s/k2xqZwq2" target="_blank" class="module-btn">Start Module</a>
+        </div>
+
+        <!-- Module 2 -->
+        <div class="module-card mod-2">
+          <div class="module-header">
+            <span class="module-number">Module 2</span>
+            <i class="fas fa-circle-check module-status"></i>
+          </div>
+          <div class="module-title">Subtraction Mastery</div>
+          <div class="module-desc">Learn "All from 9, Last from 10" and no-borrowing subtraction methods.</div>
+          <div class="module-meta">
+            <div class="meta-item"><i class="fas fa-list-ul"></i> 5 Sections</div>
+            <div class="meta-item"><i class="fas fa-calculator"></i> 150 Problems</div>
+          </div>
+          <div class="progress-bar">
+            <div class="progress-fill" style="width: 0%"></div>
+          </div>
+          <a href="https://www.genspark.ai/api/files/s/wtV9QYmG" target="_blank" class="module-btn">Start Module</a>
+        </div>
+
+        <!-- Module 3 -->
+        <div class="module-card mod-3">
+          <div class="module-header">
+            <span class="module-number">Module 3</span>
+            <i class="fas fa-circle-check module-status"></i>
+          </div>
+          <div class="module-title">Times Tables Comprehensive</div>
+          <div class="module-desc">
+            Master multiplication tables 1-12 using patterns, finger tricks, and memory aids.
+          </div>
+          <div class="module-meta">
+            <div class="meta-item"><i class="fas fa-list-ul"></i> 6 Sections</div>
+            <div class="meta-item"><i class="fas fa-calculator"></i> 200 Problems</div>
+          </div>
+          <div class="progress-bar">
+            <div class="progress-fill" style="width: 0%"></div>
+          </div>
+          <a href="https://www.genspark.ai/api/files/s/HilvutJx" target="_blank" class="module-btn">Start Module</a>
+        </div>
+
+        <!-- Module 4 -->
+        <div class="module-card mod-4">
+          <div class="module-header">
+            <span class="module-number">Module 4</span>
+            <i class="fas fa-circle-check module-status"></i>
+          </div>
+          <div class="module-title">2-Digit Multiplication</div>
+          <div class="module-desc">Learn the powerful crosswise method to multiply any 2-digit numbers instantly.</div>
+          <div class="module-meta">
+            <div class="meta-item"><i class="fas fa-list-ul"></i> 5 Sections</div>
+            <div class="meta-item"><i class="fas fa-calculator"></i> 200 Problems</div>
+          </div>
+          <div class="progress-bar">
+            <div class="progress-fill" style="width: 0%"></div>
+          </div>
+          <a href="https://www.genspark.ai/api/files/s/E8wkVvq6" target="_blank" class="module-btn">Start Module</a>
+        </div>
+
+        <!-- Module 5 -->
+        <div class="module-card mod-5">
+          <div class="module-header">
+            <span class="module-number">Module 5</span>
+            <i class="fas fa-circle-check module-status"></i>
+          </div>
+          <div class="module-title">3-Digit & Mixed</div>
+          <div class="module-desc">Scale up your skills to handle larger numbers and mixed-digit multiplication.</div>
+          <div class="module-meta">
+            <div class="meta-item"><i class="fas fa-list-ul"></i> 5 Sections</div>
+            <div class="meta-item"><i class="fas fa-calculator"></i> 180 Problems</div>
+          </div>
+          <div class="progress-bar">
+            <div class="progress-fill" style="width: 0%"></div>
+          </div>
+          <a href="https://www.genspark.ai/api/files/s/5v50CqxL" target="_blank" class="module-btn">Start Module</a>
+        </div>
+
+        <!-- Module 6 -->
+        <div class="module-card mod-6">
+          <div class="module-header">
+            <span class="module-number">Module 6</span>
+            <i class="fas fa-circle-check module-status"></i>
+          </div>
+          <div class="module-title">Multiplication Near Base</div>
+          <div class="module-desc">Use the Nikhilam Sutra to multiply numbers near 100, 1000, and other bases.</div>
+          <div class="module-meta">
+            <div class="meta-item"><i class="fas fa-list-ul"></i> 4 Sections</div>
+            <div class="meta-item"><i class="fas fa-calculator"></i> 150 Problems</div>
+          </div>
+          <div class="progress-bar">
+            <div class="progress-fill" style="width: 0%"></div>
+          </div>
+          <a href="https://www.genspark.ai/api/files/s/4eJ4RGar" target="_blank" class="module-btn">Start Module</a>
+        </div>
+
+        <!-- Module 7 -->
+        <div class="module-card mod-7">
+          <div class="module-header">
+            <span class="module-number">Module 7</span>
+            <i class="fas fa-circle-check module-status"></i>
+          </div>
+          <div class="module-title">Squaring Techniques</div>
+          <div class="module-desc">
+            Lightning-fast methods for squaring numbers ending in 5, near bases, and general.
+          </div>
+          <div class="module-meta">
+            <div class="meta-item"><i class="fas fa-list-ul"></i> 4 Sections</div>
+            <div class="meta-item"><i class="fas fa-calculator"></i> 150 Problems</div>
+          </div>
+          <div class="progress-bar">
+            <div class="progress-fill" style="width: 0%"></div>
+          </div>
+          <a href="https://www.genspark.ai/api/files/s/JHWtGRmp" target="_blank" class="module-btn">Start Module</a>
+        </div>
+
+        <!-- Module 8 -->
+        <div class="module-card mod-8">
+          <div class="module-header">
+            <span class="module-number">Module 8</span>
+            <i class="fas fa-circle-check module-status"></i>
+          </div>
+          <div class="module-title">Division Shortcuts</div>
+          <div class="module-desc">Eliminate long division with Nikhilam, Paravartya, and special divisor tricks.</div>
+          <div class="module-meta">
+            <div class="meta-item"><i class="fas fa-list-ul"></i> 5 Sections</div>
+            <div class="meta-item"><i class="fas fa-calculator"></i> 200 Problems</div>
+          </div>
+          <div class="progress-bar">
+            <div class="progress-fill" style="width: 0%"></div>
+          </div>
+          <a href="https://www.genspark.ai/api/files/s/KfrRdJhe" target="_blank" class="module-btn">Start Module</a>
+        </div>
+
+        <!-- Module 9 -->
+        <div class="module-card mod-9">
+          <div class="module-header">
+            <span class="module-number">Module 9</span>
+            <i class="fas fa-circle-check module-status"></i>
+          </div>
+          <div class="module-title">Percentages & Fractions</div>
+          <div class="module-desc">
+            Master real-world math: tips, discounts, taxes, and instant fraction conversions.
+          </div>
+          <div class="module-meta">
+            <div class="meta-item"><i class="fas fa-list-ul"></i> 4 Sections</div>
+            <div class="meta-item"><i class="fas fa-calculator"></i> 120 Problems</div>
+          </div>
+          <div class="progress-bar">
+            <div class="progress-fill" style="width: 0%"></div>
+          </div>
+          <a href="https://www.genspark.ai/api/files/s/b2E7p6YE" target="_blank" class="module-btn">Start Module</a>
+        </div>
+
+        <!-- Module 10 -->
+        <div class="module-card mod-10">
+          <div class="module-header">
+            <span class="module-number">Module 10</span>
+            <i class="fas fa-circle-check module-status"></i>
+          </div>
+          <div class="module-title">Competition Training</div>
+          <div class="module-desc">
+            The ultimate challenge: speed drills, mental math olympics, and championship finals.
+          </div>
+          <div class="module-meta">
+            <div class="meta-item"><i class="fas fa-list-ul"></i> 5 Sections</div>
+            <div class="meta-item"><i class="fas fa-clock"></i> Timed Tests</div>
+          </div>
+          <div class="progress-bar">
+            <div class="progress-fill" style="width: 0%"></div>
+          </div>
+          <a href="https://www.genspark.ai/api/files/s/OEIRz1HT" target="_blank" class="module-btn">Start Module</a>
+        </div>
+      </div>
+
+      <!-- Quick Resources -->
+      <h2 id="resources" style="margin-top: 3rem">Student Resources</h2>
+      <div class="quick-links">
+        <a href="#" class="quick-link-card">
+          <div class="link-icon"><i class="fas fa-calendar-alt"></i></div>
+          <div>
+            <strong>12-Week Study Plan</strong>
+            <div style="font-size: 0.8rem; color: #64748b">Daily schedule & goals</div>
+          </div>
+        </a>
+        <a href="#" class="quick-link-card">
+          <div class="link-icon"><i class="fas fa-users"></i></div>
+          <div>
+            <strong>Parent Guide</strong>
+            <div style="font-size: 0.8rem; color: #64748b">Support strategies</div>
+          </div>
+        </a>
+        <a href="#" class="quick-link-card">
+          <div class="link-icon"><i class="fas fa-certificate"></i></div>
+          <div>
+            <strong>Certificate</strong>
+            <div style="font-size: 0.8rem; color: #64748b">Generate completion award</div>
+          </div>
+        </a>
+      </div>
+    </main>
+
+    <footer
+      style="
+        background: white;
+        padding: 2rem;
+        text-align: center;
+        margin-top: 4rem;
+        border-top: 1px solid var(--border);
+      "
+    >
+      <div class="container">
+        <p style="color: #64748b">&copy; 2023 Vedic Mathematics Mastery System. All rights reserved.</p>
+        <p style="font-size: 0.9rem">Designed to transform students into mathematical champions.</p>
+      </div>
+    </footer>
+
+    <script>
+      // Simple local storage tracking logic
+      document.addEventListener('DOMContentLoaded', () => {
+        // Initialize progress if not exists
+        if (!localStorage.getItem('vedicMathProgress')) {
+          const initialProgress = Array(10).fill(0);
+          localStorage.setItem('vedicMathProgress', JSON.stringify(initialProgress));
+        }
+
+        const progress = JSON.parse(localStorage.getItem('vedicMathProgress'));
+
+        // Update UI based on progress
+        const overall = progress.reduce((a, b) => a + b, 0) / 10;
+        document.getElementById('overall-progress').textContent = `${Math.round(overall)}% Complete`;
+
+        // Update individual module cards
+        document.querySelectorAll('.module-card').forEach((card, index) => {
+          const bar = card.querySelector('.progress-fill');
+          const status = card.querySelector('.module-status');
+
+          if (progress[index] > 0) {
+            bar.style.width = `${progress[index]}%`;
+          }
+
+          if (progress[index] === 100) {
+            status.classList.add('completed');
+            status.style.color = 'var(--secondary)';
+          }
+        });
+
+        // Add click handlers to update progress (simulation)
+        document.querySelectorAll('.module-btn').forEach((btn, index) => {
+          btn.addEventListener('click', () => {
+            // In a real app, this would track actual completion
+            // For now, let's just mark it as "started" in local storage
+            if (progress[index] === 0) {
+              progress[index] = 10; // 10% started
+              localStorage.setItem('vedicMathProgress', JSON.stringify(progress));
+            }
+          });
+        });
+      });
+    </script>
+  </body>
+</html>

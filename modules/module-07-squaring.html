@@ -1,0 +1,774 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Module 7: Squaring Techniques</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;500;600;700&family=Caveat:wght@400;700&family=Architects+Daughter&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@1/css/pico.min.css" />
+    <style>
+      body {
+        max-width: 880px;
+        margin: 0 auto;
+        padding: 40px 60px;
+        font-family: 'Lexend', sans-serif;
+        color: #1a1a1a;
+        line-height: 1.6;
+        background-color: #ffffff;
+      }
+
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6 {
+        color: #7c3aed; /* Violet for Squaring Theme */
+        font-weight: 700;
+        margin-top: 1.5em;
+        margin-bottom: 0.5em;
+      }
+
+      h1 {
+        font-size: 2.5em;
+        text-align: center;
+        border-bottom: 3px solid #7c3aed;
+        padding-bottom: 20px;
+      }
+      h2 {
+        font-size: 1.8em;
+        border-left: 5px solid #6d28d9;
+        padding-left: 15px;
+        background-color: #f5f3ff;
+        padding: 10px 15px;
+        margin-top: 40px;
+      }
+      h3 {
+        font-size: 1.4em;
+        color: #c2410c;
+        margin-top: 25px;
+      }
+
+      .concept-box {
+        background-color: #ede9fe;
+        border-left: 4px solid #7c3aed;
+        padding: 15px;
+        margin: 20px 0;
+        border-radius: 0 4px 4px 0;
+      }
+
+      .why-works {
+        background-color: #f0fdf4;
+        border: 1px solid #bbf7d0;
+        border-left: 4px solid #16a34a;
+        padding: 15px;
+        margin: 20px 0;
+      }
+
+      .try-this {
+        background-color: #fffbeb;
+        border: 2px dashed #f59e0b;
+        padding: 20px;
+        margin: 25px 0;
+        text-align: center;
+      }
+
+      .mistake-alert {
+        background-color: #fef2f2;
+        border-left: 4px solid #ef4444;
+        padding: 15px;
+        margin: 20px 0;
+      }
+
+      .worksheet {
+        border: 2px solid #94a3b8;
+        padding: 25px;
+        margin: 30px 0;
+        background-color: #ffffff;
+        page-break-inside: avoid;
+      }
+
+      .worksheet-header {
+        display: flex;
+        justify-content: space-between;
+        border-bottom: 2px solid #94a3b8;
+        padding-bottom: 10px;
+        margin-bottom: 20px;
+        font-weight: bold;
+      }
+
+      .problem-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+        margin-bottom: 20px;
+      }
+
+      .problem-item {
+        display: flex;
+        align-items: center;
+        margin-bottom: 10px;
+        font-family: 'Lexend', monospace;
+        font-size: 1.1em;
+      }
+
+      .problem-number {
+        font-weight: bold;
+        color: #64748b;
+        margin-right: 10px;
+        width: 30px;
+      }
+
+      .diagram-container {
+        border: 1px solid #cbd5e1;
+        background-color: #f8fafc;
+        background-image:
+          linear-gradient(#e2e8f0 1px, transparent 1px), linear-gradient(90deg, #e2e8f0 1px, transparent 1px);
+        background-size: 20px 20px;
+        padding: 30px;
+        margin: 25px 0;
+        text-align: center;
+        max-width: 600px;
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      .step-circle {
+        display: inline-block;
+        width: 24px;
+        height: 24px;
+        line-height: 24px;
+        border-radius: 50%;
+        background-color: #f97316;
+        color: white;
+        text-align: center;
+        font-weight: bold;
+        font-size: 14px;
+        margin-right: 5px;
+      }
+
+      .hand-font {
+        font-family: 'Caveat', cursive;
+        font-size: 1.4em;
+        color: #7c3aed;
+      }
+      .label-font {
+        font-family: 'Architects Daughter', cursive;
+        color: #4b5563;
+      }
+
+      .answer-key {
+        font-size: 0.9em;
+        background-color: #f8fafc;
+        padding: 15px;
+        border-top: 1px dotted #cbd5e1;
+        margin-top: 15px;
+      }
+
+      .answer-grid {
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
+        gap: 10px;
+      }
+
+      .intro-box {
+        background-color: #ddd6fe;
+        padding: 20px;
+        border-radius: 8px;
+        margin-bottom: 30px;
+        border: 1px solid #c4b5fd;
+      }
+
+      .progress-tracker {
+        background-color: #f0fdf4;
+        border: 1px solid #22c55e;
+        padding: 15px;
+        border-radius: 8px;
+        margin-top: 30px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+      .star-rating {
+        color: #f59e0b;
+        font-size: 1.5em;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Module 7: Squaring Techniques</h1>
+
+    <div class="intro-box">
+      <h3>Welcome to Module 7!</h3>
+      <p>
+        Squaring numbers (multiplying a number by itself, like 25 × 25) appears everywhere in mathematics—from geometry
+        to physics to compound interest. Vedic Mathematics offers some of the most spectacular shortcuts for squaring
+        numbers instantly.
+      </p>
+      <p><strong>Learning Objectives:</strong></p>
+      <ul>
+        <li>Instantly square any number ending in 5 (in 2 seconds!)</li>
+        <li>Square numbers near 50 mentally</li>
+        <li>Square numbers near 100 effortlessly</li>
+        <li>Master the "Duplex" method for general squaring</li>
+      </ul>
+    </div>
+
+    <!-- SUB-SECTION 7.1 -->
+    <section>
+      <h2>7.1 Numbers Ending in 5</h2>
+      <p>
+        This is perhaps the most famous and easiest Vedic trick. If a number ends in 5, you can square it faster than
+        you can write it down.
+      </p>
+
+      <div class="concept-box">
+        <strong>The Method (Ekadhikena Purvena):</strong>
+        <ol>
+          <li>Take the digit(s) before the 5. Call this 'n'.</li>
+          <li>Multiply 'n' by the next number up (n + 1).</li>
+          <li>Write that result, followed by <strong>25</strong>.</li>
+        </ol>
+        <p><strong>Example: 35²</strong></p>
+        <ul>
+          <li>'n' is 3. Next number is 4.</li>
+          <li>3 × 4 = 12.</li>
+          <li>Append 25 → <strong>1225</strong>.</li>
+        </ul>
+      </div>
+
+      <div class="diagram-container">
+        <svg width="600" height="250" viewBox="0 0 600 250">
+          <text x="300" y="30" text-anchor="middle" class="hand-font" font-size="24">Squaring 75²</text>
+
+          <!-- The Number -->
+          <text x="250" y="100" font-size="60" font-weight="bold" fill="#1e3a8a">7</text>
+          <text x="310" y="100" font-size="60" font-weight="bold" fill="#ef4444">5</text>
+          <text x="350" y="70" font-size="30" font-weight="bold">²</text>
+
+          <!-- Left Part Calculation -->
+          <path
+            d="M 260 120 Q 200 160 180 180"
+            stroke="#f97316"
+            stroke-width="2"
+            fill="none"
+            marker-end="url(#arrow)"
+          />
+          <text x="180" y="210" font-size="20" font-weight="bold" fill="#0d9488">7 × (7+1)</text>
+          <text x="180" y="235" font-size="20" font-weight="bold" fill="#0d9488">= 56</text>
+
+          <!-- Right Part Calculation -->
+          <path
+            d="M 330 120 Q 380 160 400 180"
+            stroke="#f97316"
+            stroke-width="2"
+            fill="none"
+            marker-end="url(#arrow)"
+          />
+          <text x="400" y="210" font-size="20" font-weight="bold" fill="#ef4444">Always</text>
+          <text x="400" y="235" font-size="20" font-weight="bold" fill="#ef4444">25</text>
+
+          <!-- Answer -->
+          <text x="300" y="240" font-size="40" font-weight="bold" text-anchor="middle">
+            <tspan fill="#0d9488">56</tspan>
+            <tspan fill="#ef4444">25</tspan>
+          </text>
+        </svg>
+      </div>
+
+      <div class="why-works">
+        <strong>Why This Works:</strong>
+        <p>
+          (10n + 5)² = 100n² + 100n + 25 = 100n(n+1) + 25.<br />
+          This algebraic proof shows why we multiply n(n+1) for the hundreds part and append 25.
+        </p>
+      </div>
+
+      <h3>Worked Examples:</h3>
+      <ol>
+        <li><strong>25²:</strong> 2 × 3 = 6 | Append 25 → <strong>625</strong></li>
+        <li><strong>45²:</strong> 4 × 5 = 20 | Append 25 → <strong>2025</strong></li>
+        <li><strong>85²:</strong> 8 × 9 = 72 | Append 25 → <strong>7225</strong></li>
+        <li><strong>95²:</strong> 9 × 10 = 90 | Append 25 → <strong>9025</strong></li>
+        <li><strong>115²:</strong> 11 × 12 = 132 | Append 25 → <strong>13225</strong></li>
+      </ol>
+
+      <div class="try-this">
+        <strong>Try This!</strong><br />
+        Calculate 65² in your head right now.<br />
+        (Hint: What is 6 × 7?)
+      </div>
+
+      <!-- WORKSHEET 7.1 -->
+      <div class="worksheet">
+        <div class="worksheet-header">
+          <span>Worksheet 7.1: Ending in 5</span>
+          <span>Score: ____ / 40</span>
+        </div>
+        <div class="problem-grid">
+          <div class="problem-item"><span class="problem-number">1.</span> 15² = _____</div>
+          <div class="problem-item"><span class="problem-number">2.</span> 25² = _____</div>
+          <div class="problem-item"><span class="problem-number">3.</span> 35² = _____</div>
+          <div class="problem-item"><span class="problem-number">4.</span> 45² = _____</div>
+          <div class="problem-item"><span class="problem-number">5.</span> 55² = _____</div>
+          <div class="problem-item"><span class="problem-number">6.</span> 65² = _____</div>
+          <div class="problem-item"><span class="problem-number">7.</span> 75² = _____</div>
+          <div class="problem-item"><span class="problem-number">8.</span> 85² = _____</div>
+          <div class="problem-item"><span class="problem-number">9.</span> 95² = _____</div>
+          <div class="problem-item"><span class="problem-number">10.</span> 5² = _____</div>
+          <div class="problem-item"><span class="problem-number">11.</span> 105² = _____</div>
+          <div class="problem-item"><span class="problem-number">12.</span> 115² = _____</div>
+          <div class="problem-item"><span class="problem-number">13.</span> 125² = _____</div>
+          <div class="problem-item"><span class="problem-number">14.</span> 135² = _____</div>
+          <div class="problem-item"><span class="problem-number">15.</span> 145² = _____</div>
+          <div class="problem-item"><span class="problem-number">16.</span> 155² = _____</div>
+          <div class="problem-item"><span class="problem-number">17.</span> 195² = _____</div>
+          <div class="problem-item"><span class="problem-number">18.</span> 205² = _____</div>
+          <div class="problem-item"><span class="problem-number">19.</span> 25² = _____</div>
+          <div class="problem-item"><span class="problem-number">20.</span> 35² = _____</div>
+          <div class="problem-item"><span class="problem-number">21.</span> 45² = _____</div>
+          <div class="problem-item"><span class="problem-number">22.</span> 55² = _____</div>
+          <div class="problem-item"><span class="problem-number">23.</span> 65² = _____</div>
+          <div class="problem-item"><span class="problem-number">24.</span> 75² = _____</div>
+          <div class="problem-item"><span class="problem-number">25.</span> 85² = _____</div>
+          <div class="problem-item"><span class="problem-number">26.</span> 95² = _____</div>
+          <div class="problem-item"><span class="problem-number">27.</span> 15² = _____</div>
+          <div class="problem-item"><span class="problem-number">28.</span> 25² = _____</div>
+          <div class="problem-item"><span class="problem-number">29.</span> 35² = _____</div>
+          <div class="problem-item"><span class="problem-number">30.</span> 45² = _____</div>
+          <div class="problem-item"><span class="problem-number">31.</span> 55² = _____</div>
+          <div class="problem-item"><span class="problem-number">32.</span> 65² = _____</div>
+          <div class="problem-item"><span class="problem-number">33.</span> 75² = _____</div>
+          <div class="problem-item"><span class="problem-number">34.</span> 85² = _____</div>
+          <div class="problem-item"><span class="problem-number">35.</span> 95² = _____</div>
+          <div class="problem-item"><span class="problem-number">36.</span> 105² = _____</div>
+          <div class="problem-item"><span class="problem-number">37.</span> 115² = _____</div>
+          <div class="problem-item"><span class="problem-number">38.</span> 125² = _____</div>
+          <div class="problem-item"><span class="problem-number">39.</span> 135² = _____</div>
+          <div class="problem-item"><span class="problem-number">40.</span> 145² = _____</div>
+        </div>
+
+        <div class="answer-key">
+          <strong>Answer Key:</strong>
+          <div class="answer-grid">
+            <div>1. 225</div>
+            <div>2. 625</div>
+            <div>3. 1225</div>
+            <div>4. 2025</div>
+            <div>5. 3025</div>
+            <div>6. 4225</div>
+            <div>7. 5625</div>
+            <div>8. 7225</div>
+            <div>9. 9025</div>
+            <div>10. 25</div>
+            <div>11. 11025</div>
+            <div>12. 13225</div>
+            <div>13. 15625</div>
+            <div>14. 18225</div>
+            <div>15. 21025</div>
+            <div>16. 24025</div>
+            <div>17. 38025</div>
+            <div>18. 42025</div>
+            <div>19. 625</div>
+            <div>20. 1225</div>
+            <div>21. 2025</div>
+            <div>22. 3025</div>
+            <div>23. 4225</div>
+            <div>24. 5625</div>
+            <div>25. 7225</div>
+            <div>26. 9025</div>
+            <div>27. 225</div>
+            <div>28. 625</div>
+            <div>29. 1225</div>
+            <div>30. 2025</div>
+            <div>31. 3025</div>
+            <div>32. 4225</div>
+            <div>33. 5625</div>
+            <div>34. 7225</div>
+            <div>35. 9025</div>
+            <div>36. 11025</div>
+            <div>37. 13225</div>
+            <div>38. 15625</div>
+            <div>39. 18225</div>
+            <div>40. 21025</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SUB-SECTION 7.2: Near 50 -->
+    <section>
+      <h2>7.2 Squaring Near 50</h2>
+      <p>
+        For numbers close to 50 (like 48 or 53), we use a special base method. The "Working Base" is 50, but the
+        "Reference Base" is 100/2.
+      </p>
+
+      <div class="concept-box">
+        <strong>The Method (Yavadunam):</strong>
+        <ol>
+          <li>Compare the number to 25. (Yes, 25! It's the "Golden Number" for Base 50).</li>
+          <li>Find the deviation from 50 (e.g., 53 is +3, 48 is -2).</li>
+          <li><strong>Left Part:</strong> 25 + Deviation.</li>
+          <li><strong>Right Part:</strong> Square of the Deviation (must be 2 digits).</li>
+        </ol>
+        <p><strong>Example: 53²</strong></p>
+        <ul>
+          <li>Deviation is +3.</li>
+          <li>Left: 25 + 3 = 28.</li>
+          <li>Right: 3² = 09.</li>
+          <li>Answer: <strong>2809</strong>.</li>
+        </ul>
+      </div>
+
+      <!-- WORKSHEET 7.2 -->
+      <div class="worksheet">
+        <div class="worksheet-header">
+          <span>Worksheet 7.2: Near 50</span>
+          <span>Score: ____ / 35</span>
+        </div>
+        <div class="problem-grid">
+          <div class="problem-item"><span class="problem-number">1.</span> 51² = _____</div>
+          <div class="problem-item"><span class="problem-number">2.</span> 52² = _____</div>
+          <div class="problem-item"><span class="problem-number">3.</span> 53² = _____</div>
+          <div class="problem-item"><span class="problem-number">4.</span> 54² = _____</div>
+          <div class="problem-item"><span class="problem-number">5.</span> 55² = _____</div>
+          <div class="problem-item"><span class="problem-number">6.</span> 56² = _____</div>
+          <div class="problem-item"><span class="problem-number">7.</span> 57² = _____</div>
+          <div class="problem-item"><span class="problem-number">8.</span> 58² = _____</div>
+          <div class="problem-item"><span class="problem-number">9.</span> 59² = _____</div>
+          <div class="problem-item"><span class="problem-number">10.</span> 49² = _____</div>
+          <div class="problem-item"><span class="problem-number">11.</span> 48² = _____</div>
+          <div class="problem-item"><span class="problem-number">12.</span> 47² = _____</div>
+          <div class="problem-item"><span class="problem-number">13.</span> 46² = _____</div>
+          <div class="problem-item"><span class="problem-number">14.</span> 45² = _____</div>
+          <div class="problem-item"><span class="problem-number">15.</span> 44² = _____</div>
+          <div class="problem-item"><span class="problem-number">16.</span> 43² = _____</div>
+          <div class="problem-item"><span class="problem-number">17.</span> 42² = _____</div>
+          <div class="problem-item"><span class="problem-number">18.</span> 41² = _____</div>
+          <div class="problem-item"><span class="problem-number">19.</span> 61² = _____</div>
+          <div class="problem-item"><span class="problem-number">20.</span> 62² = _____</div>
+          <div class="problem-item"><span class="problem-number">21.</span> 39² = _____</div>
+          <div class="problem-item"><span class="problem-number">22.</span> 38² = _____</div>
+          <div class="problem-item"><span class="problem-number">23.</span> 51² = _____</div>
+          <div class="problem-item"><span class="problem-number">24.</span> 49² = _____</div>
+          <div class="problem-item"><span class="problem-number">25.</span> 52² = _____</div>
+          <div class="problem-item"><span class="problem-number">26.</span> 48² = _____</div>
+          <div class="problem-item"><span class="problem-number">27.</span> 53² = _____</div>
+          <div class="problem-item"><span class="problem-number">28.</span> 47² = _____</div>
+          <div class="problem-item"><span class="problem-number">29.</span> 54² = _____</div>
+          <div class="problem-item"><span class="problem-number">30.</span> 46² = _____</div>
+          <div class="problem-item"><span class="problem-number">31.</span> 55² = _____</div>
+          <div class="problem-item"><span class="problem-number">32.</span> 45² = _____</div>
+          <div class="problem-item"><span class="problem-number">33.</span> 56² = _____</div>
+          <div class="problem-item"><span class="problem-number">34.</span> 44² = _____</div>
+          <div class="problem-item"><span class="problem-number">35.</span> 57² = _____</div>
+        </div>
+
+        <div class="answer-key">
+          <strong>Answer Key:</strong>
+          <div class="answer-grid">
+            <div>1. 2601</div>
+            <div>2. 2704</div>
+            <div>3. 2809</div>
+            <div>4. 2916</div>
+            <div>5. 3025</div>
+            <div>6. 3136</div>
+            <div>7. 3249</div>
+            <div>8. 3364</div>
+            <div>9. 3481</div>
+            <div>10. 2401</div>
+            <div>11. 2304</div>
+            <div>12. 2209</div>
+            <div>13. 2116</div>
+            <div>14. 2025</div>
+            <div>15. 1936</div>
+            <div>16. 1849</div>
+            <div>17. 1764</div>
+            <div>18. 1681</div>
+            <div>19. 3721</div>
+            <div>20. 3844</div>
+            <div>21. 1521</div>
+            <div>22. 1444</div>
+            <div>23. 2601</div>
+            <div>24. 2401</div>
+            <div>25. 2704</div>
+            <div>26. 2304</div>
+            <div>27. 2809</div>
+            <div>28. 2209</div>
+            <div>29. 2916</div>
+            <div>30. 2116</div>
+            <div>31. 3025</div>
+            <div>32. 2025</div>
+            <div>33. 3136</div>
+            <div>34. 1936</div>
+            <div>35. 3249</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SUB-SECTION 7.3: Near 100 -->
+    <section>
+      <h2>7.3 Squaring Near 100</h2>
+      <p>
+        Squaring numbers near 100 is identical to the Near Base multiplication method in Module 6, but simpler because
+        both numbers are the same!
+      </p>
+
+      <div class="concept-box">
+        <strong>The Method:</strong>
+        <ol>
+          <li>Find the deviation from 100.</li>
+          <li><strong>Left Part:</strong> Number + Deviation.</li>
+          <li><strong>Right Part:</strong> Deviation squared (2 digits).</li>
+        </ol>
+        <p><strong>Example: 97²</strong> (Deviation -3)</p>
+        <ul>
+          <li>Left: 97 - 3 = 94.</li>
+          <li>Right: 3² = 09.</li>
+          <li>Answer: <strong>9409</strong>.</li>
+        </ul>
+        <p><strong>Example: 104²</strong> (Deviation +4)</p>
+        <ul>
+          <li>Left: 104 + 4 = 108.</li>
+          <li>Right: 4² = 16.</li>
+          <li>Answer: <strong>10816</strong>.</li>
+        </ul>
+      </div>
+
+      <div class="worksheet">
+        <div class="worksheet-header">
+          <span>Worksheet 7.3: Near 100</span>
+          <span>Score: ____ / 40</span>
+        </div>
+        <div class="problem-grid">
+          <div class="problem-item"><span class="problem-number">1.</span> 101² = _____</div>
+          <div class="problem-item"><span class="problem-number">2.</span> 102² = _____</div>
+          <div class="problem-item"><span class="problem-number">3.</span> 103² = _____</div>
+          <div class="problem-item"><span class="problem-number">4.</span> 104² = _____</div>
+          <div class="problem-item"><span class="problem-number">5.</span> 105² = _____</div>
+          <div class="problem-item"><span class="problem-number">6.</span> 106² = _____</div>
+          <div class="problem-item"><span class="problem-number">7.</span> 107² = _____</div>
+          <div class="problem-item"><span class="problem-number">8.</span> 108² = _____</div>
+          <div class="problem-item"><span class="problem-number">9.</span> 109² = _____</div>
+          <div class="problem-item"><span class="problem-number">10.</span> 99² = _____</div>
+          <div class="problem-item"><span class="problem-number">11.</span> 98² = _____</div>
+          <div class="problem-item"><span class="problem-number">12.</span> 97² = _____</div>
+          <div class="problem-item"><span class="problem-number">13.</span> 96² = _____</div>
+          <div class="problem-item"><span class="problem-number">14.</span> 95² = _____</div>
+          <div class="problem-item"><span class="problem-number">15.</span> 94² = _____</div>
+          <div class="problem-item"><span class="problem-number">16.</span> 93² = _____</div>
+          <div class="problem-item"><span class="problem-number">17.</span> 92² = _____</div>
+          <div class="problem-item"><span class="problem-number">18.</span> 91² = _____</div>
+          <div class="problem-item"><span class="problem-number">19.</span> 111² = _____</div>
+          <div class="problem-item"><span class="problem-number">20.</span> 112² = _____</div>
+          <div class="problem-item"><span class="problem-number">21.</span> 89² = _____</div>
+          <div class="problem-item"><span class="problem-number">22.</span> 88² = _____</div>
+          <div class="problem-item"><span class="problem-number">23.</span> 101² = _____</div>
+          <div class="problem-item"><span class="problem-number">24.</span> 99² = _____</div>
+          <div class="problem-item"><span class="problem-number">25.</span> 102² = _____</div>
+          <div class="problem-item"><span class="problem-number">26.</span> 98² = _____</div>
+          <div class="problem-item"><span class="problem-number">27.</span> 103² = _____</div>
+          <div class="problem-item"><span class="problem-number">28.</span> 97² = _____</div>
+          <div class="problem-item"><span class="problem-number">29.</span> 104² = _____</div>
+          <div class="problem-item"><span class="problem-number">30.</span> 96² = _____</div>
+          <div class="problem-item"><span class="problem-number">31.</span> 105² = _____</div>
+          <div class="problem-item"><span class="problem-number">32.</span> 95² = _____</div>
+          <div class="problem-item"><span class="problem-number">33.</span> 106² = _____</div>
+          <div class="problem-item"><span class="problem-number">34.</span> 94² = _____</div>
+          <div class="problem-item"><span class="problem-number">35.</span> 107² = _____</div>
+          <div class="problem-item"><span class="problem-number">36.</span> 93² = _____</div>
+          <div class="problem-item"><span class="problem-number">37.</span> 108² = _____</div>
+          <div class="problem-item"><span class="problem-number">38.</span> 92² = _____</div>
+          <div class="problem-item"><span class="problem-number">39.</span> 109² = _____</div>
+          <div class="problem-item"><span class="problem-number">40.</span> 91² = _____</div>
+        </div>
+
+        <div class="answer-key">
+          <strong>Answer Key:</strong>
+          <div class="answer-grid">
+            <div>1. 10201</div>
+            <div>2. 10404</div>
+            <div>3. 10609</div>
+            <div>4. 10816</div>
+            <div>5. 11025</div>
+            <div>6. 11236</div>
+            <div>7. 11449</div>
+            <div>8. 11664</div>
+            <div>9. 11881</div>
+            <div>10. 9801</div>
+            <div>11. 9604</div>
+            <div>12. 9409</div>
+            <div>13. 9216</div>
+            <div>14. 9025</div>
+            <div>15. 8836</div>
+            <div>16. 8649</div>
+            <div>17. 8464</div>
+            <div>18. 8281</div>
+            <div>19. 12321</div>
+            <div>20. 12544</div>
+            <div>21. 7921</div>
+            <div>22. 7744</div>
+            <div>23. 10201</div>
+            <div>24. 9801</div>
+            <div>25. 10404</div>
+            <div>26. 9604</div>
+            <div>27. 10609</div>
+            <div>28. 9409</div>
+            <div>29. 10816</div>
+            <div>30. 9216</div>
+            <div>31. 11025</div>
+            <div>32. 9025</div>
+            <div>33. 11236</div>
+            <div>34. 8836</div>
+            <div>35. 11449</div>
+            <div>36. 8649</div>
+            <div>37. 11664</div>
+            <div>38. 8464</div>
+            <div>39. 11881</div>
+            <div>40. 8281</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SUB-SECTION 7.4: General Squaring -->
+    <section>
+      <h2>7.4 General Squaring Method</h2>
+      <p>
+        For any other number (like 23 or 67), we use the general 2-digit multiplication method (Vertically and
+        Crosswise) or the algebraic formula <strong>(a+b)² = a² + 2ab + b²</strong>.
+      </p>
+
+      <div class="concept-box">
+        <strong>The Method (Duplex):</strong>
+        <p>For a number 'ab' (like 23):</p>
+        <ol>
+          <li>Left: a²</li>
+          <li>Middle: 2 × a × b</li>
+          <li>Right: b²</li>
+        </ol>
+        <p><strong>Example: 23²</strong></p>
+        <ul>
+          <li>a=2, b=3</li>
+          <li>Left: 2² = 4</li>
+          <li>Middle: 2 × 2 × 3 = 12</li>
+          <li>Right: 3² = 9</li>
+          <li>Combine (with carry): 4 | 12 | 9 → 4+1 | 2 | 9 → <strong>529</strong>.</li>
+        </ul>
+      </div>
+
+      <div class="worksheet">
+        <div class="worksheet-header">
+          <span>Worksheet 7.4: General Squaring</span>
+          <span>Score: ____ / 35</span>
+        </div>
+        <div class="problem-grid">
+          <div class="problem-item"><span class="problem-number">1.</span> 12² = _____</div>
+          <div class="problem-item"><span class="problem-number">2.</span> 13² = _____</div>
+          <div class="problem-item"><span class="problem-number">3.</span> 14² = _____</div>
+          <div class="problem-item"><span class="problem-number">4.</span> 21² = _____</div>
+          <div class="problem-item"><span class="problem-number">5.</span> 22² = _____</div>
+          <div class="problem-item"><span class="problem-number">6.</span> 23² = _____</div>
+          <div class="problem-item"><span class="problem-number">7.</span> 31² = _____</div>
+          <div class="problem-item"><span class="problem-number">8.</span> 32² = _____</div>
+          <div class="problem-item"><span class="problem-number">9.</span> 33² = _____</div>
+          <div class="problem-item"><span class="problem-number">10.</span> 41² = _____</div>
+          <div class="problem-item"><span class="problem-number">11.</span> 42² = _____</div>
+          <div class="problem-item"><span class="problem-number">12.</span> 61² = _____</div>
+          <div class="problem-item"><span class="problem-number">13.</span> 71² = _____</div>
+          <div class="problem-item"><span class="problem-number">14.</span> 81² = _____</div>
+          <div class="problem-item"><span class="problem-number">15.</span> 16² = _____</div>
+          <div class="problem-item"><span class="problem-number">16.</span> 17² = _____</div>
+          <div class="problem-item"><span class="problem-number">17.</span> 18² = _____</div>
+          <div class="problem-item"><span class="problem-number">18.</span> 26² = _____</div>
+          <div class="problem-item"><span class="problem-number">19.</span> 27² = _____</div>
+          <div class="problem-item"><span class="problem-number">20.</span> 64² = _____</div>
+          <div class="problem-item"><span class="problem-number">21.</span> 72² = _____</div>
+          <div class="problem-item"><span class="problem-number">22.</span> 83² = _____</div>
+          <div class="problem-item"><span class="problem-number">23.</span> 12² = _____</div>
+          <div class="problem-item"><span class="problem-number">24.</span> 23² = _____</div>
+          <div class="problem-item"><span class="problem-number">25.</span> 34² = _____</div>
+          <div class="problem-item"><span class="problem-number">26.</span> 43² = _____</div>
+          <div class="problem-item"><span class="problem-number">27.</span> 52² = _____</div>
+          <div class="problem-item"><span class="problem-number">28.</span> 61² = _____</div>
+          <div class="problem-item"><span class="problem-number">29.</span> 24² = _____</div>
+          <div class="problem-item"><span class="problem-number">30.</span> 36² = _____</div>
+          <div class="problem-item"><span class="problem-number">31.</span> 41² = _____</div>
+          <div class="problem-item"><span class="problem-number">32.</span> 29² = _____</div>
+          <div class="problem-item"><span class="problem-number">33.</span> 39² = _____</div>
+          <div class="problem-item"><span class="problem-number">34.</span> 19² = _____</div>
+          <div class="problem-item"><span class="problem-number">35.</span> 44² = _____</div>
+        </div>
+
+        <div class="answer-key">
+          <strong>Answer Key:</strong>
+          <div class="answer-grid">
+            <div>1. 144</div>
+            <div>2. 169</div>
+            <div>3. 196</div>
+            <div>4. 441</div>
+            <div>5. 484</div>
+            <div>6. 529</div>
+            <div>7. 961</div>
+            <div>8. 1024</div>
+            <div>9. 1089</div>
+            <div>10. 1681</div>
+            <div>11. 1764</div>
+            <div>12. 3721</div>
+            <div>13. 5041</div>
+            <div>14. 6561</div>
+            <div>15. 256</div>
+            <div>16. 289</div>
+            <div>17. 324</div>
+            <div>18. 676</div>
+            <div>19. 729</div>
+            <div>20. 4096</div>
+            <div>21. 5184</div>
+            <div>22. 6889</div>
+            <div>23. 144</div>
+            <div>24. 529</div>
+            <div>25. 1156</div>
+            <div>26. 1849</div>
+            <div>27. 2704</div>
+            <div>28. 3721</div>
+            <div>29. 576</div>
+            <div>30. 1296</div>
+            <div>31. 1681</div>
+            <div>32. 841</div>
+            <div>33. 1521</div>
+            <div>34. 361</div>
+            <div>35. 1936</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Module Summary -->
+    <section>
+      <h2>Module 7 Summary</h2>
+
+      <div class="concept-box">
+        <strong>You have mastered:</strong>
+        <ul>
+          <li>Instantly squaring any number ending in 5</li>
+          <li>Squaring numbers near 50 mentally</li>
+          <li>Squaring numbers near 100 in seconds</li>
+          <li>Using the Duplex method for any 2-digit square</li>
+        </ul>
+      </div>
+
+      <div class="progress-tracker">
+        <div>
+          <strong>Module 7: Squaring Techniques</strong><br />
+          <span>Status: COMPLETE</span>
+        </div>
+        <div class="star-rating">★★★★★</div>
+      </div>
+    </section>
+  </body>
+</html>

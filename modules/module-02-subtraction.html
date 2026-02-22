@@ -1,0 +1,857 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Module 2: Subtraction Mastery</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;500;600;700&family=Caveat:wght@400;700&family=Architects+Daughter&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@1/css/pico.min.css" />
+    <style>
+      body {
+        max-width: 880px;
+        margin: 0 auto;
+        padding: 40px 60px;
+        font-family: 'Lexend', sans-serif;
+        color: #1a1a1a;
+        line-height: 1.6;
+        background-color: #ffffff;
+      }
+
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6 {
+        color: #be123c; /* Deep Red for Subtraction Theme */
+        font-weight: 700;
+        margin-top: 1.5em;
+        margin-bottom: 0.5em;
+      }
+
+      h1 {
+        font-size: 2.5em;
+        text-align: center;
+        border-bottom: 3px solid #be123c;
+        padding-bottom: 20px;
+      }
+      h2 {
+        font-size: 1.8em;
+        border-left: 5px solid #047857;
+        padding-left: 15px;
+        background-color: #f0fdf4;
+        padding: 10px 15px;
+        margin-top: 40px;
+      }
+      h3 {
+        font-size: 1.4em;
+        color: #c2410c;
+        margin-top: 25px;
+      }
+
+      .concept-box {
+        background-color: #fff1f2;
+        border-left: 4px solid #be123c;
+        padding: 15px;
+        margin: 20px 0;
+        border-radius: 0 4px 4px 0;
+      }
+
+      .why-works {
+        background-color: #f0fdf4;
+        border: 1px solid #bbf7d0;
+        border-left: 4px solid #22c55e;
+        padding: 15px;
+        margin: 20px 0;
+      }
+
+      .try-this {
+        background-color: #fffbeb;
+        border: 2px dashed #f59e0b;
+        padding: 20px;
+        margin: 25px 0;
+        text-align: center;
+      }
+
+      .mistake-alert {
+        background-color: #fef2f2;
+        border-left: 4px solid #ef4444;
+        padding: 15px;
+        margin: 20px 0;
+      }
+
+      .worksheet {
+        border: 2px solid #94a3b8;
+        padding: 25px;
+        margin: 30px 0;
+        background-color: #ffffff;
+        page-break-inside: avoid;
+      }
+
+      .worksheet-header {
+        display: flex;
+        justify-content: space-between;
+        border-bottom: 2px solid #94a3b8;
+        padding-bottom: 10px;
+        margin-bottom: 20px;
+        font-weight: bold;
+      }
+
+      .problem-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+        margin-bottom: 20px;
+      }
+
+      .problem-item {
+        display: flex;
+        align-items: center;
+        margin-bottom: 10px;
+        font-family: 'Lexend', monospace;
+        font-size: 1.1em;
+      }
+
+      .problem-number {
+        font-weight: bold;
+        color: #64748b;
+        margin-right: 10px;
+        width: 30px;
+      }
+
+      .diagram-container {
+        border: 1px solid #cbd5e1;
+        background-color: #f8fafc;
+        background-image:
+          linear-gradient(#e2e8f0 1px, transparent 1px), linear-gradient(90deg, #e2e8f0 1px, transparent 1px);
+        background-size: 20px 20px;
+        padding: 30px;
+        margin: 25px 0;
+        text-align: center;
+        max-width: 600px;
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      .step-circle {
+        display: inline-block;
+        width: 24px;
+        height: 24px;
+        line-height: 24px;
+        border-radius: 50%;
+        background-color: #f97316;
+        color: white;
+        text-align: center;
+        font-weight: bold;
+        font-size: 14px;
+        margin-right: 5px;
+      }
+
+      .hand-font {
+        font-family: 'Caveat', cursive;
+        font-size: 1.4em;
+        color: #be123c;
+      }
+      .label-font {
+        font-family: 'Architects Daughter', cursive;
+        color: #4b5563;
+      }
+
+      .answer-key {
+        font-size: 0.9em;
+        background-color: #f8fafc;
+        padding: 15px;
+        border-top: 1px dotted #cbd5e1;
+        margin-top: 15px;
+      }
+
+      .answer-grid {
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
+        gap: 10px;
+      }
+
+      .intro-box {
+        background-color: #ffe4e6;
+        padding: 20px;
+        border-radius: 8px;
+        margin-bottom: 30px;
+        border: 1px solid #fda4af;
+      }
+
+      .progress-tracker {
+        background-color: #f0fdf4;
+        border: 1px solid #22c55e;
+        padding: 15px;
+        border-radius: 8px;
+        margin-top: 30px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+      .star-rating {
+        color: #f59e0b;
+        font-size: 1.5em;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Module 2: Subtraction Mastery</h1>
+
+    <div class="intro-box">
+      <h3>Welcome to Module 2!</h3>
+      <p>
+        Subtraction often feels harder than addition because "borrowing" is messy. In Vedic Mathematics, we eliminate
+        borrowing almost entirely! We turn subtraction into addition using complements.
+      </p>
+      <p><strong>Learning Objectives:</strong></p>
+      <ul>
+        <li>Master the "Complement Method" for subtracting from powers of 10</li>
+        <li>Learn the classic "All from 9, Last from 10" technique</li>
+        <li>Calculate Left-to-Right without borrowing</li>
+        <li>Develop speed and accuracy in mental subtraction</li>
+      </ul>
+      <p>
+        <strong>How to use this module:</strong> Just like Module 1, read the explanation, study the examples, and
+        <em>immediately</em> complete the worksheet.
+      </p>
+    </div>
+
+    <!-- SUB-SECTION 2.1 -->
+    <section>
+      <h2>2.1 Complement Method (Base Subtraction)</h2>
+      <p>
+        Subtracting numbers from 100, 1000, or 10,000 is usually painful with borrowing. The Complement Method makes
+        this instant.
+      </p>
+
+      <div class="concept-box">
+        <strong>The Concept:</strong> Instead of borrowing, find what number completes the value to the next base (10,
+        100, 1000).
+      </div>
+
+      <div class="why-works">
+        <strong>Why This Works:</strong> Powers of 10 are just "1" followed by zeros. Instead of borrowing across all
+        those zeros, we use the formula: <em>Subtract all digits from 9, and the last digit from 10.</em>
+      </div>
+
+      <h3>Worked Examples:</h3>
+      <ol>
+        <li>
+          <strong>1000 - 237:</strong>
+          <ul>
+            <li>Digit 2: 9 - 2 = 7</li>
+            <li>Digit 3: 9 - 3 = 6</li>
+            <li>Digit 7: 10 - 7 = 3</li>
+            <li>Result: 763</li>
+          </ul>
+        </li>
+        <li><strong>100 - 47:</strong> 9-4=5; 10-7=3. Result: 53.</li>
+        <li><strong>10000 - 8152:</strong> 9-8=1; 9-1=8; 9-5=4; 10-2=8. Result: 1848.</li>
+        <li><strong>1000 - 58:</strong> Treat as 058. 9-0=9; 9-5=4; 10-8=2. Result: 942.</li>
+        <li><strong>500 - 168:</strong> 5-1=4 (minus 1 extra) = 3; then apply complement to 68 (32). Result: 332.</li>
+      </ol>
+
+      <div class="diagram-container">
+        <svg width="400" height="200" viewBox="0 0 400 200">
+          <text x="50" y="40" class="hand-font" style="font-size: 24px">1000 - 237 = ?</text>
+
+          <!-- Top row (9s and 10) -->
+          <text x="120" y="80" class="hand-font" fill="#047857">9</text>
+          <text x="160" y="80" class="hand-font" fill="#047857">9</text>
+          <text x="200" y="80" class="hand-font" fill="#047857">10</text>
+
+          <!-- Minus sign -->
+          <text x="90" y="110" font-size="24">-</text>
+
+          <!-- Number to subtract -->
+          <text x="120" y="110" font-weight="bold" font-size="24">2</text>
+          <text x="160" y="110" font-weight="bold" font-size="24">3</text>
+          <text x="200" y="110" font-weight="bold" font-size="24">7</text>
+
+          <!-- Line -->
+          <line x1="100" y1="120" x2="220" y2="120" stroke="black" stroke-width="2" />
+
+          <!-- Result -->
+          <text x="120" y="150" class="hand-font" font-size="28" fill="#be123c">7</text>
+          <text x="160" y="150" class="hand-font" font-size="28" fill="#be123c">6</text>
+          <text x="200" y="150" class="hand-font" font-size="28" fill="#be123c">3</text>
+
+          <!-- Labels -->
+          <text x="250" y="80" class="label-font" font-size="14">All from 9</text>
+          <text x="250" y="100" class="label-font" font-size="14">Last from 10</text>
+        </svg>
+      </div>
+
+      <div class="try-this">
+        <strong>Try This!</strong><br />
+        Calculate 1000 - 642.<br />
+        9-6=? | 9-4=? | 10-2=?<br />
+        (Answer: 358)
+      </div>
+
+      <div class="mistake-alert">
+        <strong>Common Mistake:</strong> Forgetting that "Last" means the last non-zero digit. If a number ends in zero
+        (e.g., 230), apply the rule to 23, then append the zero.
+      </div>
+
+      <p>
+        <strong>Real-World Application:</strong> You pay with a $10.00 bill for an item costing $3.45. Change? 9-3=6;
+        9-4=5; 10-5=5. Change is $6.55.
+      </p>
+
+      <!-- WORKSHEET 2.1 -->
+      <div class="worksheet">
+        <div class="worksheet-header">
+          <span>Worksheet 2.1: Complements & Powers of 10</span>
+          <span>Score: ____ / 30</span>
+        </div>
+        <div class="problem-grid">
+          <div class="problem-item"><span class="problem-number">1.</span> 100 - 23 = _____</div>
+          <div class="problem-item"><span class="problem-number">2.</span> 100 - 56 = _____</div>
+          <div class="problem-item"><span class="problem-number">3.</span> 100 - 89 = _____</div>
+          <div class="problem-item"><span class="problem-number">4.</span> 100 - 12 = _____</div>
+          <div class="problem-item"><span class="problem-number">5.</span> 100 - 45 = _____</div>
+          <div class="problem-item"><span class="problem-number">6.</span> 1000 - 345 = _____</div>
+          <div class="problem-item"><span class="problem-number">7.</span> 1000 - 672 = _____</div>
+          <div class="problem-item"><span class="problem-number">8.</span> 1000 - 123 = _____</div>
+          <div class="problem-item"><span class="problem-number">9.</span> 1000 - 888 = _____</div>
+          <div class="problem-item"><span class="problem-number">10.</span> 1000 - 505 = _____</div>
+          <div class="problem-item"><span class="problem-number">11.</span> 1000 - 42 = _____</div>
+          <div class="problem-item"><span class="problem-number">12.</span> 1000 - 9 = _____</div>
+          <div class="problem-item"><span class="problem-number">13.</span> 10000 - 4567 = _____</div>
+          <div class="problem-item"><span class="problem-number">14.</span> 10000 - 1024 = _____</div>
+          <div class="problem-item"><span class="problem-number">15.</span> 10000 - 9876 = _____</div>
+          <div class="problem-item"><span class="problem-number">16.</span> 100 - 33 = _____</div>
+          <div class="problem-item"><span class="problem-number">17.</span> 1000 - 777 = _____</div>
+          <div class="problem-item"><span class="problem-number">18.</span> 1000 - 250 = _____</div>
+          <div class="problem-item"><span class="problem-number">19.</span> 100 - 5 = _____</div>
+          <div class="problem-item"><span class="problem-number">20.</span> 1000 - 99 = _____</div>
+          <div class="problem-item"><span class="problem-number">21.</span> $10.00 - $2.45 = _____</div>
+          <div class="problem-item"><span class="problem-number">22.</span> $10.00 - $6.18 = _____</div>
+          <div class="problem-item"><span class="problem-number">23.</span> $5.00 - $1.25 = _____</div>
+          <div class="problem-item"><span class="problem-number">24.</span> $20.00 - $12.34 = _____</div>
+          <div class="problem-item"><span class="problem-number">25.</span> $100.00 - $45.50 = _____</div>
+          <div class="problem-item"><span class="problem-number">26.</span> 1000 - 111 = _____</div>
+          <div class="problem-item"><span class="problem-number">27.</span> 10000 - 5000 = _____</div>
+          <div class="problem-item"><span class="problem-number">28.</span> 100 - 91 = _____</div>
+          <div class="problem-item"><span class="problem-number">29.</span> 1000 - 1 = _____</div>
+          <div class="problem-item"><span class="problem-number">30.</span> 1000 - 500 = _____</div>
+        </div>
+
+        <div class="answer-key">
+          <strong>Answer Key:</strong>
+          <div class="answer-grid">
+            <div>1. 77</div>
+            <div>2. 44</div>
+            <div>3. 11</div>
+            <div>4. 88</div>
+            <div>5. 55</div>
+            <div>6. 655</div>
+            <div>7. 328</div>
+            <div>8. 877</div>
+            <div>9. 112</div>
+            <div>10. 495</div>
+            <div>11. 958</div>
+            <div>12. 991</div>
+            <div>13. 5433</div>
+            <div>14. 8976</div>
+            <div>15. 0124</div>
+            <div>16. 67</div>
+            <div>17. 223</div>
+            <div>18. 750</div>
+            <div>19. 95</div>
+            <div>20. 901</div>
+            <div>21. 7.55</div>
+            <div>22. 3.82</div>
+            <div>23. 3.75</div>
+            <div>24. 7.66</div>
+            <div>25. 54.50</div>
+            <div>26. 889</div>
+            <div>27. 5000</div>
+            <div>28. 09</div>
+            <div>29. 999</div>
+            <div>30. 500</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SUB-SECTION 2.2 -->
+    <section>
+      <h2>2.2 "All from 9, Last from 10" Extended</h2>
+      <p>
+        This technique isn't just for 100 or 1000. It works for subtracting from any multiple of 10, or when numbers
+        have many zeros.
+      </p>
+
+      <h3>Worked Examples:</h3>
+      <ol>
+        <li>
+          <strong>3000 - 426:</strong>
+          <ul>
+            <li>Decrement first digit: 3 becomes 2.</li>
+            <li>Apply formula to 426: 9-4=5, 9-2=7, 10-6=4.</li>
+            <li>Result: 2574</li>
+          </ul>
+        </li>
+        <li><strong>500 - 27:</strong> 5->4. 027 -> 9-0=9, 9-2=7, 10-7=3. Result: 473.</li>
+        <li><strong>70000 - 36:</strong> 7->6. 00036 -> 9-0=9, 9-0=9, 9-0=9, 9-3=6, 10-6=4. Result: 69964.</li>
+        <li>
+          <strong>800 - 455:</strong> 8-4-1=3 (subtract first digit plus 1). Apply complement to 55 (45). Result: 345.
+        </li>
+        <li><strong>1000 - 340:</strong> Ignore last 0. 100-34 -> 9-3=6, 10-4=6. Append 0. Result: 660.</li>
+      </ol>
+
+      <div class="diagram-container">
+        <svg width="400" height="150" viewBox="0 0 400 150">
+          <text x="50" y="40" class="hand-font" style="font-size: 24px">5000 - 324 = ?</text>
+
+          <!-- Decrement -->
+          <text x="50" y="90" class="hand-font" fill="#047857">4</text>
+          <text x="50" y="70" class="label-font" font-size="12">5 - 1</text>
+
+          <!-- Complements -->
+          <text x="120" y="90" class="hand-font">6</text>
+          <text x="120" y="70" class="label-font" font-size="12">9-3</text>
+
+          <text x="160" y="90" class="hand-font">7</text>
+          <text x="160" y="70" class="label-font" font-size="12">9-2</text>
+
+          <text x="200" y="90" class="hand-font">6</text>
+          <text x="200" y="70" class="label-font" font-size="12">10-4</text>
+
+          <!-- Result -->
+          <text x="130" y="130" class="hand-font" fill="#be123c" font-size="28">= 4676</text>
+        </svg>
+      </div>
+
+      <!-- WORKSHEET 2.2 -->
+      <div class="worksheet">
+        <div class="worksheet-header">
+          <span>Worksheet 2.2: Advanced Complements</span>
+          <span>Score: ____ / 30</span>
+        </div>
+        <div class="problem-grid">
+          <div class="problem-item"><span class="problem-number">1.</span> 200 - 45 = _____</div>
+          <div class="problem-item"><span class="problem-number">2.</span> 300 - 123 = _____</div>
+          <div class="problem-item"><span class="problem-number">3.</span> 500 - 276 = _____</div>
+          <div class="problem-item"><span class="problem-number">4.</span> 800 - 54 = _____</div>
+          <div class="problem-item"><span class="problem-number">5.</span> 400 - 198 = _____</div>
+          <div class="problem-item"><span class="problem-number">6.</span> 6000 - 2345 = _____</div>
+          <div class="problem-item"><span class="problem-number">7.</span> 9000 - 1234 = _____</div>
+          <div class="problem-item"><span class="problem-number">8.</span> 7000 - 555 = _____</div>
+          <div class="problem-item"><span class="problem-number">9.</span> 2000 - 99 = _____</div>
+          <div class="problem-item"><span class="problem-number">10.</span> 5000 - 8 = _____</div>
+          <div class="problem-item"><span class="problem-number">11.</span> 300 - 150 = _____</div>
+          <div class="problem-item"><span class="problem-number">12.</span> 400 - 202 = _____</div>
+          <div class="problem-item"><span class="problem-number">13.</span> 1000 - 440 = _____</div>
+          <div class="problem-item"><span class="problem-number">14.</span> 600 - 320 = _____</div>
+          <div class="problem-item"><span class="problem-number">15.</span> 700 - 350 = _____</div>
+          <div class="problem-item"><span class="problem-number">16.</span> 8000 - 4200 = _____</div>
+          <div class="problem-item"><span class="problem-number">17.</span> 900 - 450 = _____</div>
+          <div class="problem-item"><span class="problem-number">18.</span> 200 - 101 = _____</div>
+          <div class="problem-item"><span class="problem-number">19.</span> 3000 - 2 = _____</div>
+          <div class="problem-item"><span class="problem-number">20.</span> 4000 - 33 = _____</div>
+          <div class="problem-item"><span class="problem-number">21.</span> 500 - 125 = _____</div>
+          <div class="problem-item"><span class="problem-number">22.</span> 600 - 75 = _____</div>
+          <div class="problem-item"><span class="problem-number">23.</span> 700 - 99 = _____</div>
+          <div class="problem-item"><span class="problem-number">24.</span> 1000 - 55 = _____</div>
+          <div class="problem-item"><span class="problem-number">25.</span> 2000 - 1111 = _____</div>
+          <div class="problem-item"><span class="problem-number">26.</span> 3000 - 222 = _____</div>
+          <div class="problem-item"><span class="problem-number">27.</span> 400 - 4 = _____</div>
+          <div class="problem-item"><span class="problem-number">28.</span> 500 - 1 = _____</div>
+          <div class="problem-item"><span class="problem-number">29.</span> 6000 - 12 = _____</div>
+          <div class="problem-item"><span class="problem-number">30.</span> 700 - 699 = _____</div>
+        </div>
+
+        <div class="answer-key">
+          <strong>Answer Key:</strong>
+          <div class="answer-grid">
+            <div>1. 155</div>
+            <div>2. 177</div>
+            <div>3. 224</div>
+            <div>4. 746</div>
+            <div>5. 202</div>
+            <div>6. 3655</div>
+            <div>7. 7766</div>
+            <div>8. 6445</div>
+            <div>9. 1901</div>
+            <div>10. 4992</div>
+            <div>11. 150</div>
+            <div>12. 198</div>
+            <div>13. 560</div>
+            <div>14. 280</div>
+            <div>15. 350</div>
+            <div>16. 3800</div>
+            <div>17. 450</div>
+            <div>18. 99</div>
+            <div>19. 2998</div>
+            <div>20. 3967</div>
+            <div>21. 375</div>
+            <div>22. 525</div>
+            <div>23. 601</div>
+            <div>24. 945</div>
+            <div>25. 889</div>
+            <div>26. 2778</div>
+            <div>27. 396</div>
+            <div>28. 499</div>
+            <div>29. 5988</div>
+            <div>30. 1</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SUB-SECTION 2.3 -->
+    <section>
+      <h2>2.3 Left-to-Right Subtraction</h2>
+      <p>
+        Just like addition, subtraction is faster when done Left-to-Right. The key is to peek ahead to see if the next
+        column will need a "borrow" (we call it a "reduction").
+      </p>
+
+      <h3>Worked Examples:</h3>
+      <ol>
+        <li>
+          <strong>84 - 36:</strong>
+          <ul>
+            <li>8 - 3 = 5. But look ahead: 4 < 6.</li>
+            <li>Reduce 5 to 4.</li>
+            <li>Take complement of 6 (which is 4) and add to 4. 4+4=8.</li>
+            <li>Result: 48.</li>
+          </ul>
+        </li>
+        <li><strong>53 - 28:</strong> 5-2=3 (reduce to 2). 10-8=2; 2+3=5. Result: 25.</li>
+        <li><strong>71 - 49:</strong> 7-4=3 (reduce to 2). 9's friend is 1; 1+1=2. Result: 22.</li>
+        <li><strong>92 - 45:</strong> 9-4=5 (reduce to 4). 5's friend is 5; 5+2=7. Result: 47.</li>
+        <li><strong>65 - 23:</strong> 6-2=4 (no reduction needed as 5 > 3). 5-3=2. Result: 42.</li>
+      </ol>
+
+      <div class="diagram-container">
+        <svg width="400" height="150" viewBox="0 0 400 150">
+          <text x="50" y="40" class="hand-font" style="font-size: 24px">84 - 36 = ?</text>
+
+          <!-- Step 1 -->
+          <circle cx="50" cy="80" r="12" fill="#f97316" />
+          <text x="46" y="85" fill="white" font-weight="bold">1</text>
+          <text x="80" y="85" class="hand-font">8 - 3 = 5 (Peek: 4 < 6)</text>
+
+          <!-- Step 2 -->
+          <circle cx="50" cy="110" r="12" fill="#f97316" />
+          <text x="46" y="115" fill="white" font-weight="bold">2</text>
+          <text x="80" y="115" class="hand-font">Reduce 5 -> 4</text>
+
+          <!-- Result -->
+          <text x="250" y="85" class="hand-font">Complement 6 is 4</text>
+          <text x="250" y="115" class="hand-font">4 + 4 = 8</text>
+
+          <text x="200" y="140" class="hand-font" fill="#be123c" font-size="24">Answer: 48</text>
+        </svg>
+      </div>
+
+      <!-- WORKSHEET 2.3 -->
+      <div class="worksheet">
+        <div class="worksheet-header">
+          <span>Worksheet 2.3: Left-to-Right Subtraction</span>
+          <span>Score: ____ / 30</span>
+        </div>
+        <div class="problem-grid">
+          <div class="problem-item"><span class="problem-number">1.</span> 52 - 34 = _____</div>
+          <div class="problem-item"><span class="problem-number">2.</span> 63 - 28 = _____</div>
+          <div class="problem-item"><span class="problem-number">3.</span> 45 - 19 = _____</div>
+          <div class="problem-item"><span class="problem-number">4.</span> 71 - 35 = _____</div>
+          <div class="problem-item"><span class="problem-number">5.</span> 82 - 56 = _____</div>
+          <div class="problem-item"><span class="problem-number">6.</span> 94 - 47 = _____</div>
+          <div class="problem-item"><span class="problem-number">7.</span> 33 - 18 = _____</div>
+          <div class="problem-item"><span class="problem-number">8.</span> 66 - 29 = _____</div>
+          <div class="problem-item"><span class="problem-number">9.</span> 54 - 37 = _____</div>
+          <div class="problem-item"><span class="problem-number">10.</span> 41 - 25 = _____</div>
+          <div class="problem-item"><span class="problem-number">11.</span> 75 - 38 = _____</div>
+          <div class="problem-item"><span class="problem-number">12.</span> 83 - 49 = _____</div>
+          <div class="problem-item"><span class="problem-number">13.</span> 92 - 64 = _____</div>
+          <div class="problem-item"><span class="problem-number">14.</span> 55 - 26 = _____</div>
+          <div class="problem-item"><span class="problem-number">15.</span> 34 - 17 = _____</div>
+          <div class="problem-item"><span class="problem-number">16.</span> 61 - 32 = _____</div>
+          <div class="problem-item"><span class="problem-number">17.</span> 74 - 45 = _____</div>
+          <div class="problem-item"><span class="problem-number">18.</span> 86 - 57 = _____</div>
+          <div class="problem-item"><span class="problem-number">19.</span> 93 - 68 = _____</div>
+          <div class="problem-item"><span class="problem-number">20.</span> 44 - 15 = _____</div>
+          <div class="problem-item"><span class="problem-number">21.</span> 53 - 35 = _____</div>
+          <div class="problem-item"><span class="problem-number">22.</span> 62 - 26 = _____</div>
+          <div class="problem-item"><span class="problem-number">23.</span> 76 - 67 = _____</div>
+          <div class="problem-item"><span class="problem-number">24.</span> 85 - 58 = _____</div>
+          <div class="problem-item"><span class="problem-number">25.</span> 91 - 19 = _____</div>
+          <div class="problem-item"><span class="problem-number">26.</span> 104 - 56 = _____</div>
+          <div class="problem-item"><span class="problem-number">27.</span> 123 - 45 = _____</div>
+          <div class="problem-item"><span class="problem-number">28.</span> 111 - 22 = _____</div>
+          <div class="problem-item"><span class="problem-number">29.</span> 135 - 46 = _____</div>
+          <div class="problem-item"><span class="problem-number">30.</span> 150 - 75 = _____</div>
+        </div>
+
+        <div class="answer-key">
+          <strong>Answer Key:</strong>
+          <div class="answer-grid">
+            <div>1. 18</div>
+            <div>2. 35</div>
+            <div>3. 26</div>
+            <div>4. 36</div>
+            <div>5. 26</div>
+            <div>6. 47</div>
+            <div>7. 15</div>
+            <div>8. 37</div>
+            <div>9. 17</div>
+            <div>10. 16</div>
+            <div>11. 37</div>
+            <div>12. 34</div>
+            <div>13. 28</div>
+            <div>14. 29</div>
+            <div>15. 17</div>
+            <div>16. 29</div>
+            <div>17. 29</div>
+            <div>18. 29</div>
+            <div>19. 25</div>
+            <div>20. 29</div>
+            <div>21. 18</div>
+            <div>22. 36</div>
+            <div>23. 9</div>
+            <div>24. 27</div>
+            <div>25. 72</div>
+            <div>26. 48</div>
+            <div>27. 78</div>
+            <div>28. 89</div>
+            <div>29. 89</div>
+            <div>30. 75</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SUB-SECTION 2.4 -->
+    <section>
+      <h2>2.4 No-Borrowing Techniques</h2>
+      <p>
+        For larger numbers, you can just write down the difference digit by digit, marking "bar numbers" (negative
+        digits) for any column where the bottom is bigger. Then convert at the end.
+      </p>
+
+      <h3>Worked Examples:</h3>
+      <ol>
+        <li>
+          <strong>423 - 157:</strong>
+          <ul>
+            <li>4-1=3</li>
+            <li>2-5 = -3 (write as bar-3)</li>
+            <li>3-7 = -4 (write as bar-4)</li>
+            <li>Convert: 300 - 30 - 4 = 266.</li>
+          </ul>
+        </li>
+        <li><strong>812 - 345:</strong> 5, -3, -3. 500-33 = 467.</li>
+        <li><strong>671 - 298:</strong> 4, -2, -7. 400-27 = 373.</li>
+        <li><strong>925 - 476:</strong> 5, -5, -1. 500-51 = 449.</li>
+        <li><strong>543 - 289:</strong> 3, -4, -6. 300-46 = 254.</li>
+      </ol>
+
+      <!-- WORKSHEET 2.4 -->
+      <div class="worksheet">
+        <div class="worksheet-header">
+          <span>Worksheet 2.4: No-Borrowing Subtraction</span>
+          <span>Score: ____ / 30</span>
+        </div>
+        <div class="problem-grid">
+          <div class="problem-item"><span class="problem-number">1.</span> 321 - 154 = _____</div>
+          <div class="problem-item"><span class="problem-number">2.</span> 543 - 276 = _____</div>
+          <div class="problem-item"><span class="problem-number">3.</span> 765 - 398 = _____</div>
+          <div class="problem-item"><span class="problem-number">4.</span> 912 - 456 = _____</div>
+          <div class="problem-item"><span class="problem-number">5.</span> 624 - 135 = _____</div>
+          <div class="problem-item"><span class="problem-number">6.</span> 831 - 247 = _____</div>
+          <div class="problem-item"><span class="problem-number">7.</span> 452 - 163 = _____</div>
+          <div class="problem-item"><span class="problem-number">8.</span> 714 - 325 = _____</div>
+          <div class="problem-item"><span class="problem-number">9.</span> 963 - 485 = _____</div>
+          <div class="problem-item"><span class="problem-number">10.</span> 525 - 176 = _____</div>
+          <div class="problem-item"><span class="problem-number">11.</span> 642 - 253 = _____</div>
+          <div class="problem-item"><span class="problem-number">12.</span> 853 - 364 = _____</div>
+          <div class="problem-item"><span class="problem-number">13.</span> 315 - 126 = _____</div>
+          <div class="problem-item"><span class="problem-number">14.</span> 726 - 237 = _____</div>
+          <div class="problem-item"><span class="problem-number">15.</span> 437 - 148 = _____</div>
+          <div class="problem-item"><span class="problem-number">16.</span> 948 - 359 = _____</div>
+          <div class="problem-item"><span class="problem-number">17.</span> 659 - 261 = _____</div>
+          <div class="problem-item"><span class="problem-number">18.</span> 513 - 224 = _____</div>
+          <div class="problem-item"><span class="problem-number">19.</span> 824 - 335 = _____</div>
+          <div class="problem-item"><span class="problem-number">20.</span> 735 - 346 = _____</div>
+          <div class="problem-item"><span class="problem-number">21.</span> 534 - 156 = _____</div>
+          <div class="problem-item"><span class="problem-number">22.</span> 843 - 265 = _____</div>
+          <div class="problem-item"><span class="problem-number">23.</span> 952 - 475 = _____</div>
+          <div class="problem-item"><span class="problem-number">24.</span> 662 - 275 = _____</div>
+          <div class="problem-item"><span class="problem-number">25.</span> 763 - 376 = _____</div>
+          <div class="problem-item"><span class="problem-number">26.</span> 872 - 384 = _____</div>
+          <div class="problem-item"><span class="problem-number">27.</span> 981 - 492 = _____</div>
+          <div class="problem-item"><span class="problem-number">28.</span> 581 - 293 = _____</div>
+          <div class="problem-item"><span class="problem-number">29.</span> 691 - 394 = _____</div>
+          <div class="problem-item"><span class="problem-number">30.</span> 800 - 401 = _____</div>
+        </div>
+
+        <div class="answer-key">
+          <strong>Answer Key:</strong>
+          <div class="answer-grid">
+            <div>1. 167</div>
+            <div>2. 267</div>
+            <div>3. 367</div>
+            <div>4. 456</div>
+            <div>5. 489</div>
+            <div>6. 584</div>
+            <div>7. 289</div>
+            <div>8. 389</div>
+            <div>9. 478</div>
+            <div>10. 349</div>
+            <div>11. 389</div>
+            <div>12. 489</div>
+            <div>13. 189</div>
+            <div>14. 489</div>
+            <div>15. 289</div>
+            <div>16. 589</div>
+            <div>17. 398</div>
+            <div>18. 289</div>
+            <div>19. 489</div>
+            <div>20. 389</div>
+            <div>21. 378</div>
+            <div>22. 578</div>
+            <div>23. 477</div>
+            <div>24. 387</div>
+            <div>25. 387</div>
+            <div>26. 488</div>
+            <div>27. 489</div>
+            <div>28. 288</div>
+            <div>29. 297</div>
+            <div>30. 399</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SUB-SECTION 2.5 -->
+    <section>
+      <h2>2.5 Subtraction Speed Challenge</h2>
+      <p>
+        Combine all the techniques you've learned. Use the complement method for powers of 10, left-to-right for simple
+        cases, and no-borrowing for tough columns.
+      </p>
+
+      <div class="try-this">
+        <strong>Speed Benchmark:</strong><br />
+        Top Performer: < 3 minutes<br />
+        Great: < 4 minutes<br />
+        Good: < 6 minutes
+      </div>
+
+      <!-- WORKSHEET 2.5 -->
+      <div class="worksheet">
+        <div class="worksheet-header">
+          <span>Worksheet 2.5: Speed Challenge</span>
+          <span>Time: ____ min</span>
+        </div>
+        <div class="problem-grid">
+          <div class="problem-item"><span class="problem-number">1.</span> 1000 - 423 = _____</div>
+          <div class="problem-item"><span class="problem-number">2.</span> 84 - 36 = _____</div>
+          <div class="problem-item"><span class="problem-number">3.</span> 500 - 123 = _____</div>
+          <div class="problem-item"><span class="problem-number">4.</span> 72 - 45 = _____</div>
+          <div class="problem-item"><span class="problem-number">5.</span> 432 - 156 = _____</div>
+          <div class="problem-item"><span class="problem-number">6.</span> 6000 - 2345 = _____</div>
+          <div class="problem-item"><span class="problem-number">7.</span> 91 - 34 = _____</div>
+          <div class="problem-item"><span class="problem-number">8.</span> 800 - 32 = _____</div>
+          <div class="problem-item"><span class="problem-number">9.</span> 543 - 298 = _____</div>
+          <div class="problem-item"><span class="problem-number">10.</span> 10000 - 1234 = _____</div>
+          <div class="problem-item"><span class="problem-number">11.</span> 333 - 145 = _____</div>
+          <div class="problem-item"><span class="problem-number">12.</span> 700 - 350 = _____</div>
+          <div class="problem-item"><span class="problem-number">13.</span> 52 - 17 = _____</div>
+          <div class="problem-item"><span class="problem-number">14.</span> 642 - 353 = _____</div>
+          <div class="problem-item"><span class="problem-number">15.</span> 200 - 101 = _____</div>
+          <div class="problem-item"><span class="problem-number">16.</span> 88 - 39 = _____</div>
+          <div class="problem-item"><span class="problem-number">17.</span> 5000 - 55 = _____</div>
+          <div class="problem-item"><span class="problem-number">18.</span> 123 - 45 = _____</div>
+          <div class="problem-item"><span class="problem-number">19.</span> 1000 - 8 = _____</div>
+          <div class="problem-item"><span class="problem-number">20.</span> 948 - 359 = _____</div>
+          <div class="problem-item"><span class="problem-number">21.</span> 67 - 28 = _____</div>
+          <div class="problem-item"><span class="problem-number">22.</span> 300 - 111 = _____</div>
+          <div class="problem-item"><span class="problem-number">23.</span> 513 - 224 = _____</div>
+          <div class="problem-item"><span class="problem-number">24.</span> 45 - 27 = _____</div>
+          <div class="problem-item"><span class="problem-number">25.</span> 1000 - 500 = _____</div>
+          <div class="problem-item"><span class="problem-number">26.</span> 74 - 45 = _____</div>
+          <div class="problem-item"><span class="problem-number">27.</span> 800 - 54 = _____</div>
+          <div class="problem-item"><span class="problem-number">28.</span> 624 - 135 = _____</div>
+          <div class="problem-item"><span class="problem-number">29.</span> 100 - 23 = _____</div>
+          <div class="problem-item"><span class="problem-number">30.</span> 321 - 154 = _____</div>
+        </div>
+
+        <div class="answer-key">
+          <strong>Answer Key:</strong>
+          <div class="answer-grid">
+            <div>1. 577</div>
+            <div>2. 48</div>
+            <div>3. 377</div>
+            <div>4. 27</div>
+            <div>5. 276</div>
+            <div>6. 3655</div>
+            <div>7. 57</div>
+            <div>8. 768</div>
+            <div>9. 245</div>
+            <div>10. 8766</div>
+            <div>11. 188</div>
+            <div>12. 350</div>
+            <div>13. 35</div>
+            <div>14. 289</div>
+            <div>15. 99</div>
+            <div>16. 49</div>
+            <div>17. 4945</div>
+            <div>18. 78</div>
+            <div>19. 992</div>
+            <div>20. 589</div>
+            <div>21. 39</div>
+            <div>22. 189</div>
+            <div>23. 289</div>
+            <div>24. 18</div>
+            <div>25. 500</div>
+            <div>26. 29</div>
+            <div>27. 746</div>
+            <div>28. 489</div>
+            <div>29. 77</div>
+            <div>30. 167</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Module Summary -->
+    <section>
+      <h2>Module 2 Summary</h2>
+
+      <div class="concept-box">
+        <strong>You have mastered:</strong>
+        <ul>
+          <li>The <strong>Complement Method</strong> for instant base subtraction.</li>
+          <li><strong>All from 9, Last from 10</strong> for large numbers.</li>
+          <li><strong>Left-to-Right Subtraction</strong> without borrowing.</li>
+          <li><strong>Speed Subtraction</strong> for mental agility.</li>
+        </ul>
+      </div>
+
+      <div class="try-this" style="background-color: #f0fdf4; border-color: #22c55e">
+        <strong>Celebration Time!</strong><br />
+        You can now subtract 1000 - 456 in your head instantly (544).<br />
+        Borrowing is a thing of the past!<br />
+        <strong>Great job! Ready for Module 3: Times Tables Comprehensive.</strong>
+      </div>
+
+      <div class="progress-tracker">
+        <div>
+          <strong>Module 2: Subtraction Mastery</strong><br />
+          <span>Status: COMPLETE</span>
+        </div>
+        <div class="star-rating">★★★★★</div>
+      </div>
+    </section>
+  </body>
+</html>
